@@ -64,3 +64,11 @@ Motion for React (`motion`, imported from `motion/react`) powers staggered hero 
 `portfolio-polish-v4` gives the fraud and SOC projects full-width featured showcases with original, unmodified repository figures. Asset hashes, immutable source links, and interpretation limits are in `docs/project-assets.md`. The figures load lazily, reserve their dimensions, include text alternatives, and link to full-size originals for mobile reading. Project descriptions, skills, experience, education, certifications, contact details, and the professional hero headline are preserved.
 
 A static SVG motif adds a subtle data/model/security cue without new animation or dependencies. Section headings and mobile spacing are tightened. The CV section remains ready for an approved document, without a download control or substituted LinkedIn PDF. Completion notes remain available in project disclosures.
+
+## Prelaunch v5 draft
+
+`portfolio-prelaunch-v5` adds clearer project-image framing and a visible, keyboard-accessible “Open full-size image” control. Original figures, captions, alt text, provenance, and full-size destinations remain unchanged.
+
+The public CV section, navigation item, and hero CV link are disabled through `showCV` in `src/data/siteConfig.js`. `src/components/CvSection.jsx` retains the implementation for later activation; first supply an approved separate CV and wire its verified download URL. The hero action currently links to Contact instead.
+
+The static HTML contains an AI/Data Engineering title, a description covering Machine Learning and Cybersecurity Analytics, and matching Open Graph and Twitter summary metadata. Canonical URL, social URL, and preview image are intentionally omitted until a deployment address and approved image are known.

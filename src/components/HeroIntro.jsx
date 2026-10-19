@@ -1,3 +1,4 @@
+import { showCV } from '../data/siteConfig'
 import { motion, useReducedMotion } from 'motion/react'
 import ArrowIcon from './ArrowIcon'
 
@@ -18,7 +19,7 @@ export default function HeroIntro({ primaryLink, secondaryLink }) {
       <motion.p variants={entrance} className="mt-5 text-sm leading-relaxed text-slate-400">MSc studies in Artificial Intelligence · University of Bath</motion.p>
       <motion.div variants={entrance} className="mt-8 flex flex-wrap gap-3">
         <a href="#projects" className={primaryLink}>Explore my work <ArrowIcon /></a>
-        <a href="#cv" className={secondaryLink}>CV & background</a>
+        <a href={showCV ? '#cv' : '#contact'} className={secondaryLink}>{showCV ? 'CV & background' : 'Get in touch'}</a>
       </motion.div>
     </motion.div>
   )

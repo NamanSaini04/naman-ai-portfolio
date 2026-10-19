@@ -1,3 +1,5 @@
+import CvSection from './components/CvSection'
+import { showCV } from './data/siteConfig'
 import PipelineMotif from './components/PipelineMotif'
 import { MotionConfig } from 'motion/react'
 import HeroIntro from './components/HeroIntro'
@@ -19,7 +21,7 @@ export default function App() {
       <header className="site-header mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-8 gap-y-3 border-b border-white/10 px-6 py-5 sm:px-8">
         <a href="#main" aria-label="Naman home" className="inline-flex min-h-11 items-center text-xl font-bold tracking-tight">naman<span className="text-cyan-300">.</span></a>
         <nav aria-label="Main navigation" className="flex w-full flex-wrap justify-between gap-x-1 gap-y-1 text-[13px] text-slate-300 sm:w-auto sm:justify-start sm:gap-x-6 sm:text-sm">
-          {[['Projects', 'projects'], ['Skills', 'skills'], ['Background', 'experience'], ['CV', 'cv'], ['Contact', 'contact']].map(([label, id]) => (
+          {[['Projects', 'projects'], ['Skills', 'skills'], ['Background', 'experience'], ...(showCV ? [['CV', 'cv']] : []), ['Contact', 'contact']].map(([label, id]) => (
             <a key={id} href={`#${id}`} className="inline-flex min-h-11 items-center hover:text-cyan-300">{label}</a>
           ))}
         </nav>
@@ -111,16 +113,10 @@ export default function App() {
           </ul>
         </RevealSection>
 
-        <RevealSection id="cv" className="grid gap-6 border-t border-white/10 py-12 sm:py-16 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="cv-title">
-          <SectionHeading id="cv-title" label="07 / CV" title="Curriculum vitae." />
-          <div className="surface rounded-2xl border border-white/10 p-6 sm:p-7">
-            <p className="text-sm font-medium text-slate-300">Approved CV coming soon</p>
-            <p className="mt-3 leading-relaxed text-slate-400">A downloadable document will appear here once supplied and approved.</p>
-          </div>
-        </RevealSection>
+        {showCV && <CvSection />}
 
         <RevealSection id="contact" className="border-t border-white/10 py-12 sm:py-16" aria-labelledby="contact-title">
-          <SectionHeading id="contact-title" label="08 / CONTACT" title="Let’s start a conversation." description="Get in touch by email, connect on LinkedIn, or explore my work on GitHub." />
+          <SectionHeading id="contact-title" label={`${showCV ? '08' : '07'} / CONTACT`} title="Let’s start a conversation." description="Get in touch by email, connect on LinkedIn, or explore my work on GitHub." />
           <div className="mt-7 flex flex-wrap gap-3">
             <a href={`mailto:${contact.email}`} className={`${primaryLink} break-all`}>{contact.email} <ArrowIcon /></a>
             <a href={contact.linkedin} className={secondaryLink}>LinkedIn <ArrowIcon /></a>
