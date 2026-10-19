@@ -1,52 +1,125 @@
 import ArrowIcon from './components/ArrowIcon'
 import ProjectCard from './components/ProjectCard'
+import SectionHeading from './components/SectionHeading'
 import { githubUrl, projects } from './data/portfolio'
+import { skillGroups } from './data/profile'
 
 const currentYear = new Date().getFullYear()
+const primaryLink = 'inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-lime-300 px-6 py-3 text-sm font-medium text-stone-950 transition-colors hover:bg-lime-200'
+const secondaryLink = 'inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-medium transition-colors hover:bg-white/10'
 
 export default function App() {
   return (
     <>
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-lime-300 focus:p-3 focus:text-stone-950">Skip to content</a>
-      <header className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-5 px-6 py-8">
-        <a href="#main" aria-label="Naman home" className="text-xl font-bold tracking-tight">naman<span className="text-lime-300">.</span></a>
-        <nav aria-label="Main navigation" className="flex gap-6 text-sm text-stone-300">
-          <a href="#about" className="inline-flex min-h-11 items-center gap-1 hover:text-lime-300">About</a>
-          <a href="#projects" className="inline-flex min-h-11 items-center gap-1 hover:text-lime-300">Projects</a>
-          <a href="#contact" className="inline-flex min-h-11 items-center gap-1 hover:text-lime-300">Contact <ArrowIcon /></a>
+      <header className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-8 gap-y-3 border-b border-white/10 px-6 py-5 sm:px-8">
+        <a href="#main" aria-label="Naman home" className="inline-flex min-h-11 items-center text-xl font-bold tracking-tight">naman<span className="text-lime-300">.</span></a>
+        <nav aria-label="Main navigation" className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-stone-300 sm:gap-x-6">
+          {[['Projects', 'projects'], ['Skills', 'skills'], ['Background', 'experience'], ['CV', 'cv'], ['Contact', 'contact']].map(([label, id]) => (
+            <a key={id} href={`#${id}`} className="inline-flex min-h-11 items-center hover:text-lime-300">{label}</a>
+          ))}
         </nav>
       </header>
-      <main id="main" tabIndex={-1} className="mx-auto max-w-6xl px-6">
-        <section className="py-24 sm:py-32" aria-labelledby="hero-title">
-          <p className="mb-8 text-sm tracking-[0.2em] text-lime-300">HELLO, I’M NAMAN SAINI</p>
-          <h1 id="hero-title" className="max-w-4xl text-5xl leading-[1.08] font-semibold tracking-tight sm:text-7xl lg:text-8xl">Curiosity meets<br /><span className="text-stone-500">creative code.</span></h1>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-stone-400">Welcome to my corner of the web. A place to explore ideas, build for the web, and document what comes next.</p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <a href="#projects" className="rounded-full bg-lime-300 px-6 py-3 font-medium text-stone-950 transition-colors hover:bg-lime-200">Explore projects ↓</a>
-            <a href={githubUrl} className="rounded-full border border-white/20 px-6 py-3 transition-colors hover:bg-white/10">Find me on GitHub <ArrowIcon /></a>
+      <main id="main" tabIndex={-1} className="mx-auto max-w-6xl px-6 sm:px-8">
+        <section className="grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.6fr_1fr] lg:gap-16" aria-labelledby="hero-title">
+          <div>
+            <p className="text-xs font-medium tracking-[0.18em] text-lime-300">NAMAN SAINI / AI & DATA PORTFOLIO</p>
+            <h1 id="hero-title" className="mt-6 text-4xl leading-[1.08] font-semibold tracking-tight sm:text-6xl lg:text-[4.25rem]">Engineering AI.<br /><span className="text-stone-400">Making data useful.</span></h1>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-stone-300">AI Engineering, Machine Learning, Data Engineering, and Cybersecurity Analytics — explored through practical, documented projects.</p>
+            <p className="mt-5 text-sm leading-relaxed text-stone-400">MSc Artificial Intelligence · University of Bath</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="#projects" className={primaryLink}>Explore my work <ArrowIcon /></a>
+              <a href="#cv" className={secondaryLink}>CV & background</a>
+            </div>
+          </div>
+          <aside aria-label="Portfolio focus" className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
+            <p className="text-xs tracking-[0.18em] text-stone-400">FROM MODELS TO DECISIONS</p>
+            <dl className="mt-6 divide-y divide-white/10">
+              {[
+                ['Machine Learning', 'Cost-aware fraud detection and model evaluation.'],
+                ['AI Engineering', 'Auditable SOC workflows with cited retrieval.'],
+                ['Data Engineering', 'Historical job data and validated pipelines.'],
+                ['Cybersecurity Analytics', 'Incident trends and response analysis.'],
+              ].map(([title, description]) => (
+                <div key={title} className="py-4 first:pt-0 last:pb-0">
+                  <dt className="font-medium text-stone-100">{title}</dt>
+                  <dd className="mt-1 text-sm leading-relaxed text-stone-400">{description}</dd>
+                </div>
+              ))}
+            </dl>
+          </aside>
+        </section>
+
+        <section id="about" className="grid gap-6 border-t border-white/10 py-12 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="about-title">
+          <SectionHeading id="about-title" label="01 / ABOUT" title="Practical work. Clear evidence." />
+          <div className="space-y-4 leading-relaxed text-stone-400">
+            <p>My work connects machine learning, reliable data pipelines, and security analysis. The projects below show how I approach model decisions, investigation workflows, and data quality.</p>
+            <p>Each project links to its implementation, with current status and limitations made explicit. Synthetic security data and planned features are clearly identified.</p>
           </div>
         </section>
-        <section id="about" className="grid gap-8 border-t border-white/10 py-20 md:grid-cols-2" aria-labelledby="about-title">
-          <h2 id="about-title" className="text-3xl font-semibold tracking-tight">Always a work in progress.</h2>
-          <div className="space-y-6 leading-relaxed text-stone-400">
-            <p>My projects explore AI, Data Engineering, and security analytics — from cost-aware fraud detection to auditable SOC investigation workflows and historical job data pipelines.</p>
-            <p>Built with React, Vite, and Tailwind CSS. Made to evolve, one idea at a time.</p>
+
+        <section id="projects" className="border-t border-white/10 py-16 sm:py-20" aria-labelledby="projects-title">
+          <SectionHeading id="projects-title" label="02 / SELECTED WORK" title="Projects with purpose." description="Explore documented implementations, current progress, and the decisions behind each project." />
+          <div className="mt-8 grid gap-5 md:grid-cols-2">{projects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}</div>
+        </section>
+
+        <section id="skills" className="border-t border-white/10 py-16 sm:py-20" aria-labelledby="skills-title">
+          <SectionHeading id="skills-title" label="03 / TECHNICAL SKILLS" title="A toolkit grounded in projects." description="Languages, tools, and techniques evidenced in the linked repositories. No proficiency ratings or years of experience implied." />
+          <div className="mt-8 grid gap-5 sm:grid-cols-2">
+            {skillGroups.map(group => (
+              <article key={group.title} className="rounded-2xl border border-white/10 p-6 sm:p-7">
+                <h3 className="text-xl font-semibold tracking-tight">{group.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-stone-400">{group.description}</p>
+                <ul aria-label={`${group.title} skills`} className="mt-5 flex flex-wrap gap-2">
+                  {group.skills.map(skill => <li key={skill} className="rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-stone-300">{skill}</li>)}
+                </ul>
+              </article>
+            ))}
           </div>
         </section>
-        <section id="projects" className="border-t border-white/10 py-20" aria-labelledby="projects-title">
-          <p className="text-xs tracking-widest text-lime-300">SELECTED WORK</p>
-          <h2 id="projects-title" className="mt-4 text-3xl font-semibold tracking-tight">Projects with purpose.</h2>
-          <p className="mt-4 text-stone-400">Explore documented implementations, current progress, and the decisions behind each project.</p>
-          <div className="mt-10 grid gap-5 md:grid-cols-2">{projects.map((project, index) => <ProjectCard key={project.title} project={project} index={index} />)}</div>
+
+        <section id="experience" className="grid gap-8 border-t border-white/10 py-16 sm:py-20 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="experience-title">
+          <SectionHeading id="experience-title" label="04 / PROFESSIONAL EXPERIENCE" title="Experience & contribution." />
+          <div className="rounded-2xl border border-dashed border-white/20 p-6 sm:p-7">
+            <p className="text-xs font-medium tracking-widest text-stone-400">DETAILS TO BE ADDED</p>
+            <h3 className="mt-3 text-xl font-medium">Professional experience</h3>
+            <p className="mt-3 leading-relaxed text-stone-400">Role titles, organisations, dates, and responsibilities will be added once confirmed.</p>
+            <a href="#projects" className="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-lime-300 hover:underline">Explore project work <ArrowIcon /></a>
+          </div>
         </section>
-        <section id="contact" className="border-t border-white/10 py-24" aria-labelledby="contact-title">
-          <p className="text-xs tracking-widest text-lime-300">LET’S CONNECT</p>
-          <h2 id="contact-title" className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">Good things start with hello.</h2>
-          <p className="mt-6 max-w-xl leading-relaxed text-stone-400">Explore my repositories and connect with me on GitHub.</p>
-          <a href={githubUrl} className="mt-8 inline-block rounded-full bg-lime-300 px-6 py-3 font-medium text-stone-950 hover:bg-lime-200">Visit my GitHub <ArrowIcon /></a>
+
+        <section id="education" className="grid gap-8 border-t border-white/10 py-16 sm:py-20 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="education-title">
+          <SectionHeading id="education-title" label="05 / EDUCATION" title="An academic foundation in AI." />
+          <article className="rounded-2xl border border-lime-300/25 bg-white/[0.03] p-6 sm:p-7">
+            <p className="text-sm font-medium text-lime-300">University of Bath</p>
+            <h3 className="mt-3 text-2xl font-semibold tracking-tight">MSc Artificial Intelligence</h3>
+            <p className="mt-4 text-sm leading-relaxed text-stone-400">Study dates, completion status, and further academic details to be confirmed.</p>
+          </article>
+        </section>
+
+        <section id="certifications" className="grid gap-8 border-t border-white/10 py-16 sm:py-20 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="certifications-title">
+          <SectionHeading id="certifications-title" label="06 / CERTIFICATIONS" title="Continued learning." />
+          <div className="rounded-2xl border border-dashed border-white/20 p-6 sm:p-7">
+            <p className="text-xs font-medium tracking-widest text-stone-400">DETAILS TO BE ADDED</p>
+            <p className="mt-3 leading-relaxed text-stone-400">Verified certification titles, issuers, dates, and credential links will appear here when available.</p>
+          </div>
+        </section>
+
+        <section id="cv" className="grid gap-8 border-t border-white/10 py-16 sm:py-20 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="cv-title">
+          <SectionHeading id="cv-title" label="07 / CV" title="The full picture." />
+          <div className="rounded-2xl border border-white/10 p-6 sm:p-7">
+            <h3 className="text-xl font-medium">Curriculum vitae</h3>
+            <p className="mt-3 leading-relaxed text-stone-400">A downloadable CV will be added once an approved document is available.</p>
+            <p className="mt-5 inline-block rounded-full border border-white/15 px-4 py-2 text-sm text-stone-400">CV not yet available</p>
+          </div>
+        </section>
+
+        <section id="contact" className="border-t border-white/10 py-16 sm:py-20" aria-labelledby="contact-title">
+          <SectionHeading id="contact-title" label="08 / CONTACT" title="Let’s start a conversation." description="Explore my repositories and connect with me on GitHub." />
+          <a href={githubUrl} className={`${primaryLink} mt-7`}>Visit my GitHub <ArrowIcon /></a>
         </section>
       </main>
-      <footer className="mx-auto flex max-w-6xl flex-wrap justify-between gap-4 border-t border-white/10 px-6 py-8 text-sm text-stone-400"><span>© {currentYear} Naman Saini</span><span>Built with curiosity.</span></footer>
+      <footer className="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 border-t border-white/10 px-6 py-7 text-sm text-stone-400 sm:px-8"><span>© {currentYear} Naman Saini</span><span>AI · Data · Security</span></footer>
     </>
   )
 }

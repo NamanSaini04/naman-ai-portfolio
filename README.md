@@ -42,3 +42,9 @@ Cards include technology badges, keyboard-accessible implementation disclosures,
 ## Recovery
 
 The previous environment was unavailable and contained uncommitted work. No source files, patches, or unreachable Git objects were recovered from the current filesystem. This project was reconstructed from source recorded in the conversation, preserving the prior layout and styling, including SVG arrows, mobile navigation targets, and improved footer contrast. Project placeholders were subsequently replaced with the four user-supplied projects after repository README and source inspection. The lockfile was regenerated.
+
+## Design v2 draft
+
+The `portfolio-design-v2` branch adds a recruiter-focused introduction, Technical Skills, Professional Experience, Education, Certifications, and CV sections. Shared section headings live in `src/components/SectionHeading.jsx`; project-evidenced skill groups live in `src/data/profile.js`.
+
+The MSc Artificial Intelligence at the University of Bath is user-supplied. Dates and completion status are unconfirmed. Professional experience, certifications, and an approved CV have not been supplied and remain clearly labelled placeholders. No CV download link is published until a document is available. The four project records and project card component are preserved from the initial build.
