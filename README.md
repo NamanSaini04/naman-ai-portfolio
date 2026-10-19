@@ -50,3 +50,11 @@ The `portfolio-design-v2` branch adds a recruiter-focused introduction, Technica
 Education dates, two professional roles, four certification titles, email, and LinkedIn contact details were supplied by the owner from their LinkedIn profile. MSc coursework is completed; the final award classification awaits official university confirmation. No Merit or official degree award is claimed. Certification issuers, issue dates, and credential IDs are omitted because they were not supplied. No proficiency claims were inferred from certification titles.
 
 An approved CV has not been supplied. The CV section remains a placeholder with no download link; a LinkedIn profile PDF must not be substituted. The four project records and project card component are preserved from the initial build.
+
+## Motion v3 draft
+
+The `portfolio-motion-v3` branch refines the presentation with a midnight-navy palette, cyan accents, CSS gradient lighting, and a fine hero grid. No remote font, image, or animation assets are required. Profile and project data are unchanged.
+
+Motion for React (`motion`, imported from `motion/react`) powers staggered hero entrances, once-only scroll reveals, and restrained project-card elevation. Individual transitions last 200–450ms. `MotionConfig` and `useReducedMotion` respect the system preference; reduced-motion mode removes entrance transforms, stagger, hover elevation, and smooth scrolling. Content never begins at zero opacity, so offscreen keyboard navigation remains readable. Project details retain native keyboard-accessible disclosure controls.
+
+`src/components/HeroIntro.jsx` owns the hero sequence; `src/components/RevealSection.jsx` owns section entrances. CSS handles button/link states and disables transitions for reduced motion. A small local SVG favicon avoids a missing-icon request. No background loops, parallax, or external artwork are used.
