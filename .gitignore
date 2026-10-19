@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.local
+*.log
+.DS_Store
+
+# Local secrets and credentials
+.env
+.env.*
