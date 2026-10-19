@@ -2,7 +2,7 @@ import ArrowIcon from './components/ArrowIcon'
 import ProjectCard from './components/ProjectCard'
 import SectionHeading from './components/SectionHeading'
 import { githubUrl, projects } from './data/portfolio'
-import { skillGroups } from './data/profile'
+import { certifications, contact, education, experience, skillGroups } from './data/profile'
 
 const currentYear = new Date().getFullYear()
 const primaryLink = 'inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-lime-300 px-6 py-3 text-sm font-medium text-stone-950 transition-colors hover:bg-lime-200'
@@ -26,7 +26,7 @@ export default function App() {
             <p className="text-xs font-medium tracking-[0.18em] text-lime-300">NAMAN SAINI / AI & DATA PORTFOLIO</p>
             <h1 id="hero-title" className="mt-6 text-4xl leading-[1.08] font-semibold tracking-tight sm:text-6xl lg:text-[4.25rem]">Engineering AI.<br /><span className="text-stone-400">Making data useful.</span></h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-stone-300">AI Engineering, Machine Learning, Data Engineering, and Cybersecurity Analytics — explored through practical, documented projects.</p>
-            <p className="mt-5 text-sm leading-relaxed text-stone-400">MSc Artificial Intelligence · University of Bath</p>
+            <p className="mt-5 text-sm leading-relaxed text-stone-400">MSc studies in Artificial Intelligence · University of Bath</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#projects" className={primaryLink}>Explore my work <ArrowIcon /></a>
               <a href="#cv" className={secondaryLink}>CV & background</a>
@@ -80,29 +80,39 @@ export default function App() {
 
         <section id="experience" className="grid gap-8 border-t border-white/10 py-16 sm:py-20 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="experience-title">
           <SectionHeading id="experience-title" label="04 / PROFESSIONAL EXPERIENCE" title="Experience & contribution." />
-          <div className="rounded-2xl border border-dashed border-white/20 p-6 sm:p-7">
-            <p className="text-xs font-medium tracking-widest text-stone-400">DETAILS TO BE ADDED</p>
-            <h3 className="mt-3 text-xl font-medium">Professional experience</h3>
-            <p className="mt-3 leading-relaxed text-stone-400">Role titles, organisations, dates, and responsibilities will be added once confirmed.</p>
-            <a href="#projects" className="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-lime-300 hover:underline">Explore project work <ArrowIcon /></a>
+          <div className="space-y-5">
+            {experience.map(position => (
+              <article key={`${position.organisation}-${position.role}`} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-7">
+                <p className="text-sm font-medium text-lime-300">{position.organisation}</p>
+                <h3 className="mt-2 text-xl font-semibold tracking-tight">{position.role}</h3>
+                <p className="mt-2 text-sm text-stone-400">{position.dates}</p>
+                <ul className="mt-5 list-disc space-y-2 pl-5 leading-relaxed text-stone-300 marker:text-stone-500">
+                  {position.responsibilities.map(item => <li key={item}>{item}</li>)}
+                </ul>
+              </article>
+            ))}
           </div>
         </section>
 
         <section id="education" className="grid gap-8 border-t border-white/10 py-16 sm:py-20 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="education-title">
           <SectionHeading id="education-title" label="05 / EDUCATION" title="An academic foundation in AI." />
-          <article className="rounded-2xl border border-lime-300/25 bg-white/[0.03] p-6 sm:p-7">
-            <p className="text-sm font-medium text-lime-300">University of Bath</p>
-            <h3 className="mt-3 text-2xl font-semibold tracking-tight">MSc Artificial Intelligence</h3>
-            <p className="mt-4 text-sm leading-relaxed text-stone-400">Study dates, completion status, and further academic details to be confirmed.</p>
-          </article>
+          <div className="space-y-5">
+            {education.map(qualification => (
+              <article key={qualification.course} className="rounded-2xl border border-lime-300/25 bg-white/[0.03] p-6 sm:p-7">
+                <p className="text-sm font-medium text-lime-300">{qualification.institution}</p>
+                <h3 className="mt-3 text-2xl font-semibold tracking-tight">{qualification.course}</h3>
+                <p className="mt-3 text-sm text-stone-400">{qualification.dates}</p>
+                {qualification.note && <p className="mt-4 text-sm leading-relaxed text-stone-300">{qualification.note}</p>}
+              </article>
+            ))}
+          </div>
         </section>
 
         <section id="certifications" className="grid gap-8 border-t border-white/10 py-16 sm:py-20 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="certifications-title">
           <SectionHeading id="certifications-title" label="06 / CERTIFICATIONS" title="Continued learning." />
-          <div className="rounded-2xl border border-dashed border-white/20 p-6 sm:p-7">
-            <p className="text-xs font-medium tracking-widest text-stone-400">DETAILS TO BE ADDED</p>
-            <p className="mt-3 leading-relaxed text-stone-400">Verified certification titles, issuers, dates, and credential links will appear here when available.</p>
-          </div>
+          <ul className="divide-y divide-white/10 rounded-2xl border border-white/10 px-6 sm:px-7">
+            {certifications.map(title => <li key={title} className="py-5 leading-relaxed text-stone-300">{title}</li>)}
+          </ul>
         </section>
 
         <section id="cv" className="grid gap-8 border-t border-white/10 py-16 sm:py-20 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="cv-title">
@@ -115,8 +125,12 @@ export default function App() {
         </section>
 
         <section id="contact" className="border-t border-white/10 py-16 sm:py-20" aria-labelledby="contact-title">
-          <SectionHeading id="contact-title" label="08 / CONTACT" title="Let’s start a conversation." description="Explore my repositories and connect with me on GitHub." />
-          <a href={githubUrl} className={`${primaryLink} mt-7`}>Visit my GitHub <ArrowIcon /></a>
+          <SectionHeading id="contact-title" label="08 / CONTACT" title="Let’s start a conversation." description="Get in touch by email, connect on LinkedIn, or explore my work on GitHub." />
+          <div className="mt-7 flex flex-wrap gap-3">
+            <a href={`mailto:${contact.email}`} className={`${primaryLink} break-all`}>{contact.email} <ArrowIcon /></a>
+            <a href={contact.linkedin} className={secondaryLink}>LinkedIn <ArrowIcon /></a>
+            <a href={githubUrl} className={secondaryLink}>GitHub <ArrowIcon /></a>
+          </div>
         </section>
       </main>
       <footer className="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 border-t border-white/10 px-6 py-7 text-sm text-stone-400 sm:px-8"><span>© {currentYear} Naman Saini</span><span>AI · Data · Security</span></footer>

@@ -47,4 +47,6 @@ The previous environment was unavailable and contained uncommitted work. No sour
 
 The `portfolio-design-v2` branch adds a recruiter-focused introduction, Technical Skills, Professional Experience, Education, Certifications, and CV sections. Shared section headings live in `src/components/SectionHeading.jsx`; project-evidenced skill groups live in `src/data/profile.js`.
 
-The MSc Artificial Intelligence at the University of Bath is user-supplied. Dates and completion status are unconfirmed. Professional experience, certifications, and an approved CV have not been supplied and remain clearly labelled placeholders. No CV download link is published until a document is available. The four project records and project card component are preserved from the initial build.
+Education dates, two professional roles, four certification titles, email, and LinkedIn contact details were supplied by the owner from their LinkedIn profile. MSc coursework is completed; the final award classification awaits official university confirmation. No Merit or official degree award is claimed. Certification issuers, issue dates, and credential IDs are omitted because they were not supplied. No proficiency claims were inferred from certification titles.
+
+An approved CV has not been supplied. The CV section remains a placeholder with no download link; a LinkedIn profile PDF must not be substituted. The four project records and project card component are preserved from the initial build.
