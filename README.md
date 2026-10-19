@@ -58,3 +58,9 @@ The `portfolio-motion-v3` branch refines the presentation with a midnight-navy p
 Motion for React (`motion`, imported from `motion/react`) powers staggered hero entrances, once-only scroll reveals, and restrained project-card elevation. Individual transitions last 200–450ms. `MotionConfig` and `useReducedMotion` respect the system preference; reduced-motion mode removes entrance transforms, stagger, hover elevation, and smooth scrolling. Content never begins at zero opacity, so offscreen keyboard navigation remains readable. Project details retain native keyboard-accessible disclosure controls.
 
 `src/components/HeroIntro.jsx` owns the hero sequence; `src/components/RevealSection.jsx` owns section entrances. CSS handles button/link states and disables transitions for reduced motion. A small local SVG favicon avoids a missing-icon request. No background loops, parallax, or external artwork are used.
+
+## Polish v4 draft
+
+`portfolio-polish-v4` gives the fraud and SOC projects full-width featured showcases with original, unmodified repository figures. Asset hashes, immutable source links, and interpretation limits are in `docs/project-assets.md`. The figures load lazily, reserve their dimensions, include text alternatives, and link to full-size originals for mobile reading. Project descriptions, skills, experience, education, certifications, contact details, and the professional hero headline are preserved.
+
+A static SVG motif adds a subtle data/model/security cue without new animation or dependencies. Section headings and mobile spacing are tightened. The CV section remains ready for an approved document, without a download control or substituted LinkedIn PDF. Completion notes remain available in project disclosures.

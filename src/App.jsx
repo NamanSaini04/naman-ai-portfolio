@@ -1,3 +1,4 @@
+import PipelineMotif from './components/PipelineMotif'
 import { MotionConfig } from 'motion/react'
 import HeroIntro from './components/HeroIntro'
 import RevealSection from './components/RevealSection'
@@ -17,25 +18,26 @@ export default function App() {
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-cyan-300 focus:p-3 focus:text-slate-950">Skip to content</a>
       <header className="site-header mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-8 gap-y-3 border-b border-white/10 px-6 py-5 sm:px-8">
         <a href="#main" aria-label="Naman home" className="inline-flex min-h-11 items-center text-xl font-bold tracking-tight">naman<span className="text-cyan-300">.</span></a>
-        <nav aria-label="Main navigation" className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-slate-300 sm:gap-x-6">
+        <nav aria-label="Main navigation" className="flex w-full flex-wrap justify-between gap-x-1 gap-y-1 text-[13px] text-slate-300 sm:w-auto sm:justify-start sm:gap-x-6 sm:text-sm">
           {[['Projects', 'projects'], ['Skills', 'skills'], ['Background', 'experience'], ['CV', 'cv'], ['Contact', 'contact']].map(([label, id]) => (
             <a key={id} href={`#${id}`} className="inline-flex min-h-11 items-center hover:text-cyan-300">{label}</a>
           ))}
         </nav>
       </header>
       <main id="main" tabIndex={-1} className="mx-auto max-w-6xl px-6 sm:px-8">
-        <section className="hero-section grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.6fr_1fr] lg:gap-16" aria-labelledby="hero-title">
+        <section className="hero-section grid items-center gap-8 py-12 sm:gap-12 sm:py-20 lg:grid-cols-[1.6fr_1fr] lg:gap-16" aria-labelledby="hero-title">
           <HeroIntro primaryLink={primaryLink} secondaryLink={secondaryLink} />
           <aside aria-label="Portfolio focus" className="focus-panel surface rounded-2xl border border-cyan-300/15 p-6 sm:p-8">
             <p className="text-xs tracking-[0.18em] text-slate-400">FROM MODELS TO DECISIONS</p>
-            <dl className="mt-6 divide-y divide-white/10">
+            <PipelineMotif />
+            <dl className="divide-y divide-white/10">
               {[
                 ['Machine Learning', 'Cost-aware fraud detection and model evaluation.'],
                 ['AI Engineering', 'Auditable SOC workflows with cited retrieval.'],
                 ['Data Engineering', 'Historical job data and validated pipelines.'],
                 ['Cybersecurity Analytics', 'Incident trends and response analysis.'],
               ].map(([title, description]) => (
-                <div key={title} className="py-4 first:pt-0 last:pb-0">
+                <div key={title} className="py-3 first:pt-0 last:pb-0">
                   <dt className="font-medium text-slate-100">{title}</dt>
                   <dd className="mt-1 text-sm leading-relaxed text-slate-400">{description}</dd>
                 </div>
@@ -45,20 +47,20 @@ export default function App() {
         </section>
 
         <RevealSection id="about" className="grid gap-6 border-t border-white/10 py-12 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="about-title">
-          <SectionHeading id="about-title" label="01 / ABOUT" title="Practical work. Clear evidence." />
+          <SectionHeading id="about-title" label="01 / ABOUT" title="AI, data & security." />
           <div className="space-y-4 leading-relaxed text-slate-400">
-            <p>My work connects machine learning, reliable data pipelines, and security analysis. The projects below show how I approach model decisions, investigation workflows, and data quality.</p>
-            <p>Each project links to its implementation, with current status and limitations made explicit. Synthetic security data and planned features are clearly identified.</p>
+            <p>I build practical projects at the intersection of machine learning, data pipelines, and security analysis — with a focus on clear decisions and traceable evidence.</p>
+            <p>Explore the source code, design decisions, and limitations in each project below.</p>
           </div>
         </RevealSection>
 
-        <RevealSection id="projects" className="border-t border-white/10 py-16 sm:py-20" aria-labelledby="projects-title">
-          <SectionHeading id="projects-title" label="02 / SELECTED WORK" title="Projects with purpose." description="Explore documented implementations, current progress, and the decisions behind each project." />
+        <RevealSection id="projects" className="border-t border-white/10 py-12 sm:py-16" aria-labelledby="projects-title">
+          <SectionHeading id="projects-title" label="02 / SELECTED WORK" title="Selected engineering projects." description="Featured implementations in fraud detection and SOC investigation, alongside data engineering and security analytics." />
           <div className="mt-8 grid gap-5 md:grid-cols-2">{projects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}</div>
         </RevealSection>
 
-        <RevealSection id="skills" className="border-t border-white/10 py-16 sm:py-20" aria-labelledby="skills-title">
-          <SectionHeading id="skills-title" label="03 / TECHNICAL SKILLS" title="A toolkit grounded in projects." description="Languages, tools, and techniques evidenced in the linked repositories. No proficiency ratings or years of experience implied." />
+        <RevealSection id="skills" className="border-t border-white/10 py-12 sm:py-16" aria-labelledby="skills-title">
+          <SectionHeading id="skills-title" label="03 / TECHNICAL SKILLS" title="Tools behind the work." description="Tools and techniques used in the linked project implementations." />
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             {skillGroups.map(group => (
               <article key={group.title} className="surface rounded-2xl border border-white/10 p-6 sm:p-7">
@@ -72,8 +74,8 @@ export default function App() {
           </div>
         </RevealSection>
 
-        <RevealSection id="experience" className="grid gap-8 border-t border-white/10 py-16 sm:py-20 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="experience-title">
-          <SectionHeading id="experience-title" label="04 / PROFESSIONAL EXPERIENCE" title="Experience & contribution." />
+        <RevealSection id="experience" className="grid gap-6 border-t border-white/10 py-12 sm:py-16 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="experience-title">
+          <SectionHeading id="experience-title" label="04 / PROFESSIONAL EXPERIENCE" title="Teaching & industry experience." />
           <div className="space-y-5">
             {experience.map(position => (
               <article key={`${position.organisation}-${position.role}`} className="surface rounded-2xl border border-white/10 p-6 sm:p-7">
@@ -88,8 +90,8 @@ export default function App() {
           </div>
         </RevealSection>
 
-        <RevealSection id="education" className="grid gap-8 border-t border-white/10 py-16 sm:py-20 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="education-title">
-          <SectionHeading id="education-title" label="05 / EDUCATION" title="An academic foundation in AI." />
+        <RevealSection id="education" className="grid gap-6 border-t border-white/10 py-12 sm:py-16 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="education-title">
+          <SectionHeading id="education-title" label="05 / EDUCATION" title="Education & academic status." />
           <div className="space-y-5">
             {education.map(qualification => (
               <article key={qualification.course} className="surface rounded-2xl border border-cyan-300/20 p-6 sm:p-7">
@@ -102,23 +104,22 @@ export default function App() {
           </div>
         </RevealSection>
 
-        <RevealSection id="certifications" className="grid gap-8 border-t border-white/10 py-16 sm:py-20 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="certifications-title">
-          <SectionHeading id="certifications-title" label="06 / CERTIFICATIONS" title="Continued learning." />
+        <RevealSection id="certifications" className="grid gap-6 border-t border-white/10 py-12 sm:py-16 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="certifications-title">
+          <SectionHeading id="certifications-title" label="06 / CERTIFICATIONS" title="Certifications & courses." />
           <ul className="surface divide-y divide-white/10 rounded-2xl border border-white/10 px-6 sm:px-7">
             {certifications.map(title => <li key={title} className="py-5 leading-relaxed text-slate-300">{title}</li>)}
           </ul>
         </RevealSection>
 
-        <RevealSection id="cv" className="grid gap-8 border-t border-white/10 py-16 sm:py-20 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="cv-title">
-          <SectionHeading id="cv-title" label="07 / CV" title="The full picture." />
+        <RevealSection id="cv" className="grid gap-6 border-t border-white/10 py-12 sm:py-16 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="cv-title">
+          <SectionHeading id="cv-title" label="07 / CV" title="Curriculum vitae." />
           <div className="surface rounded-2xl border border-white/10 p-6 sm:p-7">
-            <h3 className="text-xl font-medium">Curriculum vitae</h3>
-            <p className="mt-3 leading-relaxed text-slate-400">A downloadable CV will be added once an approved document is available.</p>
-            <p className="mt-5 inline-block rounded-full border border-white/15 px-4 py-2 text-sm text-slate-400">CV not yet available</p>
+            <p className="text-sm font-medium text-slate-300">Approved CV coming soon</p>
+            <p className="mt-3 leading-relaxed text-slate-400">A downloadable document will appear here once supplied and approved.</p>
           </div>
         </RevealSection>
 
-        <RevealSection id="contact" className="border-t border-white/10 py-16 sm:py-20" aria-labelledby="contact-title">
+        <RevealSection id="contact" className="border-t border-white/10 py-12 sm:py-16" aria-labelledby="contact-title">
           <SectionHeading id="contact-title" label="08 / CONTACT" title="Let’s start a conversation." description="Get in touch by email, connect on LinkedIn, or explore my work on GitHub." />
           <div className="mt-7 flex flex-wrap gap-3">
             <a href={`mailto:${contact.email}`} className={`${primaryLink} break-all`}>{contact.email} <ArrowIcon /></a>
