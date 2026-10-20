@@ -72,3 +72,11 @@ A static SVG motif adds a subtle data/model/security cue without new animation o
 The public CV section, navigation item, and hero CV link are disabled through `showCV` in `src/data/siteConfig.js`. `src/components/CvSection.jsx` retains the implementation for later activation; first supply an approved separate CV and wire its verified download URL. The hero action currently links to Contact instead.
 
 The static HTML contains an AI/Data Engineering title, a description covering Machine Learning and Cybersecurity Analytics, and matching Open Graph and Twitter summary metadata. Canonical URL, social URL, and preview image are intentionally omitted until a deployment address and approved image are known.
+
+## Audit v6 draft
+
+`portfolio-audit-v6` starts at V5 commit `348f900151d7456bfe7530220595d9d16bf34273`. All eight project link names now begin with their exact visible wording: “View on GitHub”, “Open full-size image”, and “Repository source”, followed by the project-specific context. Full-size links retain their new-tab announcement.
+
+Responsive, lossless-compressed WebP thumbnails reduce inline image transfer while preserving original PNG enlargement destinations, captions, alt text, and provenance. See `docs/project-assets.md` for derivative dimensions and encoding. No new runtime dependencies were added. The bundle review found required React/ReactDOM and Motion code; disabled CV markup is already eliminated from the production bundle. No major runtime rewrite was made.
+
+Preview indexing and deployment protection remain platform-managed. No robots rules, Vercel headers, canonical URL, social URL, or deployment configuration were changed. Local accessibility/browser checks do not replace a Lighthouse audit on the deployed preview or verify its response headers.

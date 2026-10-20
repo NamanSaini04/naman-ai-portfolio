@@ -26,15 +26,15 @@ export default function ProjectCard({ project, index }) {
             <p className="pb-3 text-sm leading-relaxed text-slate-400">{project.details}</p>
             {project.statusNote && <p className="pb-3 text-xs leading-relaxed text-slate-400">{project.statusNote}</p>}
           </details>
-          <a href={project.github} aria-label={`View ${project.title} on GitHub`} className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-cyan-300 hover:underline">View on GitHub <ArrowIcon /></a>
+          <a href={project.github} aria-label={`View on GitHub — ${project.title}`} className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-cyan-300 hover:underline">View on GitHub <ArrowIcon /></a>
         </div>
       </div>
       {media && (
         <figure className="min-w-0 self-center rounded-xl border border-cyan-300/15 bg-slate-950/40 p-3 sm:p-4">
           <p className="mb-3 text-xs font-medium text-slate-300">{media.label}</p>
-          <a href={media.src} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size ${media.label.toLowerCase()} (opens in a new tab)`} className="group block overflow-hidden rounded-lg border border-white/15 bg-slate-900 transition-colors hover:border-cyan-300/50">
+          <a href={media.src} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size image — ${project.title}: ${media.label} (opens in a new tab)`} className="group block overflow-hidden rounded-lg border border-white/15 bg-slate-900 transition-colors hover:border-cyan-300/50">
             <span className="block bg-slate-50 p-2 sm:p-3">
-              <img src={media.src} width={media.width} height={media.height} loading="lazy" decoding="async" alt={media.alt} className="h-auto max-h-72 w-full object-contain" />
+              <img src={media.thumbnail} srcSet={media.srcSet} sizes="(min-width: 1024px) 440px, (min-width: 768px) 600px, calc(100vw - 128px)" width={media.width} height={media.height} loading="lazy" decoding="async" alt={media.alt} className="h-auto max-h-72 w-full object-contain" />
             </span>
             <span className="flex min-h-11 items-center justify-between gap-2 border-t border-white/10 px-3 py-2 text-sm font-medium text-cyan-300 group-hover:text-cyan-200">
               <span>Open full-size image<span className="sr-only"> (opens in a new tab)</span></span>
@@ -44,7 +44,7 @@ export default function ProjectCard({ project, index }) {
           <figcaption className="mt-3 text-xs leading-relaxed text-slate-400">
             {media.caption}
             <span className="mt-2 flex flex-wrap items-center justify-between gap-x-3">
-              <a href={media.source} aria-label={`View original ${media.label.toLowerCase()} in the project repository`} className="inline-flex min-h-11 items-center gap-1 text-cyan-300 hover:underline">Repository source <ArrowIcon /></a>
+              <a href={media.source} aria-label={`Repository source — ${project.title}: ${media.label}`} className="inline-flex min-h-11 items-center gap-1 text-cyan-300 hover:underline">Repository source <ArrowIcon /></a>
             </span>
           </figcaption>
         </figure>

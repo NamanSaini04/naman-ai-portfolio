@@ -1,10 +1,17 @@
 import fraudChart from '../assets/projects/fraud-cost-threshold.png'
 import socArchitecture from '../assets/projects/soc-architecture.png'
+import fraudSmall from '../assets/projects/thumbnails/fraud-cost-threshold-440.webp'
+import fraudLarge from '../assets/projects/thumbnails/fraud-cost-threshold-880.webp'
+import socSmall from '../assets/projects/thumbnails/soc-architecture-645.webp'
+import socLarge from '../assets/projects/thumbnails/soc-architecture-1290.webp'
 
-// Original, unmodified assets from the project repositories. Provenance: docs/project-assets.md.
+// Full-size assets remain unmodified. Lossless-WebP thumbnails are resized derivatives.
+// Provenance: docs/project-assets.md.
 export const projectMedia = {
   'fraud-detection': {
     src: fraudChart,
+    thumbnail: fraudSmall,
+    srcSet: `${fraudSmall} 440w, ${fraudLarge} 880w`,
     width: 880,
     height: 440,
     label: 'Cost-based threshold analysis',
@@ -14,6 +21,8 @@ export const projectMedia = {
   },
   'soc-copilot': {
     src: socArchitecture,
+    thumbnail: socSmall,
+    srcSet: `${socSmall} 645w, ${socLarge} 1290w`,
     width: 1935,
     height: 1062,
     label: 'SOC investigation architecture',
