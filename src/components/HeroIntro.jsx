@@ -10,7 +10,19 @@ export default function HeroIntro({ primaryLink, secondaryLink }) {
   }
   return (
     <motion.div initial={reduceMotion ? false : 'rest'} animate="visible" transition={{ staggerChildren: reduceMotion ? 0 : 0.07 }}>
-      <motion.p variants={entrance} className="eyebrow text-xs font-medium tracking-[0.18em] text-cyan-300">NAMAN SAINI / AI & DATA PORTFOLIO</motion.p>
+      <motion.div variants={entrance} className="flex items-center justify-between gap-5">
+        <p className="eyebrow max-w-[15rem] text-xs font-medium tracking-[0.18em] text-cyan-300">NAMAN SAINI / AI & DATA PORTFOLIO</p>
+        <img
+          src="/naman-saini-portrait.webp"
+          alt="Portrait of Naman Saini"
+          width="226"
+          height="226"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          className="h-20 w-20 shrink-0 rounded-2xl border border-cyan-300/30 bg-slate-100 object-cover object-top shadow-[0_14px_36px_#00000050] sm:h-28 sm:w-28"
+        />
+      </motion.div>
       <h1 id="hero-title" className="mt-6 text-4xl leading-[1.08] font-semibold tracking-tight sm:text-6xl lg:text-[4.25rem]">
         <motion.span variants={entrance} className="block">Engineering AI.</motion.span>
         <motion.span variants={entrance} className="block text-slate-300">Making data useful.</motion.span>
