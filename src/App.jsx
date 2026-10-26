@@ -9,6 +9,7 @@ import ProjectCard from './components/ProjectCard'
 import ProjectCaseStudy from './components/ProjectCaseStudy'
 import SkillsHeatmap from './components/SkillsHeatmap'
 import FraudDashboard from './components/FraudDashboard'
+import AirlineDashboard from './components/AirlineDashboard'
 import SectionHeading from './components/SectionHeading'
 import { githubUrl, projects } from './data/portfolio'
 import { certifications, contact, education, experience, skillGroups } from './data/profile'
@@ -20,6 +21,10 @@ const secondaryLink = 'button-secondary inline-flex min-h-12 items-center justif
 export default function App() {
   if (/^\/projects\/fraud-detection\/dashboard\/?$/.test(window.location.pathname)) {
     return <FraudDashboard />
+  }
+
+  if (window.location.pathname === '/projects/airline-delay/dashboard' || window.location.pathname === '/projects/airline-delay/dashboard/') {
+    return <AirlineDashboard />
   }
 
   const pathMatch = window.location.pathname.match(/^\/projects\/([^/]+)\/?$/)
