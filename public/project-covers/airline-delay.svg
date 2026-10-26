@@ -1,41 +1,88 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="title desc">
+<title id="title">Airline Delay and Operational Performance Analytics</title>
+<desc id="desc">Cinematic dusk aviation scene with a large ascending airliner, airport runway lights, translucent route map and an analytics chart, in teal and navy colours.</desc>
 <defs>
- <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#070f22"/><stop offset=".58" stop-color="#17314a"/><stop offset="1" stop-color="#091426"/></linearGradient>
- <radialGradient id="h"><stop stop-color="#71dfff" stop-opacity=".25"/><stop offset="1" stop-color="#71dfff" stop-opacity="0"/></radialGradient>
- <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#305b77"/><stop offset=".5" stop-color="#152e47"/><stop offset="1" stop-color="#0b2036"/></linearGradient>
- <pattern id="grid" width="57" height="57" patternUnits="userSpaceOnUse"><path d="M57 0H0V57" fill="none" stroke="#58dff0" stroke-opacity=".075"/></pattern>
- <filter id="shadow" x="-60%" y="-60%" width="220%" height="240%"><feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#020816" flood-opacity=".7"/></filter>
- <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="16"/></filter>
- <clipPath id="frame"><rect width="1200" height="675" rx="22"/></clipPath>
+  <linearGradient id="sky" x1="0" y1="0" x2=".25" y2="1"><stop stop-color="#06132a"/><stop offset=".36" stop-color="#103453"/><stop offset=".64" stop-color="#365974"/><stop offset=".83" stop-color="#e59d80"/><stop offset="1" stop-color="#22344b"/></linearGradient>
+  <linearGradient id="plane" x1=".3" y1="0" x2=".7" y2="1"><stop stop-color="#f7fbff"/><stop offset=".4" stop-color="#bcd9e8"/><stop offset=".75" stop-color="#638daa"/><stop offset="1" stop-color="#142e46"/></linearGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2=".4" y2="1"><stop stop-color="#b6d7e7"/><stop offset=".5" stop-color="#4b738e"/><stop offset="1" stop-color="#162b40"/></linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2c536d" stop-opacity=".94"/><stop offset="1" stop-color="#0c2238" stop-opacity=".93"/></linearGradient>
+  <linearGradient id="runway" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#1c3a50"/><stop offset="1" stop-color="#09172a"/></linearGradient>
+  <radialGradient id="sun"><stop stop-color="#ffd4a8" stop-opacity=".45"/><stop offset="1" stop-color="#e6af96" stop-opacity="0"/></radialGradient>
+  <radialGradient id="cyan"><stop stop-color="#55e4fa" stop-opacity=".22"/><stop offset="1" stop-color="#58cfe7" stop-opacity="0"/></radialGradient>
+  <filter id="soft"><feGaussianBlur stdDeviation="18"/></filter>
+  <filter id="bloom"><feGaussianBlur stdDeviation="5"/></filter>
+  <filter id="shadow" x="-30%" y="-40%" width="180%" height="200%"><feDropShadow dx="0" dy="16" stdDeviation="15" flood-color="#001224" flood-opacity=".8"/></filter>
+  <clipPath id="canvas"><rect width="1200" height="675" rx="20"/></clipPath>
+  <pattern id="mapgrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" stroke="#90d5ee" stroke-opacity=".08" fill="none"/></pattern>
 </defs>
-<g clip-path="url(#frame)">
-<rect width="1200" height="675" fill="url(#b)"/>
-<rect width="1200" height="675" fill="url(#grid)"/>
-<circle cx="921" cy="208" r="399" fill="url(#h)"/>
-<circle cx="180" cy="548" r="341" fill="url(#h)" opacity=".6"/>
-<g stroke="#65d7ea" opacity=".15" fill="none"><circle cx="1061" cy="579" r="233" stroke-width="3"/><circle cx="1061" cy="579" r="301" stroke-width="3"/></g>
-
-<!-- terminal skyline -->
-<g fill="#2e5776" fill-opacity=".36"><rect x="90" y="420" width="150" height="112" rx="7"/><rect x="232" y="389" width="126" height="143" rx="7"/><rect x="374" y="446" width="191" height="86" rx="7"/><rect x="830" y="440" width="213" height="92" rx="7"/></g>
-<g fill="#8dddef" fill-opacity=".36"><path d="M95 464h460M95 484h460M834 479h210M834 499h210" stroke="#75cbdf" stroke-width="5"/></g>
-<!-- plotted route arcs -->
-<g fill="none" stroke="#8ce9ee" stroke-width="3" opacity=".55"><path d="M120 400Q430 111 850 243" stroke-dasharray="13 17"/><path d="M303 490Q619 151 1071 298" stroke-dasharray="9 15"/></g>
-<g filter="url(#glow)" opacity=".3"><circle cx="577" cy="289" r="110" fill="#7bdaf5"/></g>
-<!-- aeroplane silhouette -->
-<g transform="translate(304 262) rotate(-9 258 122)" filter="url(#shadow)">
- <path d="M35 125q-27-6-8-22l194-30L359-54q28-25 53-9l-42 132 170 11q54 6 89 25 23 14 1 27l-270 8-76 172q-8 15-27 15l-17-178-166 23-39 42q-7 7-21 4l11-58Z" fill="#e4f6ff" stroke="#8ddbe8" stroke-width="6" stroke-linejoin="round"/>
- <path d="M79 119l283-3M242 83l29 193" stroke="#608fa8" stroke-opacity=".4" stroke-width="3"/>
- <path d="M524 103l82 15" stroke="#f9bd8e" stroke-width="12" stroke-linecap="round"/>
+<g clip-path="url(#canvas)">
+<rect width="1200" height="675" fill="url(#sky)"/>
+<circle cx="398" cy="478" r="390" fill="url(#sun)"/>
+<circle cx="871" cy="207" r="420" fill="url(#cyan)"/>
+<path d="M-80 205Q110 152 310 220T710 189T1300 250" fill="none" stroke="#9ac2d5" stroke-opacity=".07" stroke-width="65" filter="url(#soft)"/>
+<path d="M-40 308Q290 255 534 309T1240 270" fill="none" stroke="#e4bfbc" stroke-opacity=".12" stroke-width="44" filter="url(#soft)"/>
+<path d="M-30 390Q300 365 526 394T1240 354" fill="none" stroke="#fbd6a1" stroke-opacity=".13" stroke-width="27" filter="url(#soft)"/>
+<g opacity=".62">
+  <path d="M0 557h1200v118H0Z" fill="url(#runway)"/>
+  <path d="M0 582Q600 566 1200 586" fill="none" stroke="#8bacc3" stroke-opacity=".34" stroke-width="3"/>
+  <g fill="#11283a"><path d="M0 555v-52h128v-30h130v73h150v-34h184v37h91v-27h220v25h297v108H0Z"/></g>
+  <path d="M72 558V474h24v-24h47v24h23v84M116 452v-75h10v75" fill="#0b1a2e" stroke="#254d61" stroke-width="4"/>
+  <path d="M95 457h47M95 482h47" stroke="#78b9d5" stroke-opacity=".38" stroke-width="3"/>
+  <g fill="#ffcf9b"><circle cx="56" cy="559" r="4"/><circle cx="134" cy="551" r="4"/><circle cx="207" cy="557" r="3"/><circle cx="294" cy="554" r="4"/><circle cx="370" cy="560" r="4"/><circle cx="450" cy="554" r="3"/><circle cx="545" cy="559" r="4"/><circle cx="639" cy="553" r="4"/><circle cx="721" cy="558" r="3"/><circle cx="806" cy="552" r="4"/><circle cx="911" cy="557" r="4"/><circle cx="1000" cy="552" r="4"/><circle cx="1114" cy="557" r="3"/></g>
+  <g stroke="#fbd1a0" stroke-opacity=".3" stroke-width="3"><path d="M56 562v28M294 557v29M545 559v35M806 556v29M1000 557v30"/></g>
 </g>
-<!-- operations metrics UI -->
+<!-- Flight map panel -->
 <g filter="url(#shadow)">
- <rect x="797" y="319" width="318" height="244" rx="19" fill="url(#glass)" stroke="#6bdbeb" stroke-width="3"/>
- <rect x="824" y="343" width="171" height="12" rx="6" fill="#93dfed"/>
- <rect x="824" y="368" width="117" height="8" rx="4" fill="#93dfed" opacity=".35"/>
- <g stroke="#7adcec" stroke-opacity=".17" stroke-width="2"><path d="M821 432h266M821 484h266M821 535h266"/></g>
- <g fill="#5dc9e5"><rect x="840" y="486" width="32" height="49" rx="6"/><rect x="889" y="449" width="32" height="86" rx="6"/><rect x="938" y="421" width="32" height="114" rx="6"/><rect x="987" y="463" width="32" height="72" rx="6"/></g>
- <path d="M830 464l44-24 46 7 46-37 54 9 62-46" fill="none" stroke="#ffc28e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="55" y="53" width="502" height="256" rx="22" fill="#09233c" fill-opacity=".62" stroke="#7fdbf5" stroke-opacity=".38" stroke-width="2"/>
+  <rect x="70" y="69" width="473" height="223" rx="12" fill="url(#mapgrid)"/>
+  <g fill="#6bb6d5" fill-opacity=".45">
+    <path d="M103 148l39-24 41-5 36-22 38 6 11 25-24 21-33 13-13 33-17 17-28-13-17-36Z"/>
+    <path d="M218 210l39-4 15 21-8 42-24 18-14-26-17-22Z"/>
+    <path d="M315 118l31-18 42 13 27 22-5 24-31-8-22 27-16-15-28-2Z"/>
+    <path d="M367 177l39 9 19 24 3 43-28 26-20-25-8-43Z"/>
+    <path d="M425 120l54-8 28 17 9 29-19 24-43 1-20-22Z"/>
+    <path d="M467 229l43 11 7 17-31 16-24-13Z"/>
+  </g>
+  <g fill="none" stroke="#8beaff" stroke-width="2.5" stroke-linecap="round"><path d="M172 151Q277 53 381 152"/><path d="M188 169Q323 85 483 149"/><path d="M381 152Q443 187 471 242" stroke="#ffbc93"/></g>
+  <g fill="#b6f4ff"><circle cx="172" cy="151" r="5"/><circle cx="381" cy="152" r="5"/><circle cx="483" cy="149" r="5"/></g>
+  <circle cx="471" cy="242" r="6" fill="#ffbe90"/>
 </g>
-<g stroke="#78dceb" stroke-opacity=".7" stroke-width="4"><path d="M106 585H645"/><path d="M106 599h432" stroke-opacity=".33"/></g>
-
-</g></svg>
+<!-- Large passenger aircraft, ascending toward top-right -->
+<g transform="translate(194 170) rotate(-13 382 251)" filter="url(#shadow)">
+  <!-- far wing -->
+  <path d="M358 273 512 32q16-22 40-18l-53 224 198 25-6 34-307 14Z" fill="url(#metal)" stroke="#7fabc3" stroke-width="5" stroke-linejoin="round"/>
+  <!-- rear stabilizer -->
+  <path d="M164 281 96 204 72 210l22 103 70 10Z" fill="url(#metal)" stroke="#698ea5" stroke-width="5"/>
+  <!-- horizontal fuselage -->
+  <path d="M52 273q111-19 242-34l298-29q84-10 171-5 33 4 43 27 6 17-15 32-25 19-84 32l-315 63-231 18-101-23q-37-11-26-37 3-21 18-44Z" fill="url(#plane)" stroke="#9dc6d8" stroke-width="6"/>
+  <!-- cabin reflection -->
+  <path d="M87 286q202-33 468-58t209-6" fill="none" stroke="#fbfeff" stroke-opacity=".72" stroke-width="7" stroke-linecap="round"/>
+  <path d="M58 334q237 19 502-31l219-50" fill="none" stroke="#193f5e" stroke-opacity=".73" stroke-width="10"/>
+  <!-- windows -->
+  <g fill="#0d354e"><ellipse cx="353" cy="270" rx="4" ry="3"/><ellipse cx="377" cy="267" rx="4" ry="3"/><ellipse cx="402" cy="265" rx="4" ry="3"/><ellipse cx="427" cy="261" rx="4" ry="3"/><ellipse cx="452" cy="258" rx="4" ry="3"/><ellipse cx="477" cy="256" rx="4" ry="3"/><ellipse cx="502" cy="253" rx="4" ry="3"/><ellipse cx="527" cy="251" rx="4" ry="3"/><ellipse cx="552" cy="248" rx="4" ry="3"/><ellipse cx="577" cy="246" rx="4" ry="3"/><ellipse cx="602" cy="243" rx="4" ry="3"/><ellipse cx="627" cy="240" rx="4" ry="3"/><ellipse cx="652" cy="237" rx="4" ry="3"/></g>
+  <!-- major near wing -->
+  <path d="M367 294 58 453q-24 17-40 2-7-9 11-30l187-167 190-7 96 34Z" fill="url(#metal)" stroke="#a2c7da" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M68 431 301 288" stroke="#d7edf7" stroke-opacity=".65" stroke-width="5" fill="none"/>
+  <!-- twin engines -->
+  <g><path d="M235 331q-15 19-8 56 6 25 35 32 36-1 42-34 4-34-17-57Z" fill="#416784" stroke="#a9d8e8" stroke-width="5"/><ellipse cx="267" cy="364" rx="25" ry="31" fill="#051e34" stroke="#9dbdcf" stroke-width="6"/><ellipse cx="267" cy="365" rx="12" ry="17" fill="#0e3c57"/></g>
+  <g><path d="M546 307q-5 25 6 46 13 17 39 12 29-11 25-44l-13-26Z" fill="#4c738d" stroke="#b0cedf" stroke-width="4"/><ellipse cx="587" cy="324" rx="20" ry="25" fill="#082135" stroke="#b4ccdb" stroke-width="5"/></g>
+  <!-- cockpit -->
+  <path d="M717 222q42-9 59 3l-38 17-31-3Z" fill="#0b3148" stroke="#bbdcec" stroke-width="3"/>
+  <path d="M739 222l-6 18" stroke="#c6e3ea" stroke-width="3"/>
+  <!-- warm landing lights -->
+  <circle cx="678" cy="284" r="7" fill="#ffbb7a"/>
+  <circle cx="678" cy="284" r="19" fill="#ffc585" opacity=".45" filter="url(#bloom)"/>
+</g>
+<!-- Analytical chart panel -->
+<g filter="url(#shadow)">
+  <rect x="836" y="328" width="325" height="241" rx="18" fill="url(#glass)" stroke="#66dcf5" stroke-width="3"/>
+  <rect x="862" y="355" width="160" height="10" rx="5" fill="#a8e5f5" opacity=".85"/>
+  <rect x="862" y="372" width="99" height="7" rx="4" fill="#a8e5f5" opacity=".35"/>
+  <g stroke="#8bcadf" stroke-opacity=".17" stroke-width="2"><path d="M858 437h276M858 488h276M858 537h276"/></g>
+  <g fill="#5ed4ef"><rect x="875" y="493" width="31" height="44" rx="4"/><rect x="918" y="461" width="31" height="76" rx="4"/><rect x="961" y="478" width="31" height="59" rx="4"/><rect x="1004" y="429" width="31" height="108" rx="4"/><rect x="1047" y="446" width="31" height="91" rx="4"/></g>
+  <path d="M865 472 909 450 944 454 981 418 1037 430 1107 383" fill="none" stroke="#ffbe8f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#ffd09f"><circle cx="909" cy="450" r="5"/><circle cx="981" cy="418" r="5"/><circle cx="1107" cy="383" r="6"/></g>
+</g>
+<rect y="656" width="1200" height="19" fill="#091b2c" opacity=".7"/>
+</g>
+</svg>
