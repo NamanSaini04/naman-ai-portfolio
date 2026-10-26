@@ -1,10 +1,31 @@
 // Skill groups reflect tools and techniques evidenced by the four project repositories.
 // No proficiency levels or years of professional experience are implied.
 export const skillGroups = [
-  { title: 'Programming', description: 'Languages used across the project implementations.', skills: ['Python', 'SQL'] },
-  { title: 'AI / ML', description: 'Modelling, evaluation, and auditable retrieval workflows.', skills: ['scikit-learn', 'XGBoost', 'imbalanced-learn', 'TF-IDF retrieval', 'Model evaluation', 'Cost-based threshold tuning'] },
-  { title: 'Data Engineering', description: 'Collection, validation, and historical data storage.', skills: ['PostgreSQL', 'REST API ingestion', 'Data validation', 'Idempotent pipelines', 'Pandas', 'NumPy'] },
-  { title: 'Tools', description: 'Interfaces, testing, and reproducible project workflows.', skills: ['Docker', 'FastAPI', 'Streamlit', 'Jupyter', 'Pytest', 'Plotly', 'MCP', 'Pydantic'] },
+  {
+    title: 'AI Engineering',
+    description: 'Auditable AI workflows and defensive decision-support applications.',
+    skills: ['RAG / TF-IDF retrieval', 'Agent workflow orchestration', 'Human-in-the-loop review', 'Cited evidence retrieval', 'MCP tools', 'FastAPI', 'Pydantic'],
+  },
+  {
+    title: 'Machine Learning & Evaluation',
+    description: 'Building, comparing and validating models against measurable outcomes.',
+    skills: ['scikit-learn', 'XGBoost', 'Feature engineering', 'Class imbalance handling', 'PR-AUC / recall / precision', 'Cost-based thresholds', 'Holt-Winters forecasting'],
+  },
+  {
+    title: 'Data Analytics & BI',
+    description: 'Turning datasets into clear performance measures and practical findings.',
+    skills: ['Python', 'Pandas', 'NumPy', 'Exploratory analysis', 'KPI design', 'Plotly', 'Streamlit dashboards', 'RFM segmentation'],
+  },
+  {
+    title: 'Data Engineering',
+    description: 'Ingestion, historical data modelling, orchestration and quality checks.',
+    skills: ['SQL', 'PostgreSQL', 'dbt', 'Apache Airflow', 'Data ingestion / ETL', 'REST APIs', 'Data validation', 'Docker'],
+  },
+  {
+    title: 'Application Delivery & Testing',
+    description: 'Making projects usable, reproducible and inspectable.',
+    skills: ['Streamlit', 'FastAPI', 'Pytest', 'Pydantic', 'Git / GitHub', 'Jupyter', 'Technical reporting'],
+  },
 ]
 
 // Profile details supplied by the portfolio owner from LinkedIn.
