@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import ArrowIcon from './ArrowIcon'
 import { caseStudies } from '../data/caseStudies'
 import { projectMedia } from '../data/projectMedia'
@@ -7,6 +7,7 @@ const primary = 'button-primary inline-flex min-h-12 items-center justify-center
 const secondary = 'button-secondary inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-slate-100 transition-colors hover:bg-white/10'
 
 export default function ProjectCaseStudy({ project }) {
+  const [showEmbeddedDashboard, setShowEmbeddedDashboard] = useState(false)
   const details = project && caseStudies[project.id]
   const media = project && projectMedia[project.id]
 
@@ -106,6 +107,26 @@ export default function ProjectCaseStudy({ project }) {
             </div>
           )}
         </section>
+
+        {details.dashboard && (
+          <section className="mt-5 rounded-2xl border border-white/10 bg-white/[0.025] p-5 sm:p-6" aria-labelledby="embed-dashboard-heading">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <h2 id="embed-dashboard-heading" className="text-lg font-semibold">Explore the actual dashboard</h2>
+                <p className="mt-1 text-sm text-slate-400">Interact with the project's published Streamlit dashboard without leaving this case study.</p>
+              </div>
+              <button type="button" aria-expanded={showEmbeddedDashboard} aria-controls="embedded-project-dashboard" onClick={() => setShowEmbeddedDashboard(v => !v)} className={secondary}>
+                {showEmbeddedDashboard ? 'Hide embedded dashboard' : 'Explore dashboard here'}
+              </button>
+            </div>
+            {showEmbeddedDashboard && (
+              <div id="embedded-project-dashboard" className="mt-5">
+                <iframe title={`Interactive ${project.title} Streamlit dashboard`} src={`${details.dashboard}?embed=true`} loading="lazy" referrerPolicy="strict-origin-when-cross-origin" className="h-[650px] w-full rounded-xl border border-white/10 bg-white sm:h-[760px]" />
+                <p className="mt-3 text-sm text-slate-400">If this embedded app does not load, <a href={details.dashboard} target="_blank" rel="noopener noreferrer" className="text-cyan-300 underline underline-offset-4">open the dashboard in a new tab</a>. Streamlit apps may need a moment to wake up.</p>
+              </div>
+            )}
+          </section>
+        )}
 
         {media && (
           <section aria-labelledby="evidence-title" className="mt-12">
