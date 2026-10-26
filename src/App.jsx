@@ -97,17 +97,42 @@ export default function App() {
           <SkillsHeatmap />
         </RevealSection>
 
-        <RevealSection id="experience" className="grid gap-6 border-t border-white/10 py-12 sm:py-16 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="experience-title">
-          <SectionHeading id="experience-title" label="04 / PROFESSIONAL EXPERIENCE" title="Teaching & industry experience." />
-          <div className="space-y-5">
+        <RevealSection id="experience" className="grid gap-7 border-t border-white/10 py-12 sm:py-16 md:grid-cols-[1fr_1.65fr] md:gap-12" aria-labelledby="experience-title">
+          <SectionHeading
+            id="experience-title"
+            label="04 / PROFESSIONAL EXPERIENCE"
+            title="What I did, and what came out of it."
+            description="My experience spans hands-on Python teaching support and cybersecurity research. Here's what I worked on, how I contributed and what I produced—without inflated impact figures."
+          />
+          <div className="space-y-6">
             {experience.map(position => (
-              <article key={`${position.organisation}-${position.role}`} className="surface rounded-2xl border border-white/10 p-6 sm:p-7">
-                <p className="text-sm font-medium text-cyan-300">{position.organisation}</p>
-                <h3 className="mt-2 text-xl font-semibold tracking-tight">{position.role}</h3>
-                <p className="mt-2 text-sm text-slate-400">{position.dates}</p>
-                <ul className="mt-5 list-disc space-y-2 pl-5 leading-relaxed text-slate-300 marker:text-slate-500">
-                  {position.responsibilities.map(item => <li key={item}>{item}</li>)}
+              <article key={`${position.organisation}-${position.role}`} className="surface overflow-hidden rounded-2xl border border-white/10 p-6 sm:p-7">
+                <div className="flex flex-wrap items-start justify-between gap-x-5 gap-y-2">
+                  <div>
+                    <p className="text-sm font-semibold text-cyan-300">{position.organisation}</p>
+                    <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-100 sm:text-2xl">{position.role}</h3>
+                  </div>
+                  <p className="rounded-full border border-white/15 bg-white/[0.04] px-3 py-2 text-xs font-medium text-slate-300">{position.dates}</p>
+                </div>
+                <ul aria-label={position.role + ' focus areas'} className="mt-4 flex flex-wrap gap-2">
+                  {position.focus.map(tag => (
+                    <li key={tag} className="rounded-full border border-cyan-300/20 bg-cyan-300/[0.055] px-3 py-1.5 text-xs font-medium text-cyan-100">{tag}</li>
+                  ))}
                 </ul>
+                <p className="mt-5 leading-relaxed text-slate-200">{position.intro}</p>
+
+                <div className="mt-6 border-t border-white/10 pt-5">
+                  <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-cyan-300">What I worked on</h4>
+                  <ul className="mt-3 list-disc space-y-3 pl-5 text-sm leading-relaxed text-slate-300 marker:text-cyan-300 sm:text-[15px]">
+                    {position.work.map(item => <li key={item}>{item}</li>)}
+                  </ul>
+                </div>
+
+                <div className="mt-6 rounded-r-xl border-l-[3px] border-cyan-300 bg-cyan-300/[0.055] px-4 py-4 sm:px-5">
+                  <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-cyan-300">Outcome & contribution</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-100 sm:text-[15px]">{position.outcome}</p>
+                  <p className="mt-3 text-xs leading-relaxed text-slate-400">{position.outcomeNote}</p>
+                </div>
               </article>
             ))}
           </div>
