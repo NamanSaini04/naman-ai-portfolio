@@ -1,10 +1,12 @@
 import { motion, useReducedMotion } from 'motion/react'
 import ArrowIcon from './ArrowIcon'
 import { projectMedia } from '../data/projectMedia'
+import { caseStudies } from '../data/caseStudies'
 
 export default function ProjectCard({ project, index }) {
   const reduceMotion = useReducedMotion()
   const media = projectMedia[project.id]
+  const caseStudy = caseStudies[project.id]
   return (
     <motion.article whileHover={reduceMotion ? undefined : { y: -3 }} transition={{ duration: 0.25, ease: 'easeOut' }} aria-labelledby={`${project.id}-title`} className={`project-card surface grid min-w-0 gap-5 rounded-2xl border p-5 focus-within:border-cyan-300/60 hover:border-cyan-300/40 sm:p-7 ${project.featured ? 'border-cyan-300/30 md:col-span-2 lg:grid-cols-[1.05fr_1fr] lg:gap-8' : 'border-white/10'}`}>
       <div className="flex min-w-0 flex-col">
@@ -20,13 +22,27 @@ export default function ProjectCard({ project, index }) {
         </ul>
         {project.disclosure && <p className="mt-4 text-sm leading-relaxed text-slate-300"><span className="font-medium text-cyan-300">Data note: </span>{project.disclosure}</p>}
         {project.planned && <p className="mt-4 text-sm leading-relaxed text-slate-300"><span className="font-medium text-amber-200">Planned: </span>{project.planned}</p>}
+        {caseStudy && (
+          <div className="mt-5 grid grid-cols-2 gap-2" aria-label={`${project.title} selected project outcomes`}>
+            {caseStudy.metrics.slice(0, 2).map(metric => (
+              <div key={metric.label} className="rounded-xl border border-cyan-300/15 bg-cyan-300/[0.04] px-3 py-3">
+                <p className="text-xl font-semibold tabular-nums text-cyan-300">{metric.value}</p>
+                <p className="mt-1 text-xs leading-relaxed text-slate-400">{metric.label}</p>
+              </div>
+            ))}
+          </div>
+        )}
         <div className="mt-auto pt-4">
           <details className="border-t border-white/10">
             <summary className="cursor-pointer py-3 text-sm text-slate-300 hover:text-cyan-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300">Implementation details<span className="sr-only"> for {project.title}</span></summary>
             <p className="pb-3 text-sm leading-relaxed text-slate-400">{project.details}</p>
             {project.statusNote && <p className="pb-3 text-xs leading-relaxed text-slate-400">{project.statusNote}</p>}
           </details>
-          <a href={project.github} aria-label={`View on GitHub — ${project.title}`} className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-cyan-300 hover:underline">View on GitHub <ArrowIcon /></a>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
+            <a href={`/projects/${project.id}`} aria-label={`Read case study — ${project.title}`} className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-cyan-300 hover:underline">View case study <ArrowIcon /></a>
+            {caseStudy?.dashboard && <a href={caseStudy.dashboard} target="_blank" rel="noopener noreferrer" aria-label={`Open published dashboard — ${project.title}`} className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-cyan-300 hover:underline">View dashboard <ArrowIcon /></a>}
+            <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`View source on GitHub — ${project.title}`} className="inline-flex min-h-11 items-center gap-2 text-sm text-slate-300 hover:text-cyan-300 hover:underline">GitHub <ArrowIcon /></a>
+          </div>
         </div>
       </div>
       {media && (
