@@ -1,0 +1,80 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Length 5579 >>
+stream
+BT /F2 15.5 Tf 0.067 0.094 0.153 rg 1 0 0 1 257.4325 811.0 Tm (NAMAN SAINI) Tj ET
+BT /F2 10 Tf 0.067 0.094 0.153 rg 1 0 0 1 182.35000000000002 791.0 Tm (Data Analyst | Python, SQL and Business Analytics) Tj ET
+BT /F1 8 Tf 0.067 0.094 0.153 rg 1 0 0 1 203.5 778.0 Tm (London, UK | +44 7405 103080 | namanbmps@gmail.com) Tj ET
+BT /F1 8 Tf 0.067 0.094 0.153 rg 1 0 0 1 212.9 766.7 Tm (GitHub: NamanSaini04 | LinkedIn: naman-sainii) Tj ET
+BT /F1 8 Tf 0.067 0.094 0.153 rg 1 0 0 1 107.62 755.4 Tm (UK Student visa holder; planning to apply for the Graduate visa, subject to eligibility and approval.) Tj ET
+BT /F2 9.5 Tf 0.086 0.306 0.388 rg 1 0 0 1 46 735.3 Tm (PROFILE) Tj ET
+BT /F1 8.25 Tf 0.067 0.094 0.153 rg 1 0 0 1 46 722.1 Tm (Help teams identify profit leakage, prioritise customers and assess risk through Python, SQL and clear KPI dashboards.) Tj ET
+BT /F1 8.25 Tf 0.067 0.094 0.153 rg 1 0 0 1 46 710.4 Tm (Portfolio outcomes include identifying $17.7K in retail sub-category losses and a customer cohort contributing 48% of) Tj ET
+BT /F1 8.25 Tf 0.067 0.094 0.153 rg 1 0 0 1 46 698.7 Tm (revenue. Bring reproducible analysis and practical recommendations to support pricing, retention and operational decisions.) Tj ET
+BT /F2 9.5 Tf 0.086 0.306 0.388 rg 1 0 0 1 46 678.2 Tm (TECHNICAL SKILLS) Tj ET
+BT /F1 8.25 Tf 0.067 0.094 0.153 rg 1 0 0 1 46 665.0 Tm (Python \(pandas, NumPy\), SQL, MySQL, PostgreSQL | Streamlit, Plotly, Power BI, Tableau | KPI reporting, exploratory analysis,) Tj ET
+BT /F1 8.25 Tf 0.067 0.094 0.153 rg 1 0 0 1 46 653.3 Tm (RFM segmentation, time-series forecasting | scikit-learn, XGBoost | Git, Jupyter Notebook) Tj ET
+BT /F2 9.5 Tf 0.086 0.306 0.388 rg 1 0 0 1 46 632.8 Tm (SELECTED PROJECTS) Tj ET
+BT /F2 8.8 Tf 0.067 0.094 0.153 rg 1 0 0 1 46 614.8 Tm (E-commerce Sales Analytics | GitHub) Tj ET
+BT /F1 8.25 Tf 0.067 0.094 0.153 rg 1 0 0 1 46 602.8 Tm (Python, pandas, Streamlit, Plotly, statsmodels) Tj ET
+BT /F1 8.1 Tf 0.067 0.094 0.153 rg 1 0 0 1 58 591.8 Tm (- Analysed 9,993 cleaned Superstore order lines; identified a $17.7K loss in the Tables sub-category and examined the) Tj ET
+BT /F1 8.1 Tf 0.067 0.094 0.153 rg 1 0 0 1 58 580.4 Tm (relationship between discounting and profitability.) Tj ET
+BT /F1 8.1 Tf 0.067 0.094 0.153 rg 1 0 0 1 58 569.0 Tm (- Produced a 12-month Holt-Winters forecast with 17.6% MAPE on a held-out year, outperforming the seasonal-naive baseline;) Tj ET
+BT /F1 8.1 Tf 0.067 0.094 0.153 rg 1 0 0 1 58 557.6 Tm (identified the top 20% of customers as contributing 48% of revenue to guide retention priorities.) Tj ET
+BT /F2 8.8 Tf 0.067 0.094 0.153 rg 1 0 0 1 46 541.4 Tm (Financial Fraud Detection Analytics | GitHub) Tj ET
+BT /F1 8.25 Tf 0.067 0.094 0.153 rg 1 0 0 1 46 529.4 Tm (Python, scikit-learn, XGBoost, Streamlit) Tj ET
+BT /F1 8.1 Tf 0.067 0.094 0.153 rg 1 0 0 1 58 518.4 Tm (- Compared four classifiers on 283,726 deduplicated transactions with 0.17% fraud; XGBoost achieved a reported PR-AUC of 0.82) Tj ET
+BT /F1 8.1 Tf 0.067 0.094 0.153 rg 1 0 0 1 58 507.0 Tm (versus 0.67 for logistic regression in the offline evaluation.) Tj ET
+BT /F1 8.1 Tf 0.067 0.094 0.153 rg 1 0 0 1 58 495.6 Tm (- Delivered a Streamlit threshold simulator and business report, making the trade-off between missed fraud, false alarms and) Tj ET
+BT /F1 8.1 Tf 0.067 0.094 0.153 rg 1 0 0 1 58 484.2 Tm (illustrative review costs visible for risk decisions.) Tj ET
+BT /F2 8.8 Tf 0.067 0.094 0.153 rg 1 0 0 1 46 468.0 Tm (Cybersecurity Incident Analytics | GitHub) Tj ET
+BT /F1 8.25 Tf 0.067 0.094 0.153 rg 1 0 0 1 46 456.0 Tm (Python, pandas, Streamlit, Plotly | Synthetic-data portfolio project) Tj ET
+BT /F1 8.1 Tf 0.067 0.094 0.153 rg 1 0 0 1 58 445.0 Tm (- Analysed 18,000 synthetic incidents; found 35% breached response SLAs and the top 5% accounted for half of recorded losses,) Tj ET
+BT /F1 8.1 Tf 0.067 0.094 0.153 rg 1 0 0 1 58 433.6 Tm (informing simulated triage and loss-prevention priorities.) Tj ET
+BT /F1 8.1 Tf 0.067 0.094 0.153 rg 1 0 0 1 58 422.2 Tm (- Delivered a four-tab dashboard and executive summary linking attack patterns, response performance and financial impact to) Tj ET
+BT /F1 8.1 Tf 0.067 0.094 0.153 rg 1 0 0 1 58 410.8 Tm (prioritised recommendations; clearly labelled all findings as synthetic-data results.) Tj ET
+BT /F2 9.5 Tf 0.086 0.306 0.388 rg 1 0 0 1 46 390.6 Tm (EXPERIENCE) Tj ET
+BT /F1 8.25 Tf 0.067 0.094 0.153 rg 1 0 0 1 46 377.4 Tm (Graduate Teaching Assistant | University of Bath | Nov 2025-Present) Tj ET
+BT /F1 8.1 Tf 0.067 0.094 0.153 rg 1 0 0 1 58 366.4 Tm (- Support Python programming labs, debugging and data manipulation exercises; explain technical concepts clearly and guide) Tj ET
+BT /F1 8.1 Tf 0.067 0.094 0.153 rg 1 0 0 1 58 355.0 Tm (systematic problem-solving.) Tj ET
+BT /F2 9.5 Tf 0.086 0.306 0.388 rg 1 0 0 1 46 334.8 Tm (EDUCATION AND CERTIFICATIONS) Tj ET
+BT /F1 8.25 Tf 0.067 0.094 0.153 rg 1 0 0 1 46 321.6 Tm (MSc Artificial Intelligence | University of Bath | 2026) Tj ET
+BT /F1 8.25 Tf 0.067 0.094 0.153 rg 1 0 0 1 46 310.6 Tm (Final results pending. Dissertation: comparative analysis of machine learning and deep learning for network intrusion) Tj ET
+BT /F1 8.25 Tf 0.067 0.094 0.153 rg 1 0 0 1 46 298.9 Tm (detection, with feature engineering and class imbalance handling.) Tj ET
+BT /F1 8.25 Tf 0.067 0.094 0.153 rg 1 0 0 1 46 287.2 Tm (BTech Computer Science Engineering | Amity University, Noida | 2017-2021) Tj ET
+BT /F1 8.25 Tf 0.067 0.094 0.153 rg 1 0 0 1 46 276.2 Tm (Oracle AI Foundation Associate | Oracle Generative AI Professional) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Title (Naman Saini | Data Analyst CV) /Author (Naman Saini) >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000000396 00000 n 
+0000006026 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R /Info 7 0 R >>
+startxref
+6108
+%%EOF
