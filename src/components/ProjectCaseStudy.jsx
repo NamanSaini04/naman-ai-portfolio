@@ -169,8 +169,8 @@ export default function ProjectCaseStudy({ project }) {
             </ul>
           </section>
           <section aria-labelledby="insights-title" className="surface rounded-2xl border border-white/10 p-6 sm:p-8">
-            <p className="text-xs uppercase tracking-widest text-cyan-300">03 / Interpretation</p>
-            <h2 id="insights-title" className="mt-2 text-2xl font-semibold">What the results tell us</h2>
+            <p className="text-xs uppercase tracking-widest text-cyan-300">03 / Findings & outcomes</p>
+            <h2 id="insights-title" className="mt-2 text-2xl font-semibold">What I found and achieved</h2>
             <ul className="mt-4 list-disc space-y-3 pl-5 leading-relaxed text-slate-300 marker:text-cyan-300">
               {details.insights.map((insight) => <li key={insight}>{insight}</li>)}
             </ul>
