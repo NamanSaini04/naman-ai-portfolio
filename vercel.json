@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/projects/fraud-detection/dashboard",
+      "destination": "/index.html"
+    },
+    {
       "source": "/projects/:slug",
       "destination": "/index.html"
     }
