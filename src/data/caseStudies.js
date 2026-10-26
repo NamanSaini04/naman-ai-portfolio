@@ -22,10 +22,11 @@ export const caseStudies = {
       'I also found that fraud was more common around 2–4 AM, and the median fraudulent payment was only $9.25. That reinforced why checking only large transactions would miss a lot of suspicious activity.',
     ],
     caveat: 'One historical dataset spanning two days; anonymised inputs, few fraud examples, no operational monitoring, and illustrative rather than observed cost savings.',
-    dashboard: null,
+    dashboard: '/projects/fraud-detection/dashboard',
+    dashboardType: 'Interactive portfolio analytics dashboard · Test-set results and cost comparisons',
+    dashboardLabel: 'Compare evaluated fraud thresholds and adjust illustrative missed-fraud and review costs',
     localCommand: 'streamlit run dashboard/app.py',
-    sourceEvidence: 'https://github.com/NamanSaini04/Financial-fraud-detection/blob/main/reports/business_insights.md',
-    dashboardLabel: 'Four-tab dashboard available locally'
+    sourceEvidence: 'https://github.com/NamanSaini04/Financial-fraud-detection/blob/main/reports/business_insights.md'
   },
   'ecommerce-sales': {
     kicker: 'Completed retail analytics study · Public Sample Superstore dataset',
