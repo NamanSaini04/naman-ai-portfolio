@@ -50,7 +50,13 @@ export const caseStudies = {
     dashboard: null,
     localCommand: 'streamlit run dashboard/streamlit_app.py',
     sourceEvidence: 'https://github.com/NamanSaini04/soc-copilot/blob/main/README.md',
-    dashboardLabel: 'Analyst dashboard available locally'
+    dashboardLabel: 'Analyst dashboard available locally',
+    visual: {
+      src: 'https://raw.githubusercontent.com/NamanSaini04/soc-copilot/main/reports/technical/assets/dashboard_preview.png',
+      alt: 'SOC Copilot dashboard preview captured from the project repository',
+      caption: 'Repository screenshot of the local Streamlit interface; not a publicly hosted dashboard.',
+      source: 'https://github.com/NamanSaini04/soc-copilot/blob/main/reports/technical/assets/dashboard_preview.png'
+    }
   },
   'job-market': {
     kicker: 'Phase 6 · UK hiring-data pipeline and public dashboard',
@@ -102,6 +108,12 @@ export const caseStudies = {
     dashboard: 'https://cybersecurity-incident-analytics-xtloahmwdyxupmfykhywls.streamlit.app/',
     dashboardType: 'Published Streamlit dashboard',
     dashboardLabel: 'Explore security KPIs, attack trends and financial impact',
-    sourceEvidence: 'https://github.com/NamanSaini04/cybersecurity-incident-analytics/blob/main/reports/executive_summary.md'
+    sourceEvidence: 'https://github.com/NamanSaini04/cybersecurity-incident-analytics/blob/main/reports/executive_summary.md',
+    visual: {
+      src: 'https://raw.githubusercontent.com/NamanSaini04/cybersecurity-incident-analytics/main/reports/figures/03_sla_breach.png',
+      alt: 'SLA breach analysis chart based on a synthetic cybersecurity incident dataset',
+      caption: 'Source-project chart of SLA breaches by severity. All incident data is synthetic.',
+      source: 'https://github.com/NamanSaini04/cybersecurity-incident-analytics/blob/main/reports/figures/03_sla_breach.png'
+    }
   }
 }
