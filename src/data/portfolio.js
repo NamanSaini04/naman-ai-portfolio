@@ -25,7 +25,7 @@ export const projects = [
   },
   {
     id: 'incident-analytics',
-    title: 'Cybersecurity Incident Analytics Dashboard',
+    title: 'Cybersecurity Incident Analytics',
     category: 'SECURITY / DATA ANALYTICS',
     status: 'Completed',
     statusNote: 'Completion status documented in the repository.',
