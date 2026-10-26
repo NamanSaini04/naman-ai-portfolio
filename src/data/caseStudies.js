@@ -38,9 +38,9 @@ export const caseStudies = {
       { value: '3', label: 'Labelled evaluation cases', note: 'Small functional sample' },
       { value: 'PDF + JSON', label: 'Incident report exports', note: 'Exported from demo workflow' },
       { value: 'Review', label: 'Analyst decisions', note: 'No operational actions executed' },
-      { value: '16', label: 'Automated tests passed', note: 'GitHub CI on demo feature branch' }
+      { value: '20', label: 'Automated tests passed', note: 'CI-verified main branch release' }
     ],
-    outcome: 'The project’s feature branch passed 16 automated tests covering the synthetic investigation workflow, analyst reviews, report export and dashboard smoke tests. Three labelled cases test basic evaluation checks; neither result establishes real-world threat-detection accuracy.',
+    outcome: 'The project’s merged main branch passed 20 automated tests covering the synthetic investigation workflow, analyst reviews, report export and dashboard smoke tests. Three labelled cases test basic evaluation checks; neither result establishes real-world threat-detection accuracy.',
     insights: [
       'Evidence IDs and retrieved citations make investigations auditable.',
       'Human approval is required before high-impact defensive actions.',
@@ -50,7 +50,7 @@ export const caseStudies = {
     dashboard: 'https://soc-copilot-8bx9rwb7hdnqydkytryatf.streamlit.app/',
     dashboardType: 'Streamlit demo link supplied by project owner',
     dashboardLabel: 'Select a synthetic alert, inspect evidence, record a review and export the report',
-    sourceEvidence: 'https://github.com/NamanSaini04/soc-copilot/blob/soc-demo-hardening-v2/README.md',
+    sourceEvidence: 'https://github.com/NamanSaini04/soc-copilot/blob/main/README.md',
     visual: {
       src: 'https://raw.githubusercontent.com/NamanSaini04/soc-copilot/main/reports/technical/assets/dashboard_preview.png',
       alt: 'SOC Copilot dashboard preview captured from the project repository',
