@@ -5,6 +5,10 @@
       "destination": "/index.html"
     },
     {
+      "source": "/projects/airline-delay/dashboard",
+      "destination": "/index.html"
+    },
+    {
       "source": "/projects/:slug",
       "destination": "/index.html"
     }
