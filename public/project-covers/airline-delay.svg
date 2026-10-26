@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img">
+<defs>
+ <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#070f22"/><stop offset=".58" stop-color="#17314a"/><stop offset="1" stop-color="#091426"/></linearGradient>
+ <radialGradient id="h"><stop stop-color="#71dfff" stop-opacity=".25"/><stop offset="1" stop-color="#71dfff" stop-opacity="0"/></radialGradient>
+ <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#305b77"/><stop offset=".5" stop-color="#152e47"/><stop offset="1" stop-color="#0b2036"/></linearGradient>
+ <pattern id="grid" width="57" height="57" patternUnits="userSpaceOnUse"><path d="M57 0H0V57" fill="none" stroke="#58dff0" stroke-opacity=".075"/></pattern>
+ <filter id="shadow" x="-60%" y="-60%" width="220%" height="240%"><feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#020816" flood-opacity=".7"/></filter>
+ <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="16"/></filter>
+ <clipPath id="frame"><rect width="1200" height="675" rx="22"/></clipPath>
+</defs>
+<g clip-path="url(#frame)">
+<rect width="1200" height="675" fill="url(#b)"/>
+<rect width="1200" height="675" fill="url(#grid)"/>
+<circle cx="921" cy="208" r="399" fill="url(#h)"/>
+<circle cx="180" cy="548" r="341" fill="url(#h)" opacity=".6"/>
+<g stroke="#65d7ea" opacity=".15" fill="none"><circle cx="1061" cy="579" r="233" stroke-width="3"/><circle cx="1061" cy="579" r="301" stroke-width="3"/></g>
+
+<!-- terminal skyline -->
+<g fill="#2e5776" fill-opacity=".36"><rect x="90" y="420" width="150" height="112" rx="7"/><rect x="232" y="389" width="126" height="143" rx="7"/><rect x="374" y="446" width="191" height="86" rx="7"/><rect x="830" y="440" width="213" height="92" rx="7"/></g>
+<g fill="#8dddef" fill-opacity=".36"><path d="M95 464h460M95 484h460M834 479h210M834 499h210" stroke="#75cbdf" stroke-width="5"/></g>
+<!-- plotted route arcs -->
+<g fill="none" stroke="#8ce9ee" stroke-width="3" opacity=".55"><path d="M120 400Q430 111 850 243" stroke-dasharray="13 17"/><path d="M303 490Q619 151 1071 298" stroke-dasharray="9 15"/></g>
+<g filter="url(#glow)" opacity=".3"><circle cx="577" cy="289" r="110" fill="#7bdaf5"/></g>
+<!-- aeroplane silhouette -->
+<g transform="translate(304 262) rotate(-9 258 122)" filter="url(#shadow)">
+ <path d="M35 125q-27-6-8-22l194-30L359-54q28-25 53-9l-42 132 170 11q54 6 89 25 23 14 1 27l-270 8-76 172q-8 15-27 15l-17-178-166 23-39 42q-7 7-21 4l11-58Z" fill="#e4f6ff" stroke="#8ddbe8" stroke-width="6" stroke-linejoin="round"/>
+ <path d="M79 119l283-3M242 83l29 193" stroke="#608fa8" stroke-opacity=".4" stroke-width="3"/>
+ <path d="M524 103l82 15" stroke="#f9bd8e" stroke-width="12" stroke-linecap="round"/>
+</g>
+<!-- operations metrics UI -->
+<g filter="url(#shadow)">
+ <rect x="797" y="319" width="318" height="244" rx="19" fill="url(#glass)" stroke="#6bdbeb" stroke-width="3"/>
+ <rect x="824" y="343" width="171" height="12" rx="6" fill="#93dfed"/>
+ <rect x="824" y="368" width="117" height="8" rx="4" fill="#93dfed" opacity=".35"/>
+ <g stroke="#7adcec" stroke-opacity=".17" stroke-width="2"><path d="M821 432h266M821 484h266M821 535h266"/></g>
+ <g fill="#5dc9e5"><rect x="840" y="486" width="32" height="49" rx="6"/><rect x="889" y="449" width="32" height="86" rx="6"/><rect x="938" y="421" width="32" height="114" rx="6"/><rect x="987" y="463" width="32" height="72" rx="6"/></g>
+ <path d="M830 464l44-24 46 7 46-37 54 9 62-46" fill="none" stroke="#ffc28e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g stroke="#78dceb" stroke-opacity=".7" stroke-width="4"><path d="M106 585H645"/><path d="M106 599h432" stroke-opacity=".33"/></g>
+
+</g></svg>
