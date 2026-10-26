@@ -27,7 +27,7 @@ export const caseStudies = {
     dashboardLabel: 'Four-tab dashboard available locally'
   },
   'soc-copilot': {
-    kicker: 'Working MVP · Synthetic security alerts',
+    kicker: 'Functional synthetic-data demo · CI-tested workflow',
     challenge: 'SOC investigations require a traceable chain from alerts to evidence and recommended action, rather than persuasive but unsupported AI output.',
     method: [
       'Implemented a typed investigation workflow with alert triage, evidence correlation, provisional ATT&CK mapping and a complete agent trace.',
@@ -36,21 +36,21 @@ export const caseStudies = {
     ],
     metrics: [
       { value: '3', label: 'Labelled evaluation cases', note: 'Small functional sample' },
-      { value: 'PDF', label: 'Incident report output', note: 'Export supported by MVP' },
-      { value: 'Human', label: 'Action approval', note: 'Recommendations are gated' },
-      { value: 'Local', label: 'Dashboard availability', note: 'No public deployment confirmed' }
+      { value: 'PDF + JSON', label: 'Incident report exports', note: 'Exported from demo workflow' },
+      { value: 'Review', label: 'Analyst decisions', note: 'No operational actions executed' },
+      { value: '16', label: 'Automated tests passed', note: 'GitHub CI on demo feature branch' }
     ],
-    outcome: 'The three included labelled cases pass the repository’s type, severity, citation-presence, ATT&CK and action-gating checks. This validates the demo workflow only; it is not a meaningful detection-accuracy estimate.',
+    outcome: 'The project’s feature branch passed 16 automated tests covering the synthetic investigation workflow, analyst reviews, report export and dashboard smoke tests. Three labelled cases test basic evaluation checks; neither result establishes real-world threat-detection accuracy.',
     insights: [
       'Evidence IDs and retrieved citations make investigations auditable.',
       'Human approval is required before high-impact defensive actions.',
       'Synthetic test cases do not establish real-world SOC performance.'
     ],
-    caveat: 'Synthetic alerts and fixtures. No production SIEM integration, persistent service authentication or independently sized evaluation set; retrieval uses a TF-IDF baseline.',
-    dashboard: null,
-    localCommand: 'streamlit run dashboard/streamlit_app.py',
-    sourceEvidence: 'https://github.com/NamanSaini04/soc-copilot/blob/main/README.md',
-    dashboardLabel: 'Analyst dashboard available locally',
+    caveat: 'This dashboard URL was supplied by the project owner but could not be independently accessed from this environment. The implementation uses only synthetic fixtures and TF-IDF retrieval. The hosted demo is not a production SOC; no real SIEM integration or statistically meaningful evaluation is claimed.',
+    dashboard: 'https://soc-copilot-8bx9rwb7hdnqydkytryatf.streamlit.app/',
+    dashboardType: 'Streamlit demo link supplied by project owner',
+    dashboardLabel: 'Select a synthetic alert, inspect evidence, record a review and export the report',
+    sourceEvidence: 'https://github.com/NamanSaini04/soc-copilot/blob/soc-demo-hardening-v2/README.md',
     visual: {
       src: 'https://raw.githubusercontent.com/NamanSaini04/soc-copilot/main/reports/technical/assets/dashboard_preview.png',
       alt: 'SOC Copilot dashboard preview captured from the project repository',
