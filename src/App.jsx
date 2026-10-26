@@ -64,8 +64,10 @@ export default function App() {
         </RevealSection>
 
         <RevealSection id="projects" className="border-t border-white/10 py-12 sm:py-16" aria-labelledby="projects-title">
-          <SectionHeading id="projects-title" label="02 / SELECTED WORK" title="Selected engineering projects." description="Featured implementations in fraud detection and SOC investigation, alongside data engineering and security analytics." />
-          <div className="mt-8 grid gap-5 md:grid-cols-2">{projects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}</div>
+          <SectionHeading id="projects-title" label="02 / PROJECT PORTFOLIO" title="Projects." description="Explore my work in machine learning, AI, data engineering and cybersecurity analytics. Each project includes the problem I tackled, the results I achieved and links to the supporting code or dashboard." />
+          <div className="mt-9 grid items-stretch gap-6 md:grid-cols-2" aria-label="Project portfolio gallery">
+            {projects.map(project => <ProjectCard key={project.id} project={project} />)}
+          </div>
         </RevealSection>
 
         <RevealSection id="skills" className="border-t border-white/10 py-12 sm:py-16" aria-labelledby="skills-title">
