@@ -143,6 +143,18 @@ export default function ProjectCaseStudy({ project }) {
           </section>
         )}
 
+        {details.visual && (
+          <section aria-labelledby="project-visual-title" className="mt-12">
+            <h2 id="project-visual-title" className="text-2xl font-semibold tracking-tight">Project dashboard & analysis preview</h2>
+            <figure className="surface mt-5 rounded-2xl border border-white/10 p-4 sm:p-6">
+              <a href={details.visual.source} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-xl bg-slate-50 p-3" aria-label={`Open source visual for ${project.title}`}>
+                <img src={details.visual.src} alt={details.visual.alt} loading="lazy" decoding="async" className="mx-auto h-auto max-h-[520px] w-full object-contain" />
+              </a>
+              <figcaption className="mt-3 text-sm leading-relaxed text-slate-400">{details.visual.caption} <a href={details.visual.source} target="_blank" rel="noopener noreferrer" className="text-cyan-300 hover:underline">Original source</a></figcaption>
+            </figure>
+          </section>
+        )}
+
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           <section aria-labelledby="challenge-title" className="surface rounded-2xl border border-white/10 p-6 sm:p-8">
             <p className="text-xs uppercase tracking-widest text-cyan-300">01 / Context</p>
