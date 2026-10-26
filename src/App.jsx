@@ -7,6 +7,7 @@ import RevealSection from './components/RevealSection'
 import ArrowIcon from './components/ArrowIcon'
 import ProjectCard from './components/ProjectCard'
 import ProjectCaseStudy from './components/ProjectCaseStudy'
+import SkillsHeatmap from './components/SkillsHeatmap'
 import FraudDashboard from './components/FraudDashboard'
 import SectionHeading from './components/SectionHeading'
 import { githubUrl, projects } from './data/portfolio'
@@ -88,6 +89,7 @@ export default function App() {
               </article>
             ))}
           </div>
+          <SkillsHeatmap />
         </RevealSection>
 
         <RevealSection id="experience" className="grid gap-6 border-t border-white/10 py-12 sm:py-16 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="experience-title">
