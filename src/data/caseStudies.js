@@ -100,7 +100,7 @@ export const caseStudies = {
     method: [
       'Prepared and analysed 5,819,079 historical US domestic flights across 12 months and 14 reporting carriers, using source data from the US Bureau of Transportation Statistics.',
       'Compared arrival punctuality, cancellation patterns, delay causes, airports and routes, and built monthly and hourly charts to identify recurring operational problems.',
-      'Created six analysis notebooks, an executive report, a preliminary delay-risk model and a locally runnable Streamlit dashboard using precomputed aggregates.'
+      'Created six analysis notebooks, an executive report, a preliminary delay-risk model and a Streamlit prototype. An interactive portfolio dashboard now presents the committed aggregates online.'
     ],
     metrics: [
       { value: '5.82M', label: 'Flights analysed', note: 'US domestic flights in 2015' },
@@ -116,10 +116,11 @@ export const caseStudies = {
       'I compared airlines and airports instead of relying on simple league tables. Congested hubs had much higher delay rates than some smaller airports, showing why airport exposure and operational context matter when judging performance.'
     ],
     caveat: 'Historical 2015 US data only; not a current airline performance ranking. Reported delay causes reflect source classifications, and a time-of-day pattern alone cannot prove a specific cause. Dollar-cost and recovery scenarios in the report are illustrative estimates, not realised savings; the preliminary predictive model is not deployment-ready.',
-    dashboard: null,
+    dashboard: '/projects/airline-delay/dashboard',
+    dashboardType: 'Interactive 2015 flight-performance dashboard · Source-backed airline, monthly, airport and route aggregates',
     localCommand: 'streamlit run dashboard/app.py',
     sourceEvidence: 'https://github.com/NamanSaini04/airline-delay-analytics/blob/main/reports/executive_summary.md',
-    dashboardLabel: 'Streamlit executive dashboard available locally',
+    dashboardLabel: 'Explore delay patterns, compare airlines and airports, and test illustrative operating-cost scenarios',
     visual: {
       src: 'https://raw.githubusercontent.com/NamanSaini04/airline-delay-analytics/main/reports/figures/02_hourly_cascade.png',
       alt: 'Hourly airline-delay cascade analysis chart based on 2015 US flight records',
