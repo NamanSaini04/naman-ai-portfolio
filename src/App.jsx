@@ -6,6 +6,7 @@ import HeroIntro from './components/HeroIntro'
 import RevealSection from './components/RevealSection'
 import ArrowIcon from './components/ArrowIcon'
 import ProjectCard from './components/ProjectCard'
+import ProjectCaseStudy from './components/ProjectCaseStudy'
 import SectionHeading from './components/SectionHeading'
 import { githubUrl, projects } from './data/portfolio'
 import { certifications, contact, education, experience, skillGroups } from './data/profile'
@@ -15,6 +16,12 @@ const primaryLink = 'button-primary inline-flex min-h-12 items-center justify-ce
 const secondaryLink = 'button-secondary inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-medium transition-colors hover:bg-white/10'
 
 export default function App() {
+  const pathMatch = window.location.pathname.match(/^\/projects\/([^/]+)\/?$/)
+  if (pathMatch) {
+    const project = projects.find(item => item.id === pathMatch[1])
+    return <ProjectCaseStudy project={project} />
+  }
+
   return (
     <MotionConfig reducedMotion="user">
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-cyan-300 focus:p-3 focus:text-slate-950">Skip to content</a>
