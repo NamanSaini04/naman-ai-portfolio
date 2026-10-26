@@ -28,27 +28,36 @@ export const skillGroups = [
   },
 ]
 
-// Profile details supplied by the portfolio owner from LinkedIn.
+// Role descriptions reflect the owner's CV and LinkedIn experience details.
+// Outcomes are deliverables and qualitative contributions, not invented performance metrics.
 export const experience = [
   {
     role: 'Graduate Teaching Assistant',
     organisation: 'University of Bath',
     dates: 'November 2025–May 2026',
-    responsibilities: [
-      'Supported tutorials and laboratory sessions.',
-      'Explained technical concepts and guided students through practical exercises.',
-      'Assisted students with technical questions and course activities.',
+    focus: ['Python labs', 'Debugging & code review', 'Student guidance'],
+    intro: 'I supported students during practical Python sessions, helping them understand both the code they were writing and the thinking behind it.',
+    work: [
+      'I worked through Python errors with students, reviewed their code and explained how to identify the underlying issue rather than just copy a fix.',
+      'I guided students through data-handling exercises and technical questions, adapting my explanations to their level of understanding.',
+      'I supported teaching staff during tutorials and labs, helping students make progress with their own practical tasks.',
     ],
+    outcome: 'My contribution was practical, one-to-one learning support: turning confusing code errors into understandable next steps and helping students approach their exercises more independently.',
+    outcomeNote: 'Qualitative teaching contribution; no unverified student-count, grade improvement or satisfaction figures.',
   },
   {
-    role: 'Summer Intern',
+    role: 'Summer Intern — Cybersecurity',
     organisation: 'TANISI IT Services Pvt. Ltd.',
     dates: 'April–May 2020',
-    responsibilities: [
-      'Used Python to extract, parse and analyse threat-intelligence information.',
-      'Investigated potential cybersecurity attack vectors.',
-      'Prepared cybersecurity awareness findings and mitigation recommendations.',
+    focus: ['Threat intelligence', 'Python-based analysis', 'Security awareness reporting'],
+    intro: 'I investigated emerging cybersecurity threats, including risks that became more relevant as organisations relied more heavily on digital systems during the COVID-19 period.',
+    work: [
+      'I used Python and threat-intelligence sources to extract, organise and analyse information about vulnerabilities, attack patterns and possible entry points.',
+      'I researched potential attack vectors and translated the technical findings into risks and defensive measures that non-specialist readers could understand.',
+      'I prepared a cybersecurity awareness report bringing together the threats I examined and recommended ways to reduce exposure.',
     ],
+    outcome: 'I delivered a structured threat-awareness report with practical mitigation recommendations that could support internal awareness activities and future policy reviews.',
+    outcomeNote: 'Report and recommendations are documented deliverables; their adoption or measurable risk reduction has not been verified.',
   },
 ]
 
