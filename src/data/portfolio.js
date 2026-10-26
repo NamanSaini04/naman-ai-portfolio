@@ -21,7 +21,7 @@ export const projects = [
     description: 'An AI-assisted SOC investigation workflow for alert triage, evidence correlation, cited playbook retrieval, and human-approved defensive recommendations.',
     technologies: ['Python', 'FastAPI', 'Streamlit', 'RAG · TF-IDF', 'MCP', 'Pydantic', 'Pytest'],
     details: 'The CI-tested synthetic workflow provides triage, evidence correlation, cited playbook retrieval, review-history recording, and downloadable PDF/JSON reports. Analyst approval records a decision only; it never triggers a real security action. Evaluation remains limited to three labelled sample cases.',
-    github: 'https://github.com/NamanSaini04/soc-copilot/tree/soc-demo-hardening-v2',
+    github: 'https://github.com/NamanSaini04/soc-copilot',
   },
   {
     id: 'job-market',
