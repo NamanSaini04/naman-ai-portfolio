@@ -1,27 +1,6 @@
 import { motion, useReducedMotion } from 'motion/react'
 import ArrowIcon from './ArrowIcon'
-import { projectMedia } from '../data/projectMedia'
 import { caseStudies } from '../data/caseStudies'
-import socDashboardPreview from '../assets/projects/soc-dashboard-preview.png'
-import incidentSlaChart from '../assets/projects/incident-sla-breach.png'
-
-// Images come from the actual GitHub project repositories, not stock photography.
-// The job-market graphic is an HTML illustration of verified pipeline components.
-const covers = {
-  'fraud-detection': {
-    src: projectMedia['fraud-detection'].thumbnail,
-    srcSet: projectMedia['fraud-detection'].srcSet,
-    alt: 'Fraud detection project chart showing how model decision thresholds affect illustrative costs.',
-  },
-  'soc-copilot': {
-    src: socDashboardPreview,
-    alt: 'Screenshot of the SOC Copilot Streamlit investigation dashboard from the project repository.',
-  },
-  'incident-analytics': {
-    src: incidentSlaChart,
-    alt: 'Cybersecurity analytics chart showing response SLA breaches by incident severity in synthetic data.',
-  },
-}
 
 const highlights = {
   'fraud-detection': '84% fraud recall and approximately 20% lower estimated cost in an offline simulation.',
@@ -37,36 +16,23 @@ const visibleTags = {
   'incident-analytics': ['Python', 'Pandas', 'Streamlit', 'Plotly'],
 }
 
-function JobMarketPreview() {
-  return (
-    <div className="flex h-full w-full flex-col justify-between overflow-hidden bg-gradient-to-br from-[#0e2635] via-[#11273b] to-[#153852] p-4 text-slate-100 sm:p-6" aria-label="Illustrated summary of implemented job-market pipeline, not a screenshot of the live dashboard">
-      <div className="flex items-center justify-between gap-3">
-        <span className="text-[10px] font-semibold tracking-[0.18em] text-cyan-200 sm:text-xs">UK JOB MARKET / DATA PLATFORM</span>
-        <span className="rounded-full border border-cyan-200/30 px-2 py-1 text-[9px] font-medium text-cyan-100 sm:text-[10px]">PIPELINE OVERVIEW</span>
-      </div>
-      <div className="grid grid-cols-3 gap-2 sm:gap-3">
-        {[
-          ['19', 'Company boards'],
-          ['53', 'dbt data tests'],
-          ['6', 'Dashboard tabs'],
-        ].map(([value, label]) => (
-          <div key={label} className="rounded-xl border border-white/15 bg-white/[0.07] px-2 py-3 text-center sm:py-4">
-            <p className="text-xl font-bold tabular-nums tracking-tight text-cyan-200 sm:text-3xl">{value}</p>
-            <p className="mt-1 text-[9px] leading-tight text-slate-200 sm:text-xs">{label}</p>
-          </div>
-        ))}
-      </div>
-      <div className="flex flex-wrap items-center gap-1 text-[9px] text-slate-200 sm:gap-2 sm:text-[11px]">
-        <span className="rounded-md border border-white/15 bg-white/10 px-2 py-1">Job feeds</span>
-        <span aria-hidden="true">→</span>
-        <span className="rounded-md border border-white/15 bg-white/10 px-2 py-1">PostgreSQL</span>
-        <span aria-hidden="true">→</span>
-        <span className="rounded-md border border-white/15 bg-white/10 px-2 py-1">dbt</span>
-        <span aria-hidden="true">→</span>
-        <span className="rounded-md border border-cyan-300/40 bg-cyan-300/10 px-2 py-1 text-cyan-100">Dashboard</span>
-      </div>
-    </div>
-  )
+const covers = {
+  'fraud-detection': {
+    src: '/project-covers/fraud-detection.svg',
+    alt: 'Illustrated credit card and fraud warning, representing transaction fraud detection.',
+  },
+  'soc-copilot': {
+    src: '/project-covers/soc-copilot.svg',
+    alt: 'Illustrated security operations console with an alert and evidence investigation panels.',
+  },
+  'job-market': {
+    src: '/project-covers/job-market.svg',
+    alt: 'Illustrated laptop showing a job search and a pipeline connecting data storage to analytics.',
+  },
+  'incident-analytics': {
+    src: '/project-covers/incident-analytics.svg',
+    alt: 'Illustrated security analytics dashboard with alert activity, charts and incident indicators.',
+  },
 }
 
 export default function ProjectCard({ project }) {
@@ -83,19 +49,17 @@ export default function ProjectCard({ project }) {
       aria-labelledby={project.id + '-title'}
       className="project-gallery-card group flex min-w-0 flex-col overflow-hidden rounded-[20px] border border-white/15 bg-[#111d2e] focus-within:border-cyan-300/60 hover:border-cyan-300/40"
     >
-      <a href={'/projects/' + project.id} aria-label={'Read the full case study: ' + project.title} className="relative block aspect-[16/9] overflow-hidden border-b border-white/10 bg-[#eaf0f6] focus-visible:outline-offset-[-3px]">
-        {cover ? (
+      <a href={'/projects/' + project.id} aria-label={'Read the full case study: ' + project.title} className="relative block aspect-[16/9] overflow-hidden border-b border-white/10 bg-[#0a182d] focus-visible:outline-offset-[-3px]">
+        {cover && (
           <img
             src={cover.src}
-            srcSet={cover.srcSet}
-            sizes="(min-width: 1024px) 520px, (min-width: 768px) calc(50vw - 56px), calc(100vw - 48px)"
+            width="1200"
+            height="675"
             alt={cover.alt}
             loading="lazy"
             decoding="async"
-            className="h-full w-full object-contain p-2 transition-transform duration-300 group-hover:scale-[1.025] sm:p-3"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
           />
-        ) : (
-          <JobMarketPreview />
         )}
         <span className={'absolute right-3 top-3 max-w-[45%] rounded-full border px-3 py-1.5 text-[11px] font-medium shadow-md backdrop-blur-md ' + (isInProgress ? 'border-amber-300/40 bg-slate-950/85 text-amber-200' : 'border-white/20 bg-slate-950/85 text-slate-100')}>
           {status}
