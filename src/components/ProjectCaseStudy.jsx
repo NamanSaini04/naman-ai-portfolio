@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import ArrowIcon from './ArrowIcon'
 import { caseStudies } from '../data/caseStudies'
 import { projectMedia } from '../data/projectMedia'
@@ -7,10 +7,8 @@ const primary = 'button-primary inline-flex min-h-12 items-center justify-center
 const secondary = 'button-secondary inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-slate-100 transition-colors hover:bg-white/10'
 
 export default function ProjectCaseStudy({ project }) {
-  const [showEmbeddedDashboard, setShowEmbeddedDashboard] = useState(false)
   const details = project && caseStudies[project.id]
   const media = project && projectMedia[project.id]
-  const internalDashboard = Boolean(details?.dashboard?.startsWith('/'))
 
   useEffect(() => {
     if (!project || !details) return undefined
@@ -91,43 +89,14 @@ export default function ProjectCaseStudy({ project }) {
           </div>
           <p className="mt-5 max-w-4xl text-sm leading-relaxed text-slate-300">{details.outcome}</p>
 
-          {details.dashboard ? (
-            <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-5">
-              <div>
-                <p className="text-sm font-semibold text-slate-100">{details.dashboardType}</p>
-                <p className="mt-1 text-sm text-slate-400">{details.dashboardLabel}</p>
-                <p className="mt-1 text-xs text-slate-400">{internalDashboard ? 'Hosted on this portfolio. This results-based dashboard does not run the live fraud-scoring model.' : 'External URL documented in the project repository. Live availability may vary.'}</p>
-              </div>
-              <a className="text-sm font-medium text-cyan-300 underline-offset-4 hover:underline" href={details.dashboard} target="_blank" rel="noopener noreferrer">Open interactive dashboard ↗</a>
-            </div>
-          ) : (
+          {!details.dashboard && details.localCommand && (
             <div className="mt-5 border-t border-white/10 pt-5">
               <p className="text-sm font-semibold text-slate-100">{details.dashboardLabel}</p>
-              <p className="mt-2 text-sm text-slate-400">There is no verified public dashboard URL for this project yet. To launch it locally after following the repository's setup instructions:</p>
+              <p className="mt-2 text-sm text-slate-400">There is no verified public dashboard URL for this project yet. To run it locally, follow the repository setup instructions:</p>
               <code className="mt-3 block w-fit max-w-full overflow-auto rounded-lg border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-cyan-200">{details.localCommand}</code>
             </div>
           )}
         </section>
-
-        {details.dashboard && (
-          <section className="mt-5 rounded-2xl border border-white/10 bg-white/[0.025] p-5 sm:p-6" aria-labelledby="embed-dashboard-heading">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <div>
-                <h2 id="embed-dashboard-heading" className="text-lg font-semibold">{internalDashboard ? 'Explore the analysis dashboard' : 'Explore the actual dashboard'}</h2>
-                <p className="mt-1 text-sm text-slate-400">{internalDashboard ? 'Review test-set results and adjust illustrative risk costs without leaving this case study.' : "Interact with the project's published Streamlit dashboard without leaving this case study."}</p>
-              </div>
-              <button type="button" aria-expanded={showEmbeddedDashboard} aria-controls="embedded-project-dashboard" onClick={() => setShowEmbeddedDashboard(v => !v)} className={secondary}>
-                {showEmbeddedDashboard ? 'Hide embedded dashboard' : 'Explore dashboard here'}
-              </button>
-            </div>
-            {showEmbeddedDashboard && (
-              <div id="embedded-project-dashboard" className="mt-5">
-                <iframe title={`Interactive ${project.title} analysis dashboard`} src={internalDashboard ? details.dashboard : `${details.dashboard}?embed=true`} loading="lazy" referrerPolicy="strict-origin-when-cross-origin" className="h-[650px] w-full rounded-xl border border-white/10 bg-[#080f1e] sm:h-[760px]" />
-                <p className="mt-3 text-sm text-slate-400">{internalDashboard ? 'For the full-size experience, ' : 'If the embedded app does not load, '}<a href={details.dashboard} target="_blank" rel="noopener noreferrer" className="text-cyan-300 underline underline-offset-4">open the dashboard in a new tab</a>{!internalDashboard && '. Streamlit apps may need a moment to wake up.'}</p>
-              </div>
-            )}
-          </section>
-        )}
 
         {media && (
           <section aria-labelledby="evidence-title" className="mt-12">
