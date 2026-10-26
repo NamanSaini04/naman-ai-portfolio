@@ -27,6 +27,39 @@ export const caseStudies = {
     sourceEvidence: 'https://github.com/NamanSaini04/Financial-fraud-detection/blob/main/reports/business_insights.md',
     dashboardLabel: 'Four-tab dashboard available locally'
   },
+  'ecommerce-sales': {
+    kicker: 'Completed retail analytics study · Public Sample Superstore dataset',
+    challenge: 'Sales can rise while profit suffers. I wanted to find out which products, discounts and customer groups were driving performance, and turn those findings into decisions a retail manager could understand.',
+    method: [
+      'Adapted the public Sample Superstore data into a consistent schema, cleaned the transaction records and kept loss-making orders so the financial picture was not artificially improved.',
+      'Analysed sales, profits, discounts, seasons and RFM customer segments using reusable Python KPI functions that also power the dashboard.',
+      'Built a 12-month Holt-Winters revenue forecast and checked it against a held-out year; packaged the findings in notebooks, charts and a public Streamlit dashboard.'
+    ],
+    metrics: [
+      { value: '9,993', label: 'Retail order lines', note: 'Cleaned Sample Superstore dataset' },
+      { value: '$17.7K', label: 'Loss from Tables', note: 'Observed in the sample dataset' },
+      { value: '17.6%', label: 'Forecast MAPE', note: 'Held-out validation year' },
+      { value: '48%', label: 'Revenue from top 20%', note: 'Customer concentration in the sample' }
+    ],
+    outcome: 'I turned 9,993 retail order lines into a clear picture of a $2.30 million sales business with a 12.5% profit margin. I found that the Tables sub-category lost about $17,700 despite contributing sales, and that deep discounts were closely associated with negative average profit. I also produced a revenue forecast with 17.6% error on a held-out year. These are findings from a sample dataset, not improvements made for an employer.',
+    insights: [
+      'I found that strong sales did not always mean healthy profits. Furniture had only a 2.5% margin, while Tables lost about $17,700. That pointed to product pricing and discounting as places a retail manager should investigate first.',
+      'When I compared orders by discount level, average profit turned negative beyond roughly 20–30% discounting. I used that pattern to recommend reviewing unusually deep discounts rather than simply increasing sales volume.',
+      'The top 20% of customers accounted for 48% of sales in this dataset. Using RFM segmentation, I identified loyal and at-risk customer groups and suggested different retention approaches for each.',
+      'I tested a 12-month sales forecast against an unseen year and reached 17.6% MAPE, outperforming the seasonal-naive benchmark reported in the project. That gives a measurable baseline for further forecasting improvements.'
+    ],
+    caveat: 'Based on the public Sample Superstore benchmark, not private records of a company I worked for. Discount associations do not by themselves establish causation, and suggested profit improvements have not been implemented or measured. The repository also includes a separate synthetic-data generator for testing.',
+    dashboard: 'https://namansaini04-ecommerce-sales-analytics-dashboardapp-zvws3u.streamlit.app/',
+    dashboardType: 'Project-reported public Streamlit dashboard',
+    dashboardLabel: 'Explore revenue, profitability, discounting and customer groups',
+    sourceEvidence: 'https://github.com/NamanSaini04/ecommerce-sales-analytics/blob/main/README.md',
+    visual: {
+      src: 'https://raw.githubusercontent.com/NamanSaini04/ecommerce-sales-analytics/main/reports/figures/05_discount_vs_profit.png',
+      alt: 'E-commerce sample-dataset chart showing discount levels and the associated profitability pattern',
+      caption: 'Project chart exploring the link between discount levels and profits in Sample Superstore data.',
+      source: 'https://github.com/NamanSaini04/ecommerce-sales-analytics/blob/main/reports/figures/05_discount_vs_profit.png'
+    }
+  },
   'soc-copilot': {
     kicker: 'Functional synthetic-data demo · CI-tested workflow',
     challenge: 'SOC investigations require a traceable chain from alerts to evidence and recommended action, rather than persuasive but unsupported AI output.',
@@ -58,6 +91,39 @@ export const caseStudies = {
       alt: 'SOC Copilot dashboard preview captured from the project repository',
       caption: 'Repository screenshot of the local Streamlit interface; not a publicly hosted dashboard.',
       source: 'https://github.com/NamanSaini04/soc-copilot/blob/main/reports/technical/assets/dashboard_preview.png'
+    }
+  },
+  'airline-delay': {
+    kicker: 'Completed operational analytics study · 2015 US flight records',
+    challenge: 'Airline delays are often blamed on weather. I wanted to examine actual flight records to understand how much delay builds within airline operations, how it changes through the day and where recovery efforts might help.',
+    method: [
+      'Prepared and analysed 5,819,079 historical US domestic flights across 12 months and 14 reporting carriers, using source data from the US Bureau of Transportation Statistics.',
+      'Compared arrival punctuality, cancellation patterns, delay causes, airports and routes, and built monthly and hourly charts to identify recurring operational problems.',
+      'Created six analysis notebooks, an executive report, a preliminary delay-risk model and a locally runnable Streamlit dashboard using precomputed aggregates.'
+    ],
+    metrics: [
+      { value: '5.82M', label: 'Flights analysed', note: 'US domestic flights in 2015' },
+      { value: '81.4%', label: 'On-time performance', note: 'Observed in the historical dataset' },
+      { value: '72%', label: 'Attributed delay minutes', note: 'Carrier + late-aircraft categories' },
+      { value: '9% → 26%', label: 'Delay-rate rise', note: 'Early morning to evening' }
+    ],
+    outcome: 'I analysed 5.82 million US flights and found that 81.4% arrived on time, while most attributed delay minutes were linked to carrier operations or late aircraft. Delay rates climbed from about 9% at 6 AM to 26% by evening. I turned these patterns into operational recommendations around early departures, aircraft turnaround and mid-day recovery. These are analytical recommendations, not changes rolled out by an airline.',
+    insights: [
+      'I found that delays built up as the day progressed: roughly 9% of flights were delayed at 6 AM, compared with 26% by evening. That suggested protecting the first departures and leaving recovery time between later flights.',
+      'About 72% of attributed delay minutes fell under carrier-related and late-aircraft categories, while weather accounted for a much larger share of cancellations than of delay minutes. That helped separate operational problems from disruption airlines cannot directly control.',
+      'The national on-time rate was 81.4%, but that average hid the worst experiences: the latest 1% of flights arrived at least 167 minutes late. I focused recommendations on reducing severe delays rather than improving an average alone.',
+      'I compared airlines and airports instead of relying on simple league tables. Congested hubs had much higher delay rates than some smaller airports, showing why airport exposure and operational context matter when judging performance.'
+    ],
+    caveat: 'Historical 2015 US data only; not a current airline performance ranking. Reported delay causes reflect source classifications, and a time-of-day pattern alone cannot prove a specific cause. Dollar-cost and recovery scenarios in the report are illustrative estimates, not realised savings; the preliminary predictive model is not deployment-ready.',
+    dashboard: null,
+    localCommand: 'streamlit run dashboard/app.py',
+    sourceEvidence: 'https://github.com/NamanSaini04/airline-delay-analytics/blob/main/reports/executive_summary.md',
+    dashboardLabel: 'Streamlit executive dashboard available locally',
+    visual: {
+      src: 'https://raw.githubusercontent.com/NamanSaini04/airline-delay-analytics/main/reports/figures/02_hourly_cascade.png',
+      alt: 'Hourly airline-delay cascade analysis chart based on 2015 US flight records',
+      caption: 'Repository chart showing how delays rise through the day in the 2015 historical data.',
+      source: 'https://github.com/NamanSaini04/airline-delay-analytics/blob/main/reports/figures/02_hourly_cascade.png'
     }
   },
   'job-market': {
