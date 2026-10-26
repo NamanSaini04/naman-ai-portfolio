@@ -4,6 +4,8 @@ import { caseStudies } from '../data/caseStudies'
 
 const highlights = {
   'fraud-detection': '84% fraud recall and approximately 20% lower estimated cost in an offline simulation.',
+  'ecommerce-sales': 'Identified $17.7K of losses in Tables and validated a 17.6% forecast MAPE.',
+  'airline-delay': 'Analysed 5.82M flights; 72% of attributed delay minutes were operational categories.',
   'soc-copilot': 'End-to-end synthetic investigation workflow, with 20 automated tests passed.',
   'job-market': '606 misleading training adverts flagged; 150 genuine postings recovered through a SQL fix.',
   'incident-analytics': '35% SLA breaches identified across 18,000 synthetic incidents.',
@@ -11,6 +13,8 @@ const highlights = {
 
 const visibleTags = {
   'fraud-detection': ['Python', 'XGBoost', 'scikit-learn', 'Streamlit'],
+  'ecommerce-sales': ['Python', 'Pandas', 'Plotly', 'Streamlit'],
+  'airline-delay': ['Python', 'Pandas', 'Plotly', 'Streamlit'],
   'soc-copilot': ['Python', 'RAG · TF-IDF', 'Streamlit', 'MCP'],
   'job-market': ['Python', 'PostgreSQL', 'dbt', 'Airflow'],
   'incident-analytics': ['Python', 'Pandas', 'Streamlit', 'Plotly'],
@@ -20,6 +24,14 @@ const covers = {
   'fraud-detection': {
     src: '/project-covers/fraud-detection.svg',
     alt: 'Illustrated credit card and fraud warning, representing transaction fraud detection.',
+  },
+  'ecommerce-sales': {
+    src: '/project-covers/ecommerce-sales.svg',
+    alt: 'Original illustration of retail shopping, a storefront and revenue charts.',
+  },
+  'airline-delay': {
+    src: '/project-covers/airline-delay.svg',
+    alt: 'Original illustration of a commercial aeroplane over an airport with operations analytics.',
   },
   'soc-copilot': {
     src: '/project-covers/soc-copilot.svg',
