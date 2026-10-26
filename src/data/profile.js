@@ -79,7 +79,6 @@ export const certifications = [
   'Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate',
   'Introduction to Programming Using Python',
   'Introduction to Programming Using Java',
-  'The Complete Digital Marketing Course',
 ]
 
 export const contact = {
