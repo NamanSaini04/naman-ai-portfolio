@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img">
+<defs>
+ <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#070f22"/><stop offset=".58" stop-color="#17314a"/><stop offset="1" stop-color="#091426"/></linearGradient>
+ <radialGradient id="h"><stop stop-color="#60dfff" stop-opacity=".25"/><stop offset="1" stop-color="#60dfff" stop-opacity="0"/></radialGradient>
+ <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#305b77"/><stop offset=".5" stop-color="#152e47"/><stop offset="1" stop-color="#0b2036"/></linearGradient>
+ <pattern id="grid" width="57" height="57" patternUnits="userSpaceOnUse"><path d="M57 0H0V57" fill="none" stroke="#58dff0" stroke-opacity=".075"/></pattern>
+ <filter id="shadow" x="-60%" y="-60%" width="220%" height="240%"><feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#020816" flood-opacity=".7"/></filter>
+ <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="16"/></filter>
+ <clipPath id="frame"><rect width="1200" height="675" rx="22"/></clipPath>
+</defs>
+<g clip-path="url(#frame)">
+<rect width="1200" height="675" fill="url(#b)"/>
+<rect width="1200" height="675" fill="url(#grid)"/>
+<circle cx="921" cy="208" r="399" fill="url(#h)"/>
+<circle cx="180" cy="548" r="341" fill="url(#h)" opacity=".6"/>
+<g stroke="#65d7ea" opacity=".15" fill="none"><circle cx="1061" cy="579" r="233" stroke-width="3"/><circle cx="1061" cy="579" r="301" stroke-width="3"/></g>
+
+<!-- retail storefront -->
+<g filter="url(#shadow)">
+ <path d="M153 229L223 127H704L773 229Z" fill="#1d3a58" stroke="#9ee4ee" stroke-width="4"/>
+ <rect x="178" y="229" width="568" height="325" rx="17" fill="#10283f" stroke="#78c9db" stroke-width="4"/>
+ <path d="M179 229h566v82H179z" fill="#315570"/>
+ <path d="M180 232h563l-28 78H207Z" fill="#122941" stroke="#96e4ea" stroke-width="2"/>
+ <path d="M212 232l-15 78M288 232l-9 78M364 232l-3 78M440 232l4 78M516 232l10 78M592 232l16 78M668 232l22 78" stroke="#96e4ea" stroke-opacity=".65" stroke-width="3"/>
+ <g fill="#e0b878" opacity=".84"><rect x="218" y="353" width="158" height="156" rx="11"/><rect x="397" y="353" width="140" height="156" rx="11"/></g>
+ <rect x="562" y="344" width="137" height="212" rx="11" fill="#082033" stroke="#81dbe7" stroke-width="4"/>
+ <path d="M242 399h112M242 426h90M416 396h108M416 427h90" stroke="#254c58" stroke-width="9" stroke-linecap="round"/>
+ <circle cx="608" cy="422" r="15" fill="#68e0ed"/><circle cx="668" cy="422" r="15" fill="#68e0ed"/>
+</g>
+<!-- shopping bag foreground -->
+<g filter="url(#shadow)">
+ <path d="M687 389h190l-18 195H705Z" fill="#f1bc81" stroke="#ffe4b5" stroke-width="5"/>
+ <path d="M744 420v-44a37 37 0 0 1 74 0v44" stroke="#214965" stroke-width="9" fill="none" stroke-linecap="round"/>
+ <circle cx="743" cy="474" r="6" fill="#224663"/><circle cx="819" cy="474" r="6" fill="#224663"/>
+ <path d="M754 516l30 24 33-35" stroke="#31576b" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<!-- analytics hovering card -->
+<g filter="url(#shadow)">
+ <rect x="823" y="126" width="316" height="297" rx="23" fill="url(#glass)" stroke="#74e6f5" stroke-width="3"/>
+ <path d="M852 196h250" stroke="#a2e7f4" stroke-opacity=".24" stroke-width="2"/>
+ <g fill="#81d8ee"><rect x="852" y="156" width="134" height="13" rx="6"/><rect x="1008" y="156" width="94" height="13" rx="6" opacity=".38"/></g>
+ <g stroke="#60c5e4" stroke-opacity=".2" stroke-width="2"><path d="M851 267h247M851 325h247M851 377h247"/></g>
+ <g fill="#5dd4ea"><rect x="868" y="302" width="31" height="76" rx="5" opacity=".65"/><rect x="918" y="278" width="31" height="100" rx="5" opacity=".7"/><rect x="968" y="242" width="31" height="136" rx="5" opacity=".83"/><rect x="1018" y="263" width="31" height="115" rx="5" opacity=".62"/></g>
+ <path d="M860 295l56-27 47 12 55-50 80 20" fill="none" stroke="#f8b480" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+ <g fill="#ffd3a5"><circle cx="916" cy="268" r="7"/><circle cx="1018" cy="230" r="7"/></g>
+</g>
+
+</g></svg>
