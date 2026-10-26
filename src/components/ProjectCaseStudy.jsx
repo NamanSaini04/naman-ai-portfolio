@@ -10,6 +10,7 @@ export default function ProjectCaseStudy({ project }) {
   const [showEmbeddedDashboard, setShowEmbeddedDashboard] = useState(false)
   const details = project && caseStudies[project.id]
   const media = project && projectMedia[project.id]
+  const internalDashboard = Boolean(details?.dashboard?.startsWith('/'))
 
   useEffect(() => {
     if (!project || !details) return undefined
@@ -76,7 +77,7 @@ export default function ProjectCaseStudy({ project }) {
               <h2 id="outcome-title" className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">Outcomes at a glance.</h2>
             </div>
             {details.dashboard && (
-              <a className={primary} href={details.dashboard} target="_blank" rel="noopener noreferrer" aria-label={`Open published external dashboard for ${project.title}`}>View Dashboard <ArrowIcon /></a>
+              <a className={primary} href={details.dashboard} target="_blank" rel="noopener noreferrer" aria-label={`Open dashboard for ${project.title}`}>View Dashboard <ArrowIcon /></a>
             )}
           </div>
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -95,7 +96,7 @@ export default function ProjectCaseStudy({ project }) {
               <div>
                 <p className="text-sm font-semibold text-slate-100">{details.dashboardType}</p>
                 <p className="mt-1 text-sm text-slate-400">{details.dashboardLabel}</p>
-                <p className="mt-1 text-xs text-slate-400">External URL documented in the project repository. Live availability may vary.</p>
+                <p className="mt-1 text-xs text-slate-400">{internalDashboard ? 'Hosted on this portfolio. This results-based dashboard does not run the live fraud-scoring model.' : 'External URL documented in the project repository. Live availability may vary.'}</p>
               </div>
               <a className="text-sm font-medium text-cyan-300 underline-offset-4 hover:underline" href={details.dashboard} target="_blank" rel="noopener noreferrer">Open interactive dashboard ↗</a>
             </div>
@@ -112,8 +113,8 @@ export default function ProjectCaseStudy({ project }) {
           <section className="mt-5 rounded-2xl border border-white/10 bg-white/[0.025] p-5 sm:p-6" aria-labelledby="embed-dashboard-heading">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
-                <h2 id="embed-dashboard-heading" className="text-lg font-semibold">Explore the actual dashboard</h2>
-                <p className="mt-1 text-sm text-slate-400">Interact with the project's published Streamlit dashboard without leaving this case study.</p>
+                <h2 id="embed-dashboard-heading" className="text-lg font-semibold">{internalDashboard ? 'Explore the analysis dashboard' : 'Explore the actual dashboard'}</h2>
+                <p className="mt-1 text-sm text-slate-400">{internalDashboard ? 'Review test-set results and adjust illustrative risk costs without leaving this case study.' : "Interact with the project's published Streamlit dashboard without leaving this case study."}</p>
               </div>
               <button type="button" aria-expanded={showEmbeddedDashboard} aria-controls="embedded-project-dashboard" onClick={() => setShowEmbeddedDashboard(v => !v)} className={secondary}>
                 {showEmbeddedDashboard ? 'Hide embedded dashboard' : 'Explore dashboard here'}
@@ -121,8 +122,8 @@ export default function ProjectCaseStudy({ project }) {
             </div>
             {showEmbeddedDashboard && (
               <div id="embedded-project-dashboard" className="mt-5">
-                <iframe title={`Interactive ${project.title} Streamlit dashboard`} src={`${details.dashboard}?embed=true`} loading="lazy" referrerPolicy="strict-origin-when-cross-origin" className="h-[650px] w-full rounded-xl border border-white/10 bg-white sm:h-[760px]" />
-                <p className="mt-3 text-sm text-slate-400">If this embedded app does not load, <a href={details.dashboard} target="_blank" rel="noopener noreferrer" className="text-cyan-300 underline underline-offset-4">open the dashboard in a new tab</a>. Streamlit apps may need a moment to wake up.</p>
+                <iframe title={`Interactive ${project.title} analysis dashboard`} src={internalDashboard ? details.dashboard : `${details.dashboard}?embed=true`} loading="lazy" referrerPolicy="strict-origin-when-cross-origin" className="h-[650px] w-full rounded-xl border border-white/10 bg-[#080f1e] sm:h-[760px]" />
+                <p className="mt-3 text-sm text-slate-400">{internalDashboard ? 'For the full-size experience, ' : 'If the embedded app does not load, '}<a href={details.dashboard} target="_blank" rel="noopener noreferrer" className="text-cyan-300 underline underline-offset-4">open the dashboard in a new tab</a>{!internalDashboard && '. Streamlit apps may need a moment to wake up.'}</p>
               </div>
             )}
           </section>
