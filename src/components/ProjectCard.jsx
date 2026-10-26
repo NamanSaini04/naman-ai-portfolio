@@ -116,12 +116,12 @@ export default function ProjectCard({ project }) {
 
         <p className="mt-4 text-sm leading-relaxed text-slate-300 sm:text-[15px]">{project.description}</p>
 
-        <div className="mt-4 rounded-lg border-l-[3px] border-cyan-300 bg-white/[0.045] px-3.5 py-3">
+        <div className="mb-6 mt-4 rounded-lg border-l-[3px] border-cyan-300 bg-white/[0.045] px-3.5 py-3">
           <p className="text-[10px] font-semibold uppercase tracking-wider text-cyan-300">Outcome achieved</p>
           <p className="mt-1.5 text-sm leading-relaxed text-slate-200">{highlights[project.id]}</p>
         </div>
 
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-t border-white/10 pt-5">
+        <div className="mt-auto flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-t border-white/10 pt-5">
           <a href={'/projects/' + project.id} className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-cyan-200" aria-label={'Read more about ' + project.title}>
             Read more <ArrowIcon />
           </a>
