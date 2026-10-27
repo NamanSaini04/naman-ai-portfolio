@@ -1,2 +1,2 @@
 export const showCV = true
-export const cvPdfUrl = '/Naman_Saini_CV.pdf'
+export const cvPdfUrl = '/Naman_Saini_CV.pdf?v=92e237253cfa'
