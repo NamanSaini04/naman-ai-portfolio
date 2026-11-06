@@ -52,7 +52,7 @@ export default function ProjectCard({ project }) {
   const cover = covers[project.id]
   const caseStudy = caseStudies[project.id]
   const isInProgress = project.status.startsWith('In Progress')
-  const status = isInProgress ? 'In progress' : project.id === 'soc-copilot' ? 'Working demo' : 'Completed'
+  const status = isInProgress ? 'In progress' : project.id === 'soc-copilot' ? 'Working demo' : project.status
 
   return (
     <motion.article

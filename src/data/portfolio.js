@@ -63,7 +63,7 @@ export const projects = [
     id: 'job-market',
     title: 'Job Market Data Engineering Platform',
     category: 'DATA ENGINEERING / PIPELINES',
-    status: 'In Progress — Phase 6',
+    status: 'Phase 6 complete',
     description: 'A daily UK hiring-data pipeline collecting from approved feeds, modelling historical records with PostgreSQL and dbt, and publishing aggregated hiring insights.',
     technologies: ['Python', 'PostgreSQL', 'SQL', 'dbt', 'Airflow', 'Docker', 'Streamlit', 'Pytest'],
     disclosure: 'Published dashboard uses tested aggregate snapshots, updated manually; the historical window is still short.',
