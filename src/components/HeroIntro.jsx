@@ -12,14 +12,14 @@ export default function HeroIntro({ primaryLink, secondaryLink }) {
     <motion.div initial={reduceMotion ? false : 'rest'} animate="visible" transition={{ staggerChildren: reduceMotion ? 0 : 0.07 }}>
       <motion.div variants={entrance} className="flex flex-col items-start gap-5">
         <img
-          src="/naman-saini-portrait.webp"
+          src="/naman-saini-portrait.webp?v=80809f266c23"
           alt="Portrait of Naman Saini"
-          width="226"
-          height="226"
+          width="800"
+          height="800"
           loading="eager"
           fetchPriority="high"
           decoding="async"
-          className="h-24 w-24 shrink-0 rounded-2xl border border-cyan-300/30 bg-slate-100 object-cover object-top shadow-[0_14px_36px_#00000050] sm:h-28 sm:w-28"
+          className="h-24 w-24 shrink-0 rounded-full bg-slate-100 object-cover object-top shadow-[0_14px_36px_#00000050] sm:h-28 sm:w-28"
         />
         <p className="eyebrow text-xs font-medium tracking-[0.18em] text-cyan-300">NAMAN SAINI / AI & DATA PORTFOLIO</p>
       </motion.div>
