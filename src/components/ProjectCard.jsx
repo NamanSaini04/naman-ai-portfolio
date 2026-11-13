@@ -3,6 +3,7 @@ import ArrowIcon from './ArrowIcon'
 import { caseStudies } from '../data/caseStudies'
 
 const highlights = {
+  'network-intrusion-detection': 'Random Forest ranked first by Macro F1 on both benchmarks: 0.892 on CICIDS2017 and 0.448 on UNSW-NB15.',
   'fraud-detection': '84% fraud recall and approximately 20% lower estimated cost in an offline simulation.',
   'ecommerce-sales': 'Identified $17.7K of losses in Tables and validated a 17.6% forecast MAPE.',
   'airline-delay': 'Analysed 5.82M flights; 72% of attributed delay minutes were operational categories.',
@@ -12,6 +13,7 @@ const highlights = {
 }
 
 const visibleTags = {
+  'network-intrusion-detection': ['Python', 'Random Forest', 'XGBoost', 'PyTorch'],
   'fraud-detection': ['Python', 'XGBoost', 'scikit-learn', 'Streamlit'],
   'ecommerce-sales': ['Python', 'Pandas', 'Plotly', 'Streamlit'],
   'airline-delay': ['Python', 'Pandas', 'Plotly', 'Streamlit'],
@@ -21,6 +23,10 @@ const visibleTags = {
 }
 
 const covers = {
+  'network-intrusion-detection': {
+    src: '/project-covers/network-intrusion-detection.svg',
+    alt: 'Illustrated network intrusion detection dashboard comparing machine-learning models across two cybersecurity datasets.',
+  },
   'fraud-detection': {
     src: '/project-covers/fraud-detection.svg',
     alt: 'Illustrated credit card and fraud warning, representing transaction fraud detection.',
