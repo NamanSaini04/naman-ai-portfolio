@@ -1,7 +1,7 @@
 export const projects = [
   {
     id: 'network-intrusion-detection',
-    title: 'Network Intrusion Detection — MSc Dissertation',
+    title: 'Network Intrusion Detection - MSc Dissertation',
     category: 'MACHINE LEARNING / CYBERSECURITY',
     featured: true,
     status: 'Completed',
