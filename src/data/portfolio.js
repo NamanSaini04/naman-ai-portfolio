@@ -4,7 +4,7 @@ export const projects = [
     title: 'Network Intrusion Detection — MSc Dissertation',
     category: 'MACHINE LEARNING / CYBERSECURITY',
     featured: true,
-    status: 'Completed · 72% dissertation',
+    status: 'Completed',
     statusNote: 'MSc Artificial Intelligence dissertation, University of Bath.',
     description: 'Compared seven ML and deep-learning models across CICIDS2017 and UNSW-NB15, focusing on class imbalance, feature selection, minority-class behaviour and cross-dataset robustness.',
     technologies: ['Python', 'scikit-learn', 'XGBoost', 'PyTorch', 'Random Forest', 'CNN', 'LSTM', 'ANOVA F-score'],
