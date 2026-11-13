@@ -52,10 +52,10 @@ export default function App() {
             <PipelineMotif />
             <dl className="divide-y divide-white/10">
               {[
-                ['Machine Learning', 'Cost-aware fraud detection and model evaluation.'],
+                ['Machine Learning', 'Cross-dataset intrusion detection, imbalance handling and model evaluation.'],
                 ['AI Engineering', 'Auditable SOC workflows with cited retrieval.'],
                 ['Data Engineering', 'Historical job data and validated pipelines.'],
-                ['Cybersecurity Analytics', 'Incident trends and response analysis.'],
+                ['Cybersecurity Analytics', 'Network intrusion, attack-class and incident-response analysis.'],
               ].map(([title, description]) => (
                 <div key={title} className="py-3 first:pt-0 last:pb-0">
                   <dt className="font-medium text-slate-100">{title}</dt>
@@ -69,8 +69,8 @@ export default function App() {
         <RevealSection id="about" className="grid gap-6 border-t border-white/10 py-12 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="about-title">
           <SectionHeading id="about-title" label="01 / ABOUT" title="AI, data & security." />
           <div className="space-y-4 leading-relaxed text-slate-400">
-            <p>I build practical projects at the intersection of machine learning, data pipelines, and security analysis — with a focus on clear decisions and traceable evidence.</p>
-            <p>Explore the source code, design decisions, and limitations in each project below.</p>
+            <p>I am an MSc Artificial Intelligence graduate from the University of Bath, working across machine learning, data pipelines and security analysis. My dissertation compared seven ML and deep-learning models for multi-class network intrusion detection across CICIDS2017 and UNSW-NB15.</p>
+            <p>I focus on reproducible experiments, class-balanced evaluation and clear limitations rather than headline accuracy alone. Explore the source code, design decisions, results and caveats in each project below.</p>
           </div>
         </RevealSection>
 
