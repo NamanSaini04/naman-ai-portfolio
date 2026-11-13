@@ -8,8 +8,8 @@ export const skillGroups = [
   },
   {
     title: 'Machine Learning & Evaluation',
-    description: 'Building, comparing and validating models against measurable outcomes.',
-    skills: ['scikit-learn', 'XGBoost', 'PyTorch', 'Random Forest', 'Feature engineering', 'ANOVA feature selection', 'Class imbalance handling', 'Macro F1 / per-class metrics', 'PR-AUC / recall / precision', 'Cost-based thresholds', 'Holt-Winters forecasting'],
+    description: 'Building and comparing models on imbalanced data with class-balanced, per-class and reproducible evaluation.'
+    skills: ['scikit-learn', 'XGBoost', 'PyTorch', 'Random Forest', 'Network intrusion detection', 'Feature engineering', 'ANOVA feature selection', 'Class imbalance handling', 'Macro F1 / per-class metrics', 'Confusion matrices', 'PR-AUC / recall / precision', 'Cost-based thresholds', 'Holt-Winters forecasting'],
   },
   {
     title: 'Data Analytics & BI',
@@ -65,7 +65,7 @@ export const education = [
   {
     course: 'MSc Artificial Intelligence',
     institution: 'University of Bath',
-    dates: 'September 2025–November 2026',
+    dates: 'September 2025–September 2026',
     note: 'Awarded MSc Artificial Intelligence with Merit on 11 November 2026. Dissertation: 72% — comparative ML/DL network intrusion detection across CICIDS2017 and UNSW-NB15.',
   },
   {
