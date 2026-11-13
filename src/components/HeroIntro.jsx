@@ -27,8 +27,8 @@ export default function HeroIntro({ primaryLink, secondaryLink }) {
         <motion.span variants={entrance} className="block">Engineering AI.</motion.span>
         <motion.span variants={entrance} className="block text-slate-300">Making data useful.</motion.span>
       </h1>
-      <motion.p variants={entrance} className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">AI Engineering, Machine Learning, Data Engineering, and Cybersecurity Analytics — explored through practical, documented projects.</motion.p>
-      <motion.p variants={entrance} className="mt-5 text-sm leading-relaxed text-slate-400">MSc studies in Artificial Intelligence · University of Bath</motion.p>
+      <motion.p variants={entrance} className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">AI Engineering, Machine Learning, Data Engineering, and Cybersecurity Analytics — backed by practical projects and MSc research in network intrusion detection.</motion.p>
+      <motion.p variants={entrance} className="mt-5 text-sm leading-relaxed text-slate-400">MSc Artificial Intelligence graduate · University of Bath · Merit · Dissertation 72%</motion.p>
       <motion.div variants={entrance} className="mt-8 flex flex-wrap gap-3">
         <a href="#projects" className={primaryLink}>Explore my work <ArrowIcon /></a>
         <a href="#contact" className={secondaryLink}>Get in touch</a>
