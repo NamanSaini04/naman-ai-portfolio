@@ -1,5 +1,18 @@
 export const projects = [
   {
+    id: 'network-intrusion-detection',
+    title: 'Network Intrusion Detection — MSc Dissertation',
+    category: 'MACHINE LEARNING / CYBERSECURITY',
+    featured: true,
+    status: 'Completed · 72% dissertation',
+    statusNote: 'MSc Artificial Intelligence dissertation, University of Bath.',
+    description: 'Compared seven ML and deep-learning models across CICIDS2017 and UNSW-NB15, focusing on class imbalance, feature selection, minority-class behaviour and cross-dataset robustness.',
+    technologies: ['Python', 'scikit-learn', 'XGBoost', 'PyTorch', 'Random Forest', 'CNN', 'LSTM', 'ANOVA F-score'],
+    disclosure: 'Benchmark study only. CICIDS2017 and UNSW-NB15 used different sampling and test designs, so absolute scores are not treated as directly comparable measures of dataset difficulty.',
+    details: 'Random Forest achieved the strongest Macro F1 on both benchmarks: 0.892 on CICIDS2017 and 0.448 on UNSW-NB15. The repository includes the dissertation methodology, reported results, reproducibility code and an interactive dashboard.',
+    github: 'https://github.com/NamanSaini04/Network-Intrusion-detection-msc-dissertation',
+  },
+  {
     id: 'fraud-detection',
     title: 'Financial Fraud Detection Analytics',
     category: 'MACHINE LEARNING / ANALYTICS',
