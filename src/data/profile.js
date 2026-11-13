@@ -1,4 +1,4 @@
-// Skill groups reflect tools and techniques evidenced by the four project repositories.
+// Skill groups reflect tools and techniques evidenced by the linked portfolio projects, including the MSc dissertation.
 // No proficiency levels or years of professional experience are implied.
 export const skillGroups = [
   {
@@ -9,7 +9,7 @@ export const skillGroups = [
   {
     title: 'Machine Learning & Evaluation',
     description: 'Building, comparing and validating models against measurable outcomes.',
-    skills: ['scikit-learn', 'XGBoost', 'Feature engineering', 'Class imbalance handling', 'PR-AUC / recall / precision', 'Cost-based thresholds', 'Holt-Winters forecasting'],
+    skills: ['scikit-learn', 'XGBoost', 'PyTorch', 'Random Forest', 'Feature engineering', 'ANOVA feature selection', 'Class imbalance handling', 'Macro F1 / per-class metrics', 'PR-AUC / recall / precision', 'Cost-based thresholds', 'Holt-Winters forecasting'],
   },
   {
     title: 'Data Analytics & BI',
@@ -65,8 +65,8 @@ export const education = [
   {
     course: 'MSc Artificial Intelligence',
     institution: 'University of Bath',
-    dates: 'September 2025–September 2026',
-    note: 'Status: Coursework completed; final award classification awaiting official university confirmation.',
+    dates: 'September 2025–November 2026',
+    note: 'Awarded MSc Artificial Intelligence with Merit on 11 November 2026. Dissertation: 72% — comparative ML/DL network intrusion detection across CICIDS2017 and UNSW-NB15.',
   },
   {
     course: 'B.Tech Computer Science',
