@@ -25,7 +25,7 @@ const visibleTags = {
 const covers = {
   'network-intrusion-detection': {
     src: '/project-covers/network-intrusion-detection.svg',
-    alt: 'Illustrated network intrusion detection dashboard comparing machine-learning models across two cybersecurity datasets.',
+    alt: 'Cybersecurity illustration showing network devices, packet flows, a central intrusion-detection shield and a highlighted malicious traffic path.',
   },
   'fraud-detection': {
     src: '/project-covers/fraud-detection.svg',
