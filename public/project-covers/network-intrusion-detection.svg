@@ -1,52 +1,143 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Network intrusion detection illustration</title>
+  <desc id="desc">A cybersecurity network with connected devices, packet flows, a central IDS shield, and a highlighted malicious intrusion path.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#071426"/>
-      <stop offset="0.55" stop-color="#0b2540"/>
-      <stop offset="1" stop-color="#123451"/>
+      <stop offset="0" stop-color="#06111f"/>
+      <stop offset="0.52" stop-color="#0a2037"/>
+      <stop offset="1" stop-color="#0d2d46"/>
     </linearGradient>
-    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#22d3ee"/>
-      <stop offset="1" stop-color="#67e8f9"/>
+    <radialGradient id="glow" cx="50%" cy="48%" r="42%">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity=".20"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#67e8f9"/>
+      <stop offset="1" stop-color="#0891b2"/>
     </linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fb7185"/>
+      <stop offset="1" stop-color="#be123c"/>
+    </linearGradient>
+    <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="smallGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
   </defs>
+
   <rect width="1200" height="675" fill="url(#bg)"/>
-  <g opacity=".16" stroke="#67e8f9" stroke-width="1">
-    <path d="M0 115h1200M0 225h1200M0 335h1200M0 445h1200M0 555h1200"/>
-    <path d="M150 0v675M300 0v675M450 0v675M600 0v675M750 0v675M900 0v675M1050 0v675"/>
-  </g>
-  <text x="72" y="88" fill="#67e8f9" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="3">NETWORK INTRUSION DETECTION</text>
-  <text x="72" y="132" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="20">MSc Artificial Intelligence · University of Bath</text>
+  <rect width="1200" height="675" fill="url(#glow)"/>
 
-  <g transform="translate(72 195)">
-    <rect width="470" height="318" rx="22" fill="#0b1d33" stroke="#24435f"/>
-    <text x="28" y="44" fill="#94a3b8" font-family="Arial" font-size="18">MACRO F1 · RANDOM FOREST</text>
-    <text x="28" y="108" fill="#f8fafc" font-family="Arial" font-size="58" font-weight="700">0.892</text>
-    <text x="28" y="138" fill="#67e8f9" font-family="Arial" font-size="18">CICIDS2017</text>
-    <text x="250" y="108" fill="#f8fafc" font-family="Arial" font-size="58" font-weight="700">0.448</text>
-    <text x="250" y="138" fill="#f59e0b" font-family="Arial" font-size="18">UNSW-NB15</text>
-    <line x1="28" y1="176" x2="442" y2="176" stroke="#24435f"/>
-    <text x="28" y="216" fill="#cbd5e1" font-family="Arial" font-size="18">7 models</text>
-    <text x="160" y="216" fill="#cbd5e1" font-family="Arial" font-size="18">2 datasets</text>
-    <text x="302" y="216" fill="#cbd5e1" font-family="Arial" font-size="18">40 features</text>
-    <rect x="28" y="252" width="360" height="15" rx="7" fill="#172f48"/>
-    <rect x="28" y="252" width="321" height="15" rx="7" fill="url(#blue)"/>
-    <rect x="28" y="282" width="360" height="15" rx="7" fill="#172f48"/>
-    <rect x="28" y="282" width="161" height="15" rx="7" fill="#f59e0b"/>
+  <!-- subtle network grid -->
+  <g stroke="#4f7899" stroke-opacity=".11" stroke-width="1">
+    <path d="M0 100H1200M0 200H1200M0 300H1200M0 400H1200M0 500H1200M0 600H1200"/>
+    <path d="M100 0V675M200 0V675M300 0V675M400 0V675M500 0V675M600 0V675M700 0V675M800 0V675M900 0V675M1000 0V675M1100 0V675"/>
   </g>
 
-  <g transform="translate(620 188)">
-    <circle cx="230" cy="165" r="126" fill="#0c2036" stroke="#245371" stroke-width="2"/>
-    <circle cx="230" cy="165" r="80" fill="#102d47" stroke="#2b6d8a" stroke-width="2"/>
-    <path d="M230 66L294 91v62c0 67-42 106-64 117-22-11-64-50-64-117V91z" fill="#0e7490" opacity=".7" stroke="#67e8f9" stroke-width="3"/>
-    <path d="M204 163l18 18 39-47" fill="none" stroke="#ecfeff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-    <g fill="#67e8f9">
-      <circle cx="71" cy="97" r="9"/><circle cx="392" cy="96" r="9"/><circle cx="95" cy="267" r="9"/><circle cx="372" cy="270" r="9"/>
-    </g>
-    <g stroke="#3b82a0" stroke-width="3">
-      <line x1="80" y1="101" x2="142" y2="130"/><line x1="383" y1="101" x2="317" y2="131"/><line x1="104" y1="262" x2="151" y2="215"/><line x1="363" y1="263" x2="307" y2="216"/>
-    </g>
+  <!-- title -->
+  <text x="62" y="78" fill="#67e8f9" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="3">NETWORK INTRUSION DETECTION</text>
+  <text x="62" y="112" fill="#94a3b8" font-family="Arial, sans-serif" font-size="16">Machine Learning · Deep Learning · Cybersecurity</text>
+
+  <!-- network connections -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M190 236 C330 220, 410 290, 530 325" stroke="#4db7d3" stroke-opacity=".55" stroke-width="3"/>
+    <path d="M178 440 C320 430, 420 385, 530 350" stroke="#4db7d3" stroke-opacity=".48" stroke-width="3"/>
+    <path d="M970 205 C840 225, 760 285, 670 325" stroke="#4db7d3" stroke-opacity=".50" stroke-width="3"/>
+    <path d="M970 470 C830 448, 765 385, 670 350" stroke="#4db7d3" stroke-opacity=".42" stroke-width="3"/>
+    <path d="M290 548 C405 502, 480 425, 545 380" stroke="#4db7d3" stroke-opacity=".35" stroke-width="3"/>
+    <path d="M880 552 C785 500, 720 430, 652 382" stroke="#4db7d3" stroke-opacity=".35" stroke-width="3"/>
   </g>
-  <text x="72" y="594" fill="#94a3b8" font-family="Arial" font-size="18">Random Forest · XGBoost · SVM · Logistic Regression · MLP · CNN · LSTM</text>
-  <text x="72" y="628" fill="#67e8f9" font-family="Arial" font-size="16" font-weight="700">CLASS IMBALANCE · FEATURE SELECTION · PER-ATTACK EVALUATION</text>
+
+  <!-- normal packet flows -->
+  <g fill="#67e8f9">
+    <circle cx="330" cy="250" r="5"/>
+    <circle cx="405" cy="285" r="4"/>
+    <circle cx="770" cy="264" r="5"/>
+    <circle cx="835" cy="235" r="4"/>
+    <circle cx="350" cy="420" r="5"/>
+    <circle cx="425" cy="392" r="4"/>
+    <circle cx="770" cy="410" r="4"/>
+    <circle cx="836" cy="445" r="5"/>
+  </g>
+
+  <!-- endpoint device left top -->
+  <g transform="translate(95 178)">
+    <rect width="170" height="110" rx="14" fill="#0d2137" stroke="#2b607d" stroke-width="2"/>
+    <rect x="18" y="18" width="134" height="66" rx="7" fill="#0a1728" stroke="#244a65"/>
+    <path d="M38 53h26l10-17 16 34 12-19h30" fill="none" stroke="#5eead4" stroke-width="3"/>
+    <rect x="62" y="91" width="46" height="6" rx="3" fill="#355f78"/>
+  </g>
+
+  <!-- endpoint device left bottom -->
+  <g transform="translate(92 390)">
+    <rect width="170" height="112" rx="14" fill="#0d2137" stroke="#2b607d" stroke-width="2"/>
+    <circle cx="44" cy="45" r="16" fill="#123851" stroke="#4db7d3"/>
+    <circle cx="44" cy="45" r="5" fill="#67e8f9"/>
+    <path d="M76 34h62M76 48h48M76 62h56" stroke="#56768e" stroke-width="6" stroke-linecap="round"/>
+    <rect x="20" y="82" width="130" height="10" rx="5" fill="#17334a"/>
+    <rect x="20" y="82" width="88" height="10" rx="5" fill="#2f8cad"/>
+  </g>
+
+  <!-- endpoint right top -->
+  <g transform="translate(935 165)">
+    <rect width="170" height="110" rx="14" fill="#0d2137" stroke="#2b607d" stroke-width="2"/>
+    <path d="M35 35h100v46H35z" fill="#091726" stroke="#335d77"/>
+    <path d="M50 54h28M50 67h56M92 54h28" stroke="#67e8f9" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="143" cy="22" r="7" fill="#22c55e"/>
+  </g>
+
+  <!-- endpoint right bottom -->
+  <g transform="translate(935 420)">
+    <rect width="170" height="112" rx="14" fill="#0d2137" stroke="#2b607d" stroke-width="2"/>
+    <ellipse cx="85" cy="30" rx="46" ry="13" fill="#12354e" stroke="#4b7893"/>
+    <path d="M39 30v48c0 7 21 13 46 13s46-6 46-13V30" fill="#0a1c2f" stroke="#4b7893"/>
+    <ellipse cx="85" cy="54" rx="46" ry="13" fill="none" stroke="#355d79"/>
+    <ellipse cx="85" cy="78" rx="46" ry="13" fill="none" stroke="#355d79"/>
+  </g>
+
+  <!-- lower workstation -->
+  <g transform="translate(235 520)">
+    <rect width="155" height="74" rx="12" fill="#0d2137" stroke="#2b607d" stroke-width="2"/>
+    <rect x="18" y="15" width="119" height="42" rx="5" fill="#081522"/>
+    <path d="M31 42l18-14 14 10 18-20 20 18 20-8" fill="none" stroke="#5eead4" stroke-width="3"/>
+    <rect x="60" y="61" width="35" height="5" rx="2" fill="#355f78"/>
+  </g>
+
+  <!-- lower server node -->
+  <g transform="translate(835 525)">
+    <rect width="155" height="76" rx="12" fill="#0d2137" stroke="#2b607d" stroke-width="2"/>
+    <rect x="18" y="14" width="119" height="17" rx="5" fill="#0a1728" stroke="#284b65"/>
+    <rect x="18" y="42" width="119" height="17" rx="5" fill="#0a1728" stroke="#284b65"/>
+    <circle cx="31" cy="22.5" r="4" fill="#22c55e"/><circle cx="31" cy="50.5" r="4" fill="#22c55e"/>
+    <path d="M43 22h80M43 50h80" stroke="#486b84" stroke-width="3"/>
+  </g>
+
+  <!-- central IDS shield -->
+  <g transform="translate(515 205)">
+    <circle cx="85" cy="135" r="145" fill="#22d3ee" opacity=".08" filter="url(#softGlow)"/>
+    <circle cx="85" cy="135" r="118" fill="#0b2239" stroke="#275a77" stroke-width="2"/>
+    <path d="M85 47L154 74v73c0 74-45 118-69 130-24-12-69-56-69-130V74z" fill="url(#cyan)" opacity=".88" stroke="#a5f3fc" stroke-width="3"/>
+    <path d="M53 141l23 23 45-58" fill="none" stroke="#ecfeff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="85" y="323" text-anchor="middle" fill="#cbd5e1" font-family="Arial" font-size="16" font-weight="700">IDS / TRAFFIC CLASSIFIER</text>
+  </g>
+
+  <!-- malicious intrusion path -->
+  <g>
+    <path d="M1110 335 C1000 330, 890 330, 760 338" fill="none" stroke="#fb7185" stroke-width="4" stroke-dasharray="10 11" stroke-linecap="round"/>
+    <circle cx="1035" cy="333" r="7" fill="#fb7185" filter="url(#smallGlow)"/>
+    <circle cx="940" cy="334" r="7" fill="#fb7185" filter="url(#smallGlow)"/>
+    <circle cx="845" cy="336" r="7" fill="#fb7185" filter="url(#smallGlow)"/>
+    <polygon points="758,338 780,325 780,351" fill="#fb7185"/>
+    <g transform="translate(1020 280)">
+      <circle cx="60" cy="55" r="50" fill="#2b0d1a" stroke="#be123c" stroke-width="2"/>
+      <path d="M38 32l44 44M82 32L38 76" stroke="#fb7185" stroke-width="9" stroke-linecap="round"/>
+    </g>
+    <rect x="842" y="285" width="118" height="34" rx="17" fill="#3a1020" stroke="#9f1239"/>
+    <text x="901" y="307" text-anchor="middle" fill="#fecdd3" font-family="Arial" font-size="13" font-weight="700">ANOMALOUS FLOW</text>
+  </g>
+
+  <!-- bottom caption -->
+  <text x="62" y="630" fill="#8fb2cf" font-family="Arial, sans-serif" font-size="15" letter-spacing="1.2">NETWORK TRAFFIC · FEATURE ENGINEERING · ATTACK CLASSIFICATION · MODEL COMPARISON</text>
 </svg>
