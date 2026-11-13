@@ -9,6 +9,7 @@ const projectNames = {
   'airline-delay': 'Airline Delay',
   'soc-copilot': 'SOC Copilot',
   'job-market': 'Job Market DE',
+  'network-intrusion-detection': 'Intrusion Detection',
 }
 
 const cellClass = {
@@ -35,12 +36,12 @@ export default function SkillsHeatmap() {
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300">PROJECT-BASED SKILL EVIDENCE</p>
           <h3 id="skills-heatmap-heading" className="mt-2 text-2xl font-semibold tracking-tight text-slate-100">Skills across my projects</h3>
           <p className="mt-3 text-sm leading-relaxed text-slate-300">
-            This heatmap shows where I used each skill in my six projects. Brighter cells mean the skill played a more central role.
+            This heatmap shows where I used each skill across my seven portfolio projects. Brighter cells mean the skill played a more central role.
             It is based on the documented work, <strong className="font-medium text-slate-100">not a self-rated proficiency chart.</strong>
           </p>
         </div>
         <span className="rounded-full border border-cyan-300/20 bg-cyan-300/[0.07] px-3 py-2 text-xs font-medium text-cyan-200">
-          6 projects · {skillEvidence.length} skills
+          7 projects · {skillEvidence.length} skills
         </span>
       </div>
 
@@ -80,7 +81,7 @@ export default function SkillsHeatmap() {
       <p className="mt-4 text-xs leading-relaxed text-slate-400">
         Select a highlighted cell to open the project's case study. “Not explicitly evidenced” means I have not claimed that skill for that project, not that I could never use it.
       </p>
-      <p className="mt-3 text-xs font-medium text-cyan-200 lg:hidden">Scroll sideways to view all six projects →</p>
+      <p className="mt-3 text-xs font-medium text-cyan-200 lg:hidden">Scroll sideways to view all seven projects →</p>
 
       <div
         role="region"
@@ -88,8 +89,8 @@ export default function SkillsHeatmap() {
         aria-label="Scrollable skills by project heatmap"
         className="mt-3 max-w-full overflow-x-auto rounded-2xl border border-white/10 bg-[#0b1627] p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-300 sm:p-3"
       >
-        <table className="w-full min-w-[850px] table-fixed border-separate border-spacing-x-1.5 border-spacing-y-1.5 text-left">
-          <caption className="sr-only">Evidence for each skill in the six portfolio projects. S indicates supporting use; C indicates a central project component. Colored cells link to project case studies.</caption>
+        <table className="w-full min-w-[980px] table-fixed border-separate border-spacing-x-1.5 border-spacing-y-1.5 text-left">
+          <caption className="sr-only">Evidence for each skill in the seven portfolio projects. S indicates supporting use; C indicates a central project component. Colored cells link to project case studies.</caption>
           <colgroup>
             <col style={{ width: 198 }} />
             {headerProjects.map(project => <col key={project.id} />)}
