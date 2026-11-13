@@ -1,5 +1,32 @@
 // Project case studies reflect public README and report evidence. Metrics are not production outcomes.
 export const caseStudies = {
+  'network-intrusion-detection': {
+    kicker: 'MSc Artificial Intelligence dissertation · University of Bath · 72%',
+    challenge: 'Network intrusion datasets are highly imbalanced, and high overall accuracy can hide poor detection of rare attacks. The project asked whether classical machine-learning and deep-learning models behave consistently across two benchmark datasets with different feature structures, attack taxonomies and test designs.',
+    method: [
+      'Evaluated SGD Logistic Regression, SGD Linear SVM, Random Forest, XGBoost, MLP, 1D CNN and LSTM using CICIDS2017 and UNSW-NB15.',
+      'Applied cleaning, identifier removal, encoding, scaling and ANOVA F-score feature selection to retain 40 features, while handling imbalance through capped/down-sampled training data and class weighting where supported. SMOTE was discussed but not used in the final pipeline.',
+      'Used Macro F1 as the primary ranking metric, supported by accuracy, macro precision/recall, weighted F1, per-class reports and confusion matrices.'
+    ],
+    metrics: [
+      { value: '7', label: 'Models evaluated', note: 'Linear, tree-based and neural approaches' },
+      { value: '0.892', label: 'CICIDS2017 Macro F1', note: 'Random Forest · strongest model' },
+      { value: '0.448', label: 'UNSW-NB15 Macro F1', note: 'Random Forest · strongest model' },
+      { value: '72%', label: 'Dissertation mark', note: 'University of Bath' }
+    ],
+    outcome: 'Random Forest produced the strongest class-balanced performance on both benchmarks. XGBoost achieved the highest UNSW-NB15 accuracy and weighted F1, but Random Forest remained stronger on the dissertation\'s primary Macro F1 criterion. The study also showed that aggregate metrics can conceal weak minority-class detection and that model performance is strongly dataset-dependent.',
+    insights: [
+      'Random Forest ranked first by Macro F1 on both datasets: 0.892 on CICIDS2017 and 0.448 on UNSW-NB15.',
+      'XGBoost remained competitive and achieved 0.757 accuracy and 0.756 weighted F1 on UNSW-NB15, but its Macro F1 was lower at 0.424.',
+      'CNN and LSTM underperformed under the tested settings, supporting the interpretation that flow-level tabular features do not naturally provide the spatial or sequential structure those architectures usually exploit.',
+      'Rare classes remained difficult: CICIDS2017 Heartbleed, SQL Injection and Infiltration had extremely small test support, while UNSW-NB15 Analysis and Backdoor showed weak Random Forest F1 despite stronger aggregate performance.'
+    ],
+    caveat: 'The two datasets used different evaluation designs and should not be treated as a direct numerical difficulty comparison. CICIDS2017 used capped sampling and had a limited pre-split median-imputation leakage risk; the reported CICIDS2017 XGBoost run used a reduced 6,068-row stratified training subset; UNSW-NB15 neural runs used one epoch; and feature selection/class weighting were not isolated through controlled ablation studies. These are benchmark results, not deployment-readiness evidence.',
+    dashboard: 'https://network-intrusion-detection-msc-dissertation-ex6wvrexwqwikdcrz.streamlit.app/',
+    dashboardType: 'Interactive dissertation results dashboard',
+    dashboardLabel: 'Compare model performance, dataset-specific metrics, class support and minority-attack behaviour',
+    sourceEvidence: 'https://github.com/NamanSaini04/Network-Intrusion-detection-msc-dissertation/blob/main/RESULTS.md'
+  },
   'fraud-detection': {
     kicker: 'Offline model evaluation · Historical credit-card dataset',
     challenge: 'With just 0.17% fraudulent transactions, headline accuracy is misleading. The objective was to compare fraud classifiers using precision-recall measures and translate predictions into review decisions.',
