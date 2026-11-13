@@ -8,7 +8,7 @@ export const skillGroups = [
   },
   {
     title: 'Machine Learning & Evaluation',
-    description: 'Building and comparing models on imbalanced data with class-balanced, per-class and reproducible evaluation.'
+    description: 'Building and comparing models on imbalanced data with class-balanced, per-class and reproducible evaluation.',
     skills: ['scikit-learn', 'XGBoost', 'PyTorch', 'Random Forest', 'Network intrusion detection', 'Feature engineering', 'ANOVA feature selection', 'Class imbalance handling', 'Macro F1 / per-class metrics', 'Confusion matrices', 'PR-AUC / recall / precision', 'Cost-based thresholds', 'Holt-Winters forecasting'],
   },
   {
