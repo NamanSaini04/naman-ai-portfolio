@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/offerings",
+      "destination": "/offerings/index.html"
+    },
+    {
+      "source": "/offerings/",
+      "destination": "/offerings/index.html"
+    },
+    {
       "source": "/projects/fraud-detection/dashboard",
       "destination": "/index.html"
     },
