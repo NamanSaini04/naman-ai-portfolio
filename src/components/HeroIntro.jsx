@@ -1,6 +1,7 @@
 import { showCV, cvPdfUrl } from '../data/siteConfig'
 import { motion, useReducedMotion } from 'motion/react'
 import ArrowIcon from './ArrowIcon'
+import { portraitSrc } from '../data/profilePortrait'
 
 export default function HeroIntro({ primaryLink, secondaryLink }) {
   const reduceMotion = useReducedMotion()
@@ -12,7 +13,7 @@ export default function HeroIntro({ primaryLink, secondaryLink }) {
     <motion.div initial={reduceMotion ? false : 'rest'} animate="visible" transition={{ staggerChildren: reduceMotion ? 0 : 0.07 }}>
       <motion.div variants={entrance} className="flex flex-col items-start gap-5">
         <img
-          src="/naman-saini-portrait.webp?v=80809f266c23"
+          src={portraitSrc}
           alt="Portrait of Naman Saini"
           width="800"
           height="800"

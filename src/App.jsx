@@ -11,6 +11,7 @@ import SkillsHeatmap from './components/SkillsHeatmap'
 import FraudDashboard from './components/FraudDashboard'
 import AirlineDashboard from './components/AirlineDashboard'
 import SectionHeading from './components/SectionHeading'
+import ServicesPage, { ServicesOverview } from './components/ServicesPage'
 import { githubUrl, projects } from './data/portfolio'
 import { certifications, contact, education, experience, skillGroups } from './data/profile'
 
@@ -33,144 +34,156 @@ export default function App() {
     return <ProjectCaseStudy project={project} />
   }
 
+  const isServicesPage = /^\/services\/?$/.test(window.location.pathname)
+
   return (
     <MotionConfig reducedMotion="user">
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-cyan-300 focus:p-3 focus:text-slate-950">Skip to content</a>
       <header className="site-header mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-8 gap-y-3 border-b border-white/10 px-6 py-5 sm:px-8">
-        <a href="#main" aria-label="Naman home" className="inline-flex min-h-11 items-center text-xl font-bold tracking-tight">naman<span className="text-cyan-300">.</span></a>
+        <a href={isServicesPage ? '/' : '#main'} aria-label="Naman home" className="inline-flex min-h-11 items-center text-xl font-bold tracking-tight">naman<span className="text-cyan-300">.</span></a>
         <nav aria-label="Main navigation" className="flex w-full flex-wrap justify-between gap-x-1 gap-y-1 text-[13px] text-slate-300 sm:w-auto sm:justify-start sm:gap-x-6 sm:text-sm">
-          {[['Projects', 'projects'], ['Skills', 'skills'], ['Background', 'experience'], ...(showCV ? [['CV', 'cv']] : []), ['Contact', 'contact']].map(([label, id]) => (
-            <a key={id} href={`#${id}`} className="inline-flex min-h-11 items-center hover:text-cyan-300">{label}</a>
+          {[['Projects', '/#projects'], ['Services', '/services'], ['Skills', '/#skills'], ['Background', '/#experience'], ...(showCV ? [['CV', '/#cv']] : []), ['Contact', '#contact']].map(([label, href]) => (
+            <a key={href} href={href} aria-current={isServicesPage && href === '/services' ? 'page' : undefined} className="inline-flex min-h-11 items-center hover:text-cyan-300 aria-[current=page]:text-cyan-300">{label}</a>
           ))}
         </nav>
       </header>
       <main id="main" tabIndex={-1} className="mx-auto max-w-6xl px-6 sm:px-8">
-        <section className="hero-section grid items-center gap-8 py-12 sm:gap-12 sm:py-20 lg:grid-cols-[1.6fr_1fr] lg:gap-16" aria-labelledby="hero-title">
-          <HeroIntro primaryLink={primaryLink} secondaryLink={secondaryLink} />
-          <aside aria-label="Portfolio focus" className="focus-panel surface rounded-2xl border border-cyan-300/15 p-6 sm:p-8">
-            <p className="text-xs tracking-[0.18em] text-slate-400">FROM MODELS TO DECISIONS</p>
-            <PipelineMotif />
-            <dl className="divide-y divide-white/10">
-              {[
-                ['Machine Learning', 'Cross-dataset intrusion detection, imbalance handling and model evaluation.'],
-                ['AI Engineering', 'Auditable SOC workflows with cited retrieval.'],
-                ['Data Engineering', 'Historical job data and validated pipelines.'],
-                ['Cybersecurity Analytics', 'Network intrusion, attack-class and incident-response analysis.'],
-              ].map(([title, description]) => (
-                <div key={title} className="py-3 first:pt-0 last:pb-0">
-                  <dt className="font-medium text-slate-100">{title}</dt>
-                  <dd className="mt-1 text-sm leading-relaxed text-slate-400">{description}</dd>
-                </div>
-              ))}
-            </dl>
-          </aside>
-        </section>
-
-        <RevealSection id="about" className="grid gap-6 border-t border-white/10 py-12 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="about-title">
-          <SectionHeading id="about-title" label="01 / ABOUT" title="AI, data & security." />
-          <div className="space-y-4 leading-relaxed text-slate-400">
-            <p>I am an MSc Artificial Intelligence graduate from the University of Bath, working across machine learning, data pipelines and security analysis. My dissertation compared seven ML and deep-learning models for multi-class network intrusion detection across CICIDS2017 and UNSW-NB15.</p>
-            <p>I focus on reproducible experiments, class-balanced evaluation and clear limitations rather than headline accuracy alone. Explore the source code, design decisions, results and caveats in each project below.</p>
-          </div>
-        </RevealSection>
-
-        <RevealSection id="projects" className="border-t border-white/10 py-12 sm:py-16" aria-labelledby="projects-title">
-          <SectionHeading id="projects-title" label="02 / PROJECT PORTFOLIO" title="Projects." description="Explore my work in machine learning, AI, data engineering and cybersecurity analytics. Each project includes the problem I tackled, the results I achieved and links to the supporting code or dashboard." />
-          <div className="mt-9 grid items-stretch gap-6 md:grid-cols-2" aria-label="Project portfolio gallery">
-            {projects.map(project => <ProjectCard key={project.id} project={project} />)}
-          </div>
-        </RevealSection>
-
-        <RevealSection id="skills" className="border-t border-white/10 py-12 sm:py-16" aria-labelledby="skills-title">
-          <SectionHeading id="skills-title" label="03 / TECHNICAL SKILLS" title="Tools behind the work." description="Tools and techniques used in the linked project implementations." />
-          <div className="mt-8 grid gap-5 sm:grid-cols-2">
-            {skillGroups.map(group => (
-              <article key={group.title} className="surface rounded-2xl border border-white/10 p-6 sm:p-7">
-                <h3 className="text-xl font-semibold tracking-tight">{group.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-400">{group.description}</p>
-                <ul aria-label={`${group.title} skills`} className="mt-5 flex flex-wrap gap-2">
-                  {group.skills.map(skill => <li key={skill} className="rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-slate-300">{skill}</li>)}
-                </ul>
-              </article>
-            ))}
-          </div>
-          <SkillsHeatmap />
-        </RevealSection>
-
-        <RevealSection id="experience" className="grid gap-7 border-t border-white/10 py-12 sm:py-16 md:grid-cols-[1fr_1.65fr] md:gap-12" aria-labelledby="experience-title">
-          <SectionHeading
-            id="experience-title"
-            label="04 / PROFESSIONAL EXPERIENCE"
-            title="What I did, and what came out of it."
-            description="My experience spans hands-on Python teaching support and cybersecurity research. Here's what I worked on, how I contributed and what I produced—without inflated impact figures."
-          />
-          <div className="space-y-6">
-            {experience.map(position => (
-              <article key={`${position.organisation}-${position.role}`} className="surface overflow-hidden rounded-2xl border border-white/10 p-6 sm:p-7">
-                <div className="flex flex-wrap items-start justify-between gap-x-5 gap-y-2">
-                  <div>
-                    <p className="text-sm font-semibold text-cyan-300">{position.organisation}</p>
-                    <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-100 sm:text-2xl">{position.role}</h3>
-                  </div>
-                  <p className="rounded-full border border-white/15 bg-white/[0.04] px-3 py-2 text-xs font-medium text-slate-300">{position.dates}</p>
-                </div>
-                <ul aria-label={position.role + ' focus areas'} className="mt-4 flex flex-wrap gap-2">
-                  {position.focus.map(tag => (
-                    <li key={tag} className="rounded-full border border-cyan-300/20 bg-cyan-300/[0.055] px-3 py-1.5 text-xs font-medium text-cyan-100">{tag}</li>
-                  ))}
-                </ul>
-                <p className="mt-5 leading-relaxed text-slate-200">{position.intro}</p>
-
-                <div className="mt-6 border-t border-white/10 pt-5">
-                  <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-cyan-300">What I worked on</h4>
-                  <ul className="mt-3 list-disc space-y-3 pl-5 text-sm leading-relaxed text-slate-300 marker:text-cyan-300 sm:text-[15px]">
-                    {position.work.map(item => <li key={item}>{item}</li>)}
-                  </ul>
-                </div>
-
-                <div className="mt-6 rounded-r-xl border-l-[3px] border-cyan-300 bg-cyan-300/[0.055] px-4 py-4 sm:px-5">
-                  <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-cyan-300">Outcome & contribution</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-100 sm:text-[15px]">{position.outcome}</p>
-                  <p className="mt-3 text-xs leading-relaxed text-slate-400">{position.outcomeNote}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </RevealSection>
-
-        <RevealSection id="education" className="grid gap-6 border-t border-white/10 py-12 sm:py-16 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="education-title">
-          <SectionHeading id="education-title" label="05 / EDUCATION" title="Education & academic status." />
-          <div className="space-y-5">
-            {education.map(qualification => (
-              <article key={qualification.course} className="surface rounded-2xl border border-cyan-300/20 p-6 sm:p-7">
-                <p className="text-sm font-medium text-cyan-300">{qualification.institution}</p>
-                <h3 className="mt-3 text-2xl font-semibold tracking-tight">{qualification.course}</h3>
-                <p className="mt-3 text-sm text-slate-400">{qualification.dates}</p>
-                {qualification.note && <p className="mt-4 text-sm leading-relaxed text-slate-300">{qualification.note}</p>}
-              </article>
-            ))}
-          </div>
-        </RevealSection>
-
-        <RevealSection id="certifications" className="grid gap-6 border-t border-white/10 py-12 sm:py-16 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="certifications-title">
-          <SectionHeading id="certifications-title" label="06 / CERTIFICATIONS" title="Certifications & courses." />
-          <ul className="surface divide-y divide-white/10 rounded-2xl border border-white/10 px-6 sm:px-7">
-            {certifications.map(title => <li key={title} className="py-5 leading-relaxed text-slate-300">{title}</li>)}
-          </ul>
-        </RevealSection>
-
-        {showCV && <CvSection />}
-
-        <RevealSection id="contact" className="border-t border-white/10 py-12 sm:py-16" aria-labelledby="contact-title">
-          <SectionHeading id="contact-title" label={`${showCV ? '08' : '07'} / CONTACT`} title="Let’s start a conversation." description="Get in touch by email, connect on LinkedIn, or explore my work on GitHub." />
-          <div className="mt-7 flex flex-wrap gap-3">
-            <a href={`mailto:${contact.email}`} className={`${primaryLink} break-all`}>{contact.email} <ArrowIcon /></a>
-            <a href={contact.linkedin} className={secondaryLink}>LinkedIn <ArrowIcon /></a>
-            <a href={githubUrl} className={secondaryLink}>GitHub <ArrowIcon /></a>
-          </div>
-        </RevealSection>
+        {isServicesPage ? <ServicesPage primaryLink={primaryLink} secondaryLink={secondaryLink} /> : <PortfolioHome />}
       </main>
       <footer className="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 border-t border-white/10 px-6 py-7 text-sm text-slate-400 sm:px-8"><span>© {currentYear} Naman Saini</span><span>AI · Data · Security</span></footer>
     </MotionConfig>
+  )
+}
+
+function PortfolioHome() {
+  return (
+    <>
+      <section className="hero-section grid items-center gap-8 py-12 sm:gap-12 sm:py-20 lg:grid-cols-[1.6fr_1fr] lg:gap-16" aria-labelledby="hero-title">
+        <HeroIntro primaryLink={primaryLink} secondaryLink={secondaryLink} />
+        <aside aria-label="Portfolio focus" className="focus-panel surface rounded-2xl border border-cyan-300/15 p-6 sm:p-8">
+          <p className="text-xs tracking-[0.18em] text-slate-400">FROM MODELS TO DECISIONS</p>
+          <PipelineMotif />
+          <dl className="divide-y divide-white/10">
+            {[
+              ['Machine Learning', 'Cross-dataset intrusion detection, imbalance handling and model evaluation.'],
+              ['AI Engineering', 'Auditable SOC workflows with cited retrieval.'],
+              ['Data Engineering', 'Historical job data and validated pipelines.'],
+              ['Cybersecurity Analytics', 'Network intrusion, attack-class and incident-response analysis.'],
+            ].map(([title, description]) => (
+              <div key={title} className="py-3 first:pt-0 last:pb-0">
+                <dt className="font-medium text-slate-100">{title}</dt>
+                <dd className="mt-1 text-sm leading-relaxed text-slate-400">{description}</dd>
+              </div>
+            ))}
+          </dl>
+        </aside>
+      </section>
+
+      <RevealSection id="about" className="grid gap-6 border-t border-white/10 py-12 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="about-title">
+        <SectionHeading id="about-title" label="01 / ABOUT" title="AI, data & security." />
+        <div className="space-y-4 leading-relaxed text-slate-400">
+          <p>I am an MSc Artificial Intelligence graduate from the University of Bath, working across machine learning, data pipelines and security analysis. My dissertation compared seven ML and deep-learning models for multi-class network intrusion detection across CICIDS2017 and UNSW-NB15.</p>
+          <p>I focus on reproducible experiments, class-balanced evaluation and clear limitations rather than headline accuracy alone. Explore the source code, design decisions, results and caveats in each project below.</p>
+        </div>
+      </RevealSection>
+
+      <ServicesOverview />
+
+      <RevealSection id="projects" className="border-t border-white/10 py-12 sm:py-16" aria-labelledby="projects-title">
+        <SectionHeading id="projects-title" label="02 / PROJECT PORTFOLIO" title="Projects." description="Explore my work in machine learning, AI, data engineering and cybersecurity analytics. Each project includes the problem I tackled, the results I achieved and links to the supporting code or dashboard." />
+        <div className="mt-9 grid items-stretch gap-6 md:grid-cols-2" aria-label="Project portfolio gallery">
+          {projects.map(project => <ProjectCard key={project.id} project={project} />)}
+        </div>
+      </RevealSection>
+
+      <RevealSection id="skills" className="border-t border-white/10 py-12 sm:py-16" aria-labelledby="skills-title">
+        <SectionHeading id="skills-title" label="03 / TECHNICAL SKILLS" title="Tools behind the work." description="Tools and techniques used in the linked project implementations." />
+        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+          {skillGroups.map(group => (
+            <article key={group.title} className="surface rounded-2xl border border-white/10 p-6 sm:p-7">
+              <h3 className="text-xl font-semibold tracking-tight">{group.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-400">{group.description}</p>
+              <ul aria-label={`${group.title} skills`} className="mt-5 flex flex-wrap gap-2">
+                {group.skills.map(skill => <li key={skill} className="rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-slate-300">{skill}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
+        <SkillsHeatmap />
+      </RevealSection>
+
+      <RevealSection id="experience" className="grid gap-7 border-t border-white/10 py-12 sm:py-16 md:grid-cols-[1fr_1.65fr] md:gap-12" aria-labelledby="experience-title">
+        <SectionHeading
+          id="experience-title"
+          label="04 / PROFESSIONAL EXPERIENCE"
+          title="What I did, and what came out of it."
+          description="My experience spans hands-on Python teaching support and cybersecurity research. Here's what I worked on, how I contributed and what I produced—without inflated impact figures."
+        />
+        <div className="space-y-6">
+          {experience.map(position => (
+            <article key={`${position.organisation}-${position.role}`} className="surface overflow-hidden rounded-2xl border border-white/10 p-6 sm:p-7">
+              <div className="flex flex-wrap items-start justify-between gap-x-5 gap-y-2">
+                <div>
+                  <p className="text-sm font-semibold text-cyan-300">{position.organisation}</p>
+                  <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-100 sm:text-2xl">{position.role}</h3>
+                </div>
+                <p className="rounded-full border border-white/15 bg-white/[0.04] px-3 py-2 text-xs font-medium text-slate-300">{position.dates}</p>
+              </div>
+              <ul aria-label={position.role + ' focus areas'} className="mt-4 flex flex-wrap gap-2">
+                {position.focus.map(tag => (
+                  <li key={tag} className="rounded-full border border-cyan-300/20 bg-cyan-300/[0.055] px-3 py-1.5 text-xs font-medium text-cyan-100">{tag}</li>
+                ))}
+              </ul>
+              <p className="mt-5 leading-relaxed text-slate-200">{position.intro}</p>
+
+              <div className="mt-6 border-t border-white/10 pt-5">
+                <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-cyan-300">What I worked on</h4>
+                <ul className="mt-3 list-disc space-y-3 pl-5 text-sm leading-relaxed text-slate-300 marker:text-cyan-300 sm:text-[15px]">
+                  {position.work.map(item => <li key={item}>{item}</li>)}
+                </ul>
+              </div>
+
+              <div className="mt-6 rounded-r-xl border-l-[3px] border-cyan-300 bg-cyan-300/[0.055] px-4 py-4 sm:px-5">
+                <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-cyan-300">Outcome & contribution</h4>
+                <p className="mt-2 text-sm leading-relaxed text-slate-100 sm:text-[15px]">{position.outcome}</p>
+                <p className="mt-3 text-xs leading-relaxed text-slate-400">{position.outcomeNote}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </RevealSection>
+
+      <RevealSection id="education" className="grid gap-6 border-t border-white/10 py-12 sm:py-16 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="education-title">
+        <SectionHeading id="education-title" label="05 / EDUCATION" title="Education & academic status." />
+        <div className="space-y-5">
+          {education.map(qualification => (
+            <article key={qualification.course} className="surface rounded-2xl border border-cyan-300/20 p-6 sm:p-7">
+              <p className="text-sm font-medium text-cyan-300">{qualification.institution}</p>
+              <h3 className="mt-3 text-2xl font-semibold tracking-tight">{qualification.course}</h3>
+              <p className="mt-3 text-sm text-slate-400">{qualification.dates}</p>
+              {qualification.note && <p className="mt-4 text-sm leading-relaxed text-slate-300">{qualification.note}</p>}
+            </article>
+          ))}
+        </div>
+      </RevealSection>
+
+      <RevealSection id="certifications" className="grid gap-6 border-t border-white/10 py-12 sm:py-16 md:grid-cols-[1fr_1.5fr] md:gap-12" aria-labelledby="certifications-title">
+        <SectionHeading id="certifications-title" label="06 / CERTIFICATIONS" title="Certifications & courses." />
+        <ul className="surface divide-y divide-white/10 rounded-2xl border border-white/10 px-6 sm:px-7">
+          {certifications.map(title => <li key={title} className="py-5 leading-relaxed text-slate-300">{title}</li>)}
+        </ul>
+      </RevealSection>
+
+      {showCV && <CvSection />}
+
+      <RevealSection id="contact" className="border-t border-white/10 py-12 sm:py-16" aria-labelledby="contact-title">
+        <SectionHeading id="contact-title" label={`${showCV ? '08' : '07'} / CONTACT`} title="Let’s start a conversation." description="Get in touch by email, connect on LinkedIn, or explore my work on GitHub." />
+        <div className="mt-7 flex flex-wrap gap-3">
+          <a href={`mailto:${contact.email}`} className={`${primaryLink} break-all`}>{contact.email} <ArrowIcon /></a>
+          <a href={contact.linkedin} className={secondaryLink}>LinkedIn <ArrowIcon /></a>
+          <a href={githubUrl} className={secondaryLink}>GitHub <ArrowIcon /></a>
+        </div>
+      </RevealSection>
+    </>
   )
 }
