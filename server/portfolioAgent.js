@@ -123,8 +123,19 @@ export async function runPortfolioAgent({ question, history = [], pathname = '/'
       signal,
     })
     if (!response.ok) {
-      const code = response.status === 402 ? 'ai_credits_required' : [401, 403].includes(response.status) ? 'ai_auth_required' : 'ai_unavailable'
-      throw Object.assign(new Error('AI provider request failed'), { status: response.status, code })
+      const detail = await response.json().catch(() => ({}))
+      const errorMessage = String(detail.error?.message || detail.message || '')
+      let reason = 'unclassified'
+      if (/credit|balance|budget|funds|payment method|billing/i.test(errorMessage)) reason = 'credits_or_billing'
+      else if (/verif|activat|onboard|enable|setup|account.*disabled/i.test(errorMessage)) reason = 'account_setup'
+      else if (/model.*(allow|access|disabled)|allowlist/i.test(errorMessage)) reason = 'model_access'
+      else if (/key.*(invalid|not found|revok|expir)|invalid.*key/i.test(errorMessage)) reason = 'invalid_key'
+      else if (/oidc|issuer|audience|signature/i.test(errorMessage)) reason = 'project_identity'
+      else if (/permission|forbidden|access/i.test(errorMessage)) reason = 'permissions'
+      const rawCode = String(detail.error?.code || detail.error?.type || detail.code || '')
+      const providerCode = /^[a-z_]{1,60}$/i.test(rawCode) ? rawCode : undefined
+      const code = response.status === 402 || reason === 'credits_or_billing' ? 'ai_credits_required' : [401, 403].includes(response.status) ? 'ai_auth_required' : 'ai_unavailable'
+      throw Object.assign(new Error('AI provider request failed'), { status: response.status, code, reason, providerCode })
     }
     const completion = await response.json()
     const message = completion.choices?.[0]?.message

@@ -53,12 +53,13 @@ export default async function handler(req, res) {
 
   // Vercel supplies a fresh invocation-scoped identity header. An optional
   // Gateway key supports other environments; credentials stay on the server.
-  const apiKey = process.env.AI_GATEWAY_API_KEY || req.headers['x-vercel-oidc-token'] || process.env.VERCEL_OIDC_TOKEN
+  const credential = process.env.AI_GATEWAY_API_KEY || req.headers['x-vercel-oidc-token'] || process.env.VERCEL_OIDC_TOKEN
+  const apiKey = typeof credential === 'string' ? credential.trim() : undefined
   try {
     const result = await runPortfolioAgent(input, { apiKey, model: process.env.PORTFOLIO_AGENT_MODEL || 'openai/gpt-4.1-mini', signal: AbortSignal.timeout(35_000) })
     return res.status(200).json(result)
   } catch (error) {
-    console.warn('Portfolio AI request failed', { code: error.code || 'ai_unavailable', status: error.status || 503 })
+    console.warn('Portfolio AI request failed', { code: error.code || 'ai_unavailable', status: error.status || 503, reason: error.reason, providerCode: error.providerCode, credentialSource: process.env.AI_GATEWAY_API_KEY ? 'gateway_key' : 'project_identity' })
     return res.status(503).json({ error: 'AI answers are temporarily unavailable. You can still explore the portfolio sources below.', code: error.code || 'ai_unavailable' })
   }
 }
