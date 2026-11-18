@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/portfolio-chat.js": {
+      "maxDuration": 45
+    }
+  },
   "rewrites": [
     {
       "source": "/services",
