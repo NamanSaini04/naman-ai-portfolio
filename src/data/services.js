@@ -2,12 +2,14 @@ export const services = [
   {
     id: 'automation',
     title: 'AI workflow automation',
-    summary: 'Prototype an assistant for document search or request triage, with source references and human review.',
+    summary: 'Prototype document search, evidence-cited report drafting or request triage, with source checks and human review.',
     details: 'Start with one repetitive workflow and a small set of examples. I’ll test the prototype against cases where the expected answer or action is known.',
     examples: [
       'A document assistant that points readers to the passages behind each answer.',
       'A triage tool that tags or summarises incoming requests for someone to review.',
+      'A report-drafting workflow with evidence citations, validation and reviewer checks.',
     ],
+    exampleProject: { label: 'See the Incident Postmortem Generator', href: '/projects/incident-postmortem' },
     action: 'Discuss automation',
   },
   {

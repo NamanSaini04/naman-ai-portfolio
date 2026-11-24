@@ -23,9 +23,10 @@ export const evidenceGroups = [
 export const skillEvidence = [
   { name: 'ML model training', group: 'AI Engineering & ML', levels: [2, 0, 0, 1, 0, 0, 2, 0] },
   { name: 'Feature engineering', group: 'AI Engineering & ML', levels: [2, 1, 1, 1, 0, 0, 2, 0] },
-  { name: 'Model evaluation', group: 'AI Engineering & ML', levels: [2, 2, 0, 1, 0, 0, 2, 2] },
+  { name: 'ML model evaluation', group: 'AI Engineering & ML', levels: [2, 2, 0, 1, 0, 0, 2, 0] },
+  { name: 'LLM evaluation & grounding', group: 'AI Engineering & ML', levels: [0, 0, 0, 0, 0, 0, 0, 2] },
   { name: 'Cost-sensitive ML', group: 'AI Engineering & ML', levels: [2, 0, 0, 0, 0, 0, 0, 0] },
-  { name: 'RAG / TF-IDF retrieval', group: 'AI Engineering & ML', levels: [0, 0, 0, 0, 2, 0, 0, 2] },
+  { name: 'RAG / TF-IDF / BM25', group: 'AI Engineering & ML', levels: [0, 0, 0, 0, 2, 0, 0, 2] },
   { name: 'AI agent workflows', group: 'AI Engineering & ML', levels: [0, 0, 0, 0, 2, 0, 0, 1] },
 
   { name: 'Exploratory data analysis', group: 'Analytics & BI', levels: [2, 2, 2, 2, 0, 1, 1, 0] },

@@ -8,7 +8,7 @@ const highlights = {
   'ecommerce-sales': 'Identified $17.7K of losses in Tables and validated a 17.6% forecast MAPE.',
   'airline-delay': 'Analysed 5.82M flights; 72% of attributed delay minutes were operational categories.',
   'soc-copilot': 'End-to-end synthetic investigation workflow, with 20 automated tests passed.',
-  'incident-postmortem': '1401/1401 citations verified; a reviewer agent caught 28/29 planted errors.',
+  'incident-postmortem': 'In synthetic tests, 1401/1401 citations verified; a reviewer caught 28/29 planted errors.',
   'job-market': '606 misleading training adverts flagged; 150 genuine postings recovered through a SQL fix.',
   'incident-analytics': '35% SLA breaches identified across 18,000 synthetic incidents.',
 }

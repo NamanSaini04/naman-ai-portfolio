@@ -44,7 +44,7 @@ export function executePortfolioTool(name, args) {
       return { project, score: terms.filter(term => text.includes(term)).length }
     }).sort((a, b) => b.score - a.score)
     const matching = ranked.filter(item => item.score > 0)
-    const selected = (matching.length ? matching : ranked).slice(0, 7)
+    const selected = matching.length ? matching : ranked
     return {
       projects: selected.map(({ project }) => ({ id: project.id, title: project.title, status: project.status, description: project.description, technologies: project.technologies })),
       sources: selected.map(({ project }) => projectSources(project)[0]),

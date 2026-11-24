@@ -73,6 +73,11 @@ export default function ServicesPage({ primaryLink, secondaryLink }) {
             <ul className="mt-2 flex-1 list-disc space-y-2 pl-5 leading-relaxed text-slate-300 marker:text-cyan-300">
               {service.examples.map(example => <li key={example}>{example}</li>)}
             </ul>
+            {service.exampleProject && (
+              <a href={service.exampleProject.href} className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-cyan-300 hover:underline">
+                {service.exampleProject.label} <ArrowIcon />
+              </a>
+            )}
             <a href={enquiry(service.title + ' enquiry')} className="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-cyan-300 hover:underline">
               {service.action} <ArrowIcon />
             </a>

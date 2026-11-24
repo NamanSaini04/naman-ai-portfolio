@@ -99,7 +99,7 @@ export const caseStudies = {
     metrics: [
       { value: '1401/1401', label: 'Citations confirmed', note: 'Independent verifier, 18 reports' },
       { value: '120/120', label: 'Hallucination traps avoided', note: 'Checked by hand' },
-      { value: '94%', label: 'ATT&CK recall', note: '0 forbidden techniques used' },
+      { value: '94%', label: 'ATT&CK recall', note: 'Lenient scoring · 12 reports · 0 forbidden techniques used' },
       { value: '28/29', label: 'Planted errors caught', note: 'Reviewer agent benchmark' }
     ],
     outcome: 'I built and evaluated an end-to-end postmortem generator with a live demo, PDF export and a technical report. Across 3 runs of 6 synthetic incidents, category and severity were correct in 18/18 reports and every citation was confirmed by an independent check. The code checks could not see one subtler failure: correct quotes supporting overconfident claims. A reviewer agent I added found it in about 1 in 11 claims, and one prompt rule cut it from 7 to 1 on the two incidents I re-tested.',

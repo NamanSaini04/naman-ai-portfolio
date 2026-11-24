@@ -3,8 +3,8 @@
 export const skillGroups = [
   {
     title: 'AI Engineering',
-    description: 'Auditable AI workflows and defensive decision-support applications.',
-    skills: ['RAG / TF-IDF retrieval', 'Agent workflow orchestration', 'Human-in-the-loop review', 'Cited evidence retrieval', 'MCP tools', 'FastAPI', 'Pydantic'],
+    description: 'Evidence-grounded LLM applications, evaluated report generation and auditable security workflows.',
+    skills: ['Anthropic API', 'RAG / TF-IDF / BM25 retrieval', 'LLM evaluation & claim validation', 'Reviewer agents', 'MITRE ATT&CK mapping', 'Agent workflow orchestration', 'Human-in-the-loop review', 'Cited evidence retrieval', 'MCP tools', 'FastAPI', 'Pydantic'],
   },
   {
     title: 'Machine Learning & Evaluation',
@@ -24,7 +24,7 @@ export const skillGroups = [
   {
     title: 'Application Delivery & Testing',
     description: 'Making projects usable, reproducible and inspectable.',
-    skills: ['Streamlit', 'FastAPI', 'Pytest', 'Pydantic', 'Git / GitHub', 'Jupyter', 'Technical reporting'],
+    skills: ['Streamlit', 'FastAPI', 'Pytest', 'Pydantic', 'Git / GitHub', 'GitHub Actions', 'ReportLab PDF export', 'Jupyter', 'Technical reporting'],
   },
 ]
 

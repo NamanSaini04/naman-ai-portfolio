@@ -101,7 +101,7 @@ function projectSelection(matches, title = 'Explore the projects') {
 }
 
 function servicesAnswer(contactLinks) {
-  return { title: 'AI and data services', paragraphs: ['Naman offers small, scoped projects in AI workflow automation, analytics and dashboards, and Python/SQL data pipelines. Examples include a document-search prototype with source references, Power BI or Excel reporting, and repeatable ingestion and cleanup workflows.', 'Contact Naman with your goal and a sample of your data to discuss scope and terms.'], links: [{ label: 'Explore services', href: '/services' }, ...contactLinks], suggestions: ['Show me related projects', 'How can I contact him?'] }
+  return { title: 'AI and data services', paragraphs: ['Naman offers small, scoped projects in AI workflow automation, analytics and dashboards, and Python/SQL data pipelines. Examples include document search and report-drafting prototypes with source checks and human review, Power BI or Excel reporting, and repeatable ingestion and cleanup workflows.', 'Contact Naman with your goal and a sample of your data to discuss scope and terms.'], links: [{ label: 'Explore services', href: '/services' }, ...contactLinks], suggestions: ['Show me related projects', 'How can I contact him?'] }
 }
 
 export function getPortfolioAnswer(question, context = {}, pathname = '/') {

@@ -66,7 +66,7 @@ function PortfolioHome() {
           <dl className="divide-y divide-white/10">
             {[
               ['Machine Learning', 'Cross-dataset intrusion detection, imbalance handling and model evaluation.'],
-              ['AI Engineering', 'Auditable SOC workflows with cited retrieval.'],
+              ['AI Engineering', 'Evidence-cited LLM reports, reviewer agents and auditable SOC workflows.'],
               ['Data Engineering', 'Historical job data and validated pipelines.'],
               ['Cybersecurity Analytics', 'Network intrusion, attack-class and incident-response analysis.'],
             ].map(([title, description]) => (
@@ -83,6 +83,7 @@ function PortfolioHome() {
         <SectionHeading id="about-title" label="01 / ABOUT" title="AI, data & security." />
         <div className="space-y-4 leading-relaxed text-slate-400">
           <p>I am an MSc Artificial Intelligence graduate from the University of Bath, working across machine learning, data pipelines and security analysis. My dissertation compared seven ML and deep-learning models for multi-class network intrusion detection across CICIDS2017 and UNSW-NB15.</p>
+          <p>My Cybersecurity Incident Postmortem Generator combines the Anthropic API, BM25 retrieval and a reviewer agent to draft reports with traceable evidence. I evaluated citation grounding and overconfident claims on six synthetic incidents; the case study explains the results and limits.</p>
           <p>I focus on reproducible experiments, class-balanced evaluation and clear limitations rather than headline accuracy alone. Explore the source code, design decisions, results and caveats in each project below.</p>
         </div>
       </RevealSection>
