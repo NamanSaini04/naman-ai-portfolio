@@ -12,7 +12,7 @@ export default function CvSection() {
         <p className="mt-3 leading-relaxed text-slate-300">
           Read or download my two-page UAE AI Engineer CV, covering machine learning, deep learning, model evaluation, technical projects, education and experience.
         </p>
-        <p className="mt-3 text-sm text-slate-400">{cvFileName} · 2 pages</p>
+        <p className="mt-3 text-sm text-slate-400">PDF document · 2 pages</p>
         <div className="mt-6 flex flex-wrap gap-3">
           <a href={cvPdfUrl} target="_blank" rel="noopener noreferrer" className="button-primary inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-cyan-300 px-6 py-3 text-sm font-medium text-slate-950 hover:bg-cyan-200" aria-label="Open Naman Saini CV as a PDF in a new tab">
             View CV <ArrowIcon />
