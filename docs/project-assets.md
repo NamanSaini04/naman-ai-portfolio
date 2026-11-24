@@ -24,3 +24,11 @@ Full-size links still open the original PNGs above, whose bytes and hashes are u
 - SOC: 645 × 354 and 1290 × 708, from the original 1935 × 1062 PNG.
 
 These dimensions preserve the exact original aspect ratios. Explicit width/height, responsive `srcset`/`sizes`, lazy loading, captions, alt text, and full-size links are retained. No originals are fetched for the inline image; opening a full-size link loads its PNG separately. Derivatives live in `src/assets/projects/thumbnails/`.
+
+## incident-postmortem-generator
+
+- Preview: `public/project-previews/incident-postmortem-timeline.png`, drawn by the project's own PDF code
+  (`src/pmgen/pdf.py`, `timeline_drawing`) from the INC-2026-004 evidence and the milestones and key events of
+  the generated report. Synthetic incident.
+- Cover: `public/project-covers/incident-postmortem.svg`, an original decorative illustration, not a screenshot
+  or a result.
