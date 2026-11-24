@@ -1,4 +1,4 @@
-import { showCV, cvPdfUrl } from '../data/siteConfig'
+import { showCV, cvFileName, cvPdfUrl } from '../data/siteConfig'
 import { motion, useReducedMotion } from 'motion/react'
 import ArrowIcon from './ArrowIcon'
 import { portraitSrc } from '../data/profilePortrait'
@@ -33,7 +33,7 @@ export default function HeroIntro({ primaryLink, secondaryLink }) {
       <motion.div variants={entrance} className="mt-8 flex flex-wrap gap-3">
         <a href="#projects" className={primaryLink}>Explore my work <ArrowIcon /></a>
         <a href="#contact" className={secondaryLink}>Get in touch</a>
-        {showCV && <a href={cvPdfUrl} download="Naman_Saini_UAE_AI_Engineer_CV.pdf" className="inline-flex min-h-12 items-center justify-center rounded-full border border-cyan-300/30 px-5 py-3 text-sm font-medium text-cyan-200 transition-colors hover:bg-cyan-300/10">Download CV</a>}
+        {showCV && <a href={cvPdfUrl} download={cvFileName} className="inline-flex min-h-12 items-center justify-center rounded-full border border-cyan-300/30 px-5 py-3 text-sm font-medium text-cyan-200 transition-colors hover:bg-cyan-300/10">Download CV</a>}
       </motion.div>
     </motion.div>
   )
