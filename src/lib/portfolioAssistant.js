@@ -17,6 +17,7 @@ const projectAliases = {
   'incident-analytics': ['incident analytics', 'security incidents', 'incident response', 'sla', 'ransomware'],
   'airline-delay': ['airline', 'flight', 'aviation', 'airport', 'delay'],
   'soc-copilot': ['soc', 'copilot', 'rag', 'mcp', 'playbook', 'ai agent', 'agents', 'human in the loop'],
+  'incident-postmortem': ['postmortem', 'post mortem', 'incident report', 'llm', 'hallucination', 'llm evaluation', 'citations', 'attack', 'mitre', 'reviewer agent', 'anthropic', 'claude api'],
   'job-market': ['job market', 'hiring data', 'dbt', 'postgres', 'postgresql', 'airflow', 'etl', 'pipeline', 'data engineering', 'data engineer'],
 }
 
@@ -174,7 +175,7 @@ export function getPortfolioAnswer(question, context = {}, pathname = '/') {
     return projectSelection(selected.length ? selected : projects, matches.length ? 'Projects matching your question' : 'Start with these projects')
   }
   if (/\b(about|background|introduce|introduction|summary|bio|who|yourself)\b/.test(normalized)) {
-    return { title: 'About Naman', paragraphs: ['Naman Saini is an MSc Artificial Intelligence graduate from the University of Bath with Merit. His portfolio covers machine learning, data engineering, analytics and cybersecurity, with documented methods, results and limitations.', 'His work includes a network-intrusion-detection dissertation, a fraud-detection study, a SOC Copilot demo and a UK job-market data pipeline.'], links: [{ label: 'About Naman', href: '/#about' }, { label: 'Explore projects', href: '/#projects' }], suggestions: starterQuestions.slice(0, 3) }
+    return { title: 'About Naman', paragraphs: ['Naman Saini is an MSc Artificial Intelligence graduate from the University of Bath with Merit. His portfolio covers machine learning, data engineering, analytics and cybersecurity, with documented methods, results and limitations.', 'His work includes a network-intrusion-detection dissertation, an evidence-cited incident postmortem generator built on an LLM, a fraud-detection study, a SOC Copilot demo and a UK job-market data pipeline.'], links: [{ label: 'About Naman', href: '/#about' }, { label: 'Explore projects', href: '/#projects' }], suggestions: starterQuestions.slice(0, 3) }
   }
   if (matches.length) return projectSelection(matches.slice(0, 4).map(match => match.project), 'Related portfolio work')
 

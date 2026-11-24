@@ -8,6 +8,7 @@ const highlights = {
   'ecommerce-sales': 'Identified $17.7K of losses in Tables and validated a 17.6% forecast MAPE.',
   'airline-delay': 'Analysed 5.82M flights; 72% of attributed delay minutes were operational categories.',
   'soc-copilot': 'End-to-end synthetic investigation workflow, with 20 automated tests passed.',
+  'incident-postmortem': '1401/1401 citations verified; a reviewer agent caught 28/29 planted errors.',
   'job-market': '606 misleading training adverts flagged; 150 genuine postings recovered through a SQL fix.',
   'incident-analytics': '35% SLA breaches identified across 18,000 synthetic incidents.',
 }
@@ -18,6 +19,7 @@ const visibleTags = {
   'ecommerce-sales': ['Python', 'Pandas', 'Plotly', 'Streamlit'],
   'airline-delay': ['Python', 'Pandas', 'Plotly', 'Streamlit'],
   'soc-copilot': ['Python', 'RAG · TF-IDF', 'Streamlit', 'MCP'],
+  'incident-postmortem': ['Python', 'LLM · Anthropic API', 'RAG · BM25', 'Streamlit'],
   'job-market': ['Python', 'PostgreSQL', 'dbt', 'Airflow'],
   'incident-analytics': ['Python', 'Pandas', 'Streamlit', 'Plotly'],
 }
@@ -42,6 +44,10 @@ const covers = {
   'soc-copilot': {
     src: '/project-covers/soc-copilot.svg',
     alt: 'Illustrated security operations console with an alert and evidence investigation panels.',
+  },
+  'incident-postmortem': {
+    src: '/project-covers/incident-postmortem.svg',
+    alt: 'Original illustration of evidence log lines linked to checked claims in an incident report, with a timeline and a verification shield.',
   },
   'job-market': {
     src: '/project-covers/job-market.svg',

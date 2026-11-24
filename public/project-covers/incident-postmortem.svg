@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img">
+<title>Evidence-cited incident postmortem</title>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#050f24"/><stop offset=".61" stop-color="#182b49"/><stop offset="1" stop-color="#050f24"/></linearGradient>
+ <radialGradient id="halo"><stop stop-color="#50d1ff" stop-opacity=".26"/><stop offset="1" stop-color="#50d1ff" stop-opacity="0"/></radialGradient>
+ <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#264e71" stop-opacity=".96"/><stop offset=".57" stop-color="#112943" stop-opacity=".96"/><stop offset="1" stop-color="#091a30"/></linearGradient>
+ <pattern id="mesh" width="55" height="55" patternUnits="userSpaceOnUse"><path d="M55 0H0V55" fill="none" stroke="#50d1ff" stroke-opacity=".075" stroke-width="1"/></pattern>
+ <filter id="shadow" x="-50%" y="-50%" width="200%" height="220%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity=".45"/></filter>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<rect width="1200" height="675" fill="url(#mesh)"/>
+<circle cx="600" cy="330" r="330" fill="url(#halo)"/>
+<!-- evidence logs on the left -->
+<g filter="url(#shadow)">
+ <rect x="110" y="150" width="250" height="375" rx="20" fill="url(#glass)" stroke="#50d1ff" stroke-opacity=".35"/>
+ <g fill="#9fdcf5" fill-opacity=".55">
+  <rect x="140" y="190" width="190" height="10" rx="5"/><rect x="140" y="222" width="150" height="10" rx="5"/>
+  <rect x="140" y="254" width="175" height="10" rx="5"/><rect x="140" y="286" width="120" height="10" rx="5"/>
+  <rect x="140" y="318" width="185" height="10" rx="5"/><rect x="140" y="350" width="140" height="10" rx="5"/>
+  <rect x="140" y="382" width="170" height="10" rx="5"/><rect x="140" y="414" width="110" height="10" rx="5"/>
+  <rect x="140" y="446" width="160" height="10" rx="5"/><rect x="140" y="478" width="130" height="10" rx="5"/>
+ </g>
+ <rect x="132" y="244" width="200" height="30" rx="8" fill="none" stroke="#ff9f43" stroke-width="3"/>
+ <rect x="132" y="372" width="200" height="30" rx="8" fill="none" stroke="#ff9f43" stroke-width="3"/>
+</g>
+<!-- citation links -->
+<g fill="none" stroke="#ff9f43" stroke-width="3" stroke-dasharray="8 8" stroke-opacity=".85">
+ <path d="M332 259 C430 259 440 245 520 245"/>
+ <path d="M332 387 C430 387 440 372 520 372"/>
+</g>
+<!-- postmortem report on the right -->
+<g filter="url(#shadow)">
+ <rect x="520" y="120" width="420" height="435" rx="22" fill="url(#glass)" stroke="#50d1ff" stroke-opacity=".5"/>
+ <rect x="552" y="152" width="230" height="16" rx="8" fill="#e6f7ff" fill-opacity=".85"/>
+ <rect x="552" y="182" width="150" height="10" rx="5" fill="#9fdcf5" fill-opacity=".45"/>
+ <!-- timeline -->
+ <line x1="560" y1="465" x2="900" y2="465" stroke="#9fdcf5" stroke-opacity=".5" stroke-width="2"/>
+ <g fill="#50d1ff"><path d="M590 455l10 10-10 10-10-10z"/><path d="M670 455l10 10-10 10-10-10z"/><circle cx="740" cy="465" r="7"/></g>
+ <g fill="#ff9f43"><path d="M800 455l10 10-10 10-10-10z"/><path d="M880 455l10 10-10 10-10-10z"/></g>
+ <!-- findings with citation checks -->
+ <g>
+  <circle cx="566" cy="245" r="13" fill="#2fd38a"/><path d="M559 245l5 5 9-10" fill="none" stroke="#04203a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="592" y="238" width="250" height="12" rx="6" fill="#e6f7ff" fill-opacity=".7"/>
+  <rect x="852" y="236" width="56" height="16" rx="8" fill="#ff9f43" fill-opacity=".9"/>
+  <circle cx="566" cy="308" r="13" fill="#2fd38a"/><path d="M559 308l5 5 9-10" fill="none" stroke="#04203a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="592" y="301" width="220" height="12" rx="6" fill="#e6f7ff" fill-opacity=".7"/>
+  <circle cx="566" cy="372" r="13" fill="#2fd38a"/><path d="M559 372l5 5 9-10" fill="none" stroke="#04203a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="592" y="365" width="235" height="12" rx="6" fill="#e6f7ff" fill-opacity=".7"/>
+  <rect x="852" y="363" width="56" height="16" rx="8" fill="#ff9f43" fill-opacity=".9"/>
+ </g>
+</g>
+<!-- verification shield -->
+<g transform="translate(965 400)" filter="url(#shadow)">
+ <path d="M60 0 L118 22 V72 C118 118 90 146 60 160 C30 146 2 118 2 72 V22 Z" fill="#0b2a46" stroke="#50d1ff" stroke-width="4"/>
+ <path d="M34 80l18 18 36-40" fill="none" stroke="#2fd38a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

@@ -88,6 +88,39 @@ export const caseStudies = {
       source: 'https://github.com/NamanSaini04/ecommerce-sales-analytics/blob/main/reports/figures/05_discount_vs_profit.png'
     }
   },
+  'incident-postmortem': {
+    kicker: 'Completed LLM application · 6 synthetic incidents · release v1.0.0',
+    challenge: 'An LLM can draft a security postmortem in seconds, but a fluent report that invents an IP address, overstates what is known or misreads a timestamp is worse than no report. The aim was a system where every claim can be traced to evidence and every failure mode is measured.',
+    method: [
+      'Built deterministic ingestion, extraction and timeline code (UTC handling, inferred dates flagged, duplicates merged), so the model receives numbered evidence records and can only cite them.',
+      'Added BM25 policy retrieval (A/B tested), MITRE ATT&CK mapping checked against the official catalogue, response-time metrics computed by code, and a validator that sends specific problems back to the model once.',
+      'Measured everything: an independent verifier that re-reads the original files, a 10-measure evaluation suite, and a reviewer agent tested with deliberately planted errors. Answer keys and predictions were written before each run.'
+    ],
+    metrics: [
+      { value: '1401/1401', label: 'Citations confirmed', note: 'Independent verifier, 18 reports' },
+      { value: '120/120', label: 'Hallucination traps avoided', note: 'Checked by hand' },
+      { value: '94%', label: 'ATT&CK recall', note: '0 forbidden techniques used' },
+      { value: '28/29', label: 'Planted errors caught', note: 'Reviewer agent benchmark' }
+    ],
+    outcome: 'I built and evaluated an end-to-end postmortem generator with a live demo, PDF export and a technical report. Across 3 runs of 6 synthetic incidents, category and severity were correct in 18/18 reports and every citation was confirmed by an independent check. The code checks could not see one subtler failure: correct quotes supporting overconfident claims. A reviewer agent I added found it in about 1 in 11 claims, and one prompt rule cut it from 7 to 1 on the two incidents I re-tested.',
+    insights: [
+      'Code owns the facts. Indicators, timestamps and timelines come from parsers, so the model cannot invent an IP address: an indicator it names is kept only if extraction found it in the evidence.',
+      'I wrote answer keys, trap statements and predictions before each run, held three incidents back from prompt tuning, and kept the predictions that failed in the project record.',
+      'The validator and verifier proved every quote was real, but a reviewer agent showed that real quotes were sometimes used to support claims labelled "confirmed" that were really inferences. I measured the problem, fixed the prompt and re-measured, including a small over-correction the fix introduced.',
+      'Several important findings were mistakes in my own answer keys and scoring. They are documented as corrections rather than silently fixed.',
+    ],
+    caveat: 'All incidents and answer keys are synthetic and were written by the project author. The generator and the reviewer agent use the same model family, and most results come from one run per incident, so they show the pipeline behaves as designed rather than accuracy on real incidents. The public demo shows saved reports and makes no API calls.',
+    dashboard: 'https://incident-postmortem-generator-fpcsgufbx6gwrke2fyxqpm.streamlit.app/',
+    dashboardType: 'Streamlit demo of saved reports (no API calls)',
+    dashboardLabel: 'Pick an incident, inspect its timeline, evidence and ATT&CK mapping, and see the independent verification',
+    sourceEvidence: 'https://github.com/NamanSaini04/incident-postmortem-generator/blob/main/docs/technical_report.md',
+    visual: {
+      src: '/project-previews/incident-postmortem-timeline.png',
+      alt: 'Timeline chart from the INC-2026-004 ransomware postmortem: events per evidence file from 10 November 22:41 to 11 November 09:40, with attack start, first detection, response start and containment marked, and inferred times shown in a different colour.',
+      caption: 'Timeline chart from the generated INC-2026-004 (synthetic ransomware) PDF report. Exact times are blue; times whose date was inferred or timezone assumed are amber.',
+      source: 'https://github.com/NamanSaini04/incident-postmortem-generator/blob/main/src/pmgen/pdf.py'
+    }
+  },
   'soc-copilot': {
     kicker: 'Functional synthetic-data demo · CI-tested workflow',
     challenge: 'SOC investigations require a traceable chain from alerts to evidence and recommended action, rather than persuasive but unsupported AI output.',
