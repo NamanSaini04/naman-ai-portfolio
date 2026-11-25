@@ -33,7 +33,7 @@ export const caseStudies = {
     method: [
       'Deduplicated 283,726 transactions and used a held-out test split. Fitted preprocessing on training data only and handled class imbalance without resampling the test set.',
       'Compared logistic regression, random forest, XGBoost and an SVM subsample. Evaluated PR-AUC and false-positive versus missed-fraud trade-offs.',
-      'Built a local Streamlit dashboard with an overview, exploratory charts, decision-threshold simulator and sample transaction scoring.'
+      'Built and published a Streamlit dashboard with an overview, exploratory charts, an adjustable business-cost model, a decision-threshold simulator and sample transaction scoring.'
     ],
     metrics: [
       { value: '283,726', label: 'Transactions analysed', note: 'Post-deduplication dataset' },
@@ -49,9 +49,9 @@ export const caseStudies = {
       'I also found that fraud was more common around 2–4 AM, and the median fraudulent payment was only $9.25. That reinforced why checking only large transactions would miss a lot of suspicious activity.',
     ],
     caveat: 'One historical dataset spanning two days; anonymised inputs, few fraud examples, no operational monitoring, and illustrative rather than observed cost savings.',
-    dashboard: '/projects/fraud-detection/dashboard',
-    dashboardType: 'Interactive portfolio analytics dashboard · Test-set results and cost comparisons',
-    dashboardLabel: 'Compare evaluated fraud thresholds and adjust illustrative missed-fraud and review costs',
+    dashboard: 'https://financial-fraud-detection-9arzobmjkhfrofqg4dqma4.streamlit.app/',
+    dashboardType: 'Published Streamlit dashboard · Held-out model evaluation and interactive cost scenarios',
+    dashboardLabel: 'Explore model results and charts, adjust fraud-review costs and thresholds, and score sample transactions',
     localCommand: 'streamlit run dashboard/app.py',
     sourceEvidence: 'https://github.com/NamanSaini04/Financial-fraud-detection/blob/main/reports/business_insights.md'
   },
